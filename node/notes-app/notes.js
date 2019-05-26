@@ -9,10 +9,11 @@ const getNotes = () => {return 'Here\'s ur notes buddee!'}
 // command: add
 const addNote = (title, body) => {
   const notes = loadNotes()
-  const duplicateNotes = notes.filter((note) => {return note.title === title})
+  const duplicateNote = notes.find((note) => note.title === title)
 
-  if (duplicateNotes.length === 0) {
+  if (!duplicateNote) {
     console.log('Okie title checks out bic')
+    console.log(duplicateNote)
     notes.push({
       title: title,
       body: body
