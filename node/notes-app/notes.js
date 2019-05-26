@@ -46,7 +46,21 @@ const listNotes = () => {
   notes.forEach((note) => {
     console.log(note.title)
   })
+}
 
+
+// command: read
+const readNote = title => {
+  const notes = loadNotes()
+  const noteToRead = notes.find((note) => {return note.title === title})
+
+  if (noteToRead) {
+    console.log(chalk.green('Note found!'))
+    console.log(chalk.green(noteToRead.title))
+    console.log(chalk.blue(noteToRead.body))
+  } else {
+    console.log(chalk.red('You w0t m8'))
+  }
 }
 
 
@@ -72,5 +86,6 @@ module.exports = {
   getNotes: getNotes,
   addNote: addNote,
   removeNote: removeNote,
-  listNotes: listNotes
+  listNotes: listNotes,
+  readNote: readNote
 }

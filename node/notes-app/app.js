@@ -49,7 +49,14 @@ yargs.command({
 yargs.command({
   command: 'read',
   describe: 'Read notes',
-  handler() { console.log('Reading note!') }
+  builder: {
+    title: {
+      describe: 'Title of note to be read',
+      demandOption: true,
+      type: 'string'
+    }
+  },
+  handler(argv) { notes.readNote(title=argv.title) }
 })
 
 let unneeded = yargs.argv
