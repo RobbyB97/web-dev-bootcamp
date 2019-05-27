@@ -11,6 +11,8 @@ const addNote = (title, body) => {
   const notes = loadNotes()
   const duplicateNote = notes.find((note) => note.title === title)
 
+  debugger
+
   if (!duplicateNote) {
     console.log('Okie title checks out bic')
     console.log(duplicateNote)
