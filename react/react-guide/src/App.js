@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Person/Person.css'
 import Person from './Person/Person'
 
 class App extends Component {
@@ -18,16 +19,25 @@ class App extends Component {
   //    {name: 'NO WHEY', age: 5043}
   //  ],
   //}
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     //alert('OMG I BEEN CLIKT!')
     this.setState({
       persons: [
-        {name: 'Dude', age: 90},
+        {name: newName, age: 90},
         {name: 'BRO', age: 53},
         //{name: 'OMG', age: 1337},
         //{name: 'NO WHEY', age: 5043}
       ]
-    });
+    } )
+  }
+
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: event.target.value, age: 90},
+        {name: 'BRO', age: 53}
+      ]
+    } )
   }
 
   render() {
@@ -35,11 +45,12 @@ class App extends Component {
       <div className="App">
         <h1> Im a React App </h1>
         <p> It is working! </p>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={() => this.switchNameHandler('JEEBIS!')}>Switch Name</button>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
-          click={this.switchNameHandler} 
+          click={this.switchNameHandler.bind(this, 'HOLY COW!')}
+          changed={this.nameChangedHandler}
         />
         <Person
           name={this.state.persons[1].name}
