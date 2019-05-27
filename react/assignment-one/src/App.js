@@ -9,12 +9,6 @@ class App extends Component {
     name: 'Mang'
   }
 
-  switchName = (username) => {
-    this.setState({
-      name: username
-    })
-  }
-
   changeName = (event) => {
     this.setState({
       name: event.target.value
@@ -30,7 +24,6 @@ class App extends Component {
       <div className="App" style={styles}>
         <UserInput
           name={this.state.name}
-          click={this.switchName.bind(this, this.state.name)}
           changed={this.changeName}
         />
         <UserOutput

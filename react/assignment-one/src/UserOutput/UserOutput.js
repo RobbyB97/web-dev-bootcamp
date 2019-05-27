@@ -4,7 +4,7 @@ import './UserOutput.css'
 const userOutput = (props) => {
   return (
     <div className="UserOutput">
-      <p onChange={props.changed}>{props.name}</p>
+      <p>{props.name}</p>
       <p>
         COME ON MAN :(
       </p>
