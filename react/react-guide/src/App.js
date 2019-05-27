@@ -11,21 +11,12 @@ class App extends Component {
     ],
     otherState: 'Hi i paul'
   }
-  //state = {
-  //  persons: [
-  //    {name: 'Dude', age: 53},
-  //    {name: 'OMG', age: 1337},
-  //    {name: 'NO WHEY', age: 5043}
-  //  ],
-  //}
   switchNameHandler = (newName) => {
     //alert('OMG I BEEN CLIKT!')
     this.setState({
       persons: [
         {name: newName, age: 90},
-        {name: 'BRO', age: 53},
-        //{name: 'OMG', age: 1337},
-        //{name: 'NO WHEY', age: 5043}
+        {name: 'BRO', age: 53}
       ]
     } )
   }
