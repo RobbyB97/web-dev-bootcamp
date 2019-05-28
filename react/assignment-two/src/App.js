@@ -22,7 +22,9 @@ class App extends Component {
   }
 
   removeCharInp = (index) => {
-    alert(index)
+    const newInput = this.state.inp.slice(0, index) + this.state.inp.slice(index+1)
+    this.setState({inp: newInput})
+
   }
 
   render() {
@@ -30,7 +32,7 @@ class App extends Component {
     let chars=null
 
     if (this.state.inp) {
-      let charset = this.state.inp.split('')
+      const charset = this.state.inp.split('')
 
       chars = (
         <div>
@@ -52,6 +54,7 @@ class App extends Component {
         <input
           type="text"
           onChange = {(event) => this.changeInpNum(event)}
+          value = {this.state.inp}
         />
         <p> {this.state.inpLength} </p>
         <ValidComponent
