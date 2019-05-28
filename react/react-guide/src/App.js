@@ -96,17 +96,17 @@ class App extends Component {
 
     return (
       <StyleRoot>
-      <div className="App">
-        <h1> Im a React App </h1>
-        <p className={classes.join(' ')}> It is working! </p>
-        <button
-          className="mainButton"
-          style={style}
-          onClick={this.togglePersonHandler}>
-            Toggle Ppl
-        </button>
-        {persons}
-      </div>
+        <div className="App">
+          <h1> Im a React App </h1>
+          <p className={classes.join(' ')}> It is working! </p>
+          <button
+            className="mainButton"
+            style={style}
+            onClick={this.togglePersonHandler}>
+              Toggle Ppl
+          </button>
+          {persons}
+        </div>
       </StyleRoot>
     );
   }
