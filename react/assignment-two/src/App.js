@@ -21,8 +21,8 @@ class App extends Component {
     }
   }
 
-  removeInpChar = (event) => {
-
+  removeCharInp = (index) => {
+    alert(index)
   }
 
   render() {
@@ -38,7 +38,7 @@ class App extends Component {
             return (
               <CharBox
                 char = {char}
-                index = {index}/>
+                click = {() => this.removeCharInp(index)}/>
             )
           })}
         </div>
