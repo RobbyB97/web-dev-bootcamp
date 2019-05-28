@@ -1,4 +1,4 @@
 # Node modules
 node_modules/*
-node/notes-app/node_modules/*
+node/*/node_modules/*
 react/react-guide/node_modules/*
