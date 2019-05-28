@@ -1,11 +1,14 @@
 const request = require('request')
 const fs = require('fs')
 
-const getKey = () => {return fs.readFileSync('./secretkey.txt').toString().replace(' ', '')}
-const geturl = () => {return 'https://api.darksky.net/forecast/' + getKey() + '/37.8267,-122.4233'}
-const url = geturl().replace('\n', '')
+// Get darksky info
+const darkSkyKey = () => {return fs.readFileSync('./darkskykey.txt').toString().replace(' ', '')}
+const geturl = () => {return 'https://api.darksky.net/forecast/' + darkSkyKey() + '/37.8267,-122.4233'}
+const darkSkyurl = geturl().replace('\n', '')
 
-request({url: url, json: true}, (error, response) => {
+// Get mapbox info
+
+request({url: darkSkyurl, json: true}, (error, response) => {
   console.log(response.body.currently)
   let temp = response.body.currently.temperature.toString()
   let rainChance = response.body.currently.precipProbability.toString()
