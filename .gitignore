@@ -1,4 +1,7 @@
 # Node modules
 node_modules/*
 node/*/node_modules/*
-react/react-guide/node_modules/*
+react/*/node_modules/*
+
+#API keys
+node/weather-app/secretkey.txt
