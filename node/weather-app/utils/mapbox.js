@@ -4,7 +4,7 @@ const request = require('request')
 const geocode = (address, callback) => {
 
   // Generate url
-  const key = fs.readFileSync('../mapboxkey.txt').toString().replace(' ', '')
+  const key = fs.readFileSync('./mapboxkey.txt').toString().replace(' ', '')
   let url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=' + key + '&limit=1'
   url = url.replace('\n', '')
 
@@ -26,12 +26,4 @@ const geocode = (address, callback) => {
   })
 }
 
-geocode('Philadelphia', (error, data) => {
-  if (error) {
-    console.log('ERROR: ' + error)
-  } else if (data) {
-    console.log(data)
-  } else {
-    console.log('Jeez idk you messed up man')
-  }
-})
+module.exports = geocode
