@@ -1,12 +1,12 @@
 const fs = require('fs')
 const request = require('request')
 
-const weather = (coordinates, callback) => {
+const weather = (latitude, longitude, callback) => {
 
   // Generate url
   const key = fs.readFileSync('./darkskykey.txt').toString().replace(' ', '')
 //  const coords = '/' + coordinates['latitude'] + ',' + coordinates['longitude']
-  let url = 'https://api.darksky.net/forecast/' + key + '/37.8267,-122.4233'
+  let url = 'https://api.darksky.net/forecast/' + key + '/' + latitude + ',' + longitude
   url = url.replace('\n', '')
 
   // Request data from darksky
