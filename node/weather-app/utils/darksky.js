@@ -18,7 +18,8 @@ const weather = (coordinates, callback) => {
     } else {
       const temp = response.body.currently.temperature.toString()
       const rainChance = response.body.currently.precipProbability.toString()
-      callback(response.body.daily.data[0].summary + ' It is currently ' + temp + ' degrees out. There is a ' + rainChance + '% chance of rain.')
+      const string = response.body.daily.data[0].summary + ' It is currently ' + temp + ' degrees out. There is a ' + rainChance + '% chance of rain.'
+      callback(undefined, string)
     }
   })
 }

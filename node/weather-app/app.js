@@ -8,7 +8,6 @@ const place = geocode('North Haven', (error, data) => {
     console.log('ERROR: ' + error)
   } else if (data) {
     console.log(data)
-    callback(data)
   } else {
     console.log('Jeez idk you messed up man')
   }
@@ -21,7 +20,6 @@ const forecast = weather(place, (error, data) => {
     console.log('ERROR: ' + error)
   } else if (data) {
     console.log(data)
-    callback(data)
   } else {
     console.log('idk man')
   }
