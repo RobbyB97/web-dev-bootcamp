@@ -12,7 +12,7 @@ const geocode = (address, callback) => {
   request({url: url, json: true}, (error, response) => {
     if (error) {
       callback('Unable to connect to mapbox...', undefined)
-    } else if (!response.body.features[0]) {
+    } else if (response.body.features.length === 0) {
       callback('Could not find location...', undefined)
     } else {
       const coordinates = response.body.features[0].geometry['coordinates']
