@@ -8,24 +8,6 @@ const app = express()
 
 app.use(express.static(publicPage))
 
-app.get('', (req, res) => {
-  res.send('<h1>CONTENT!</h1>')
-})
-
-app.get('/help', (req, res) => {
-  res.send([{
-    name: 'Robby',
-    age: 22
-  },
-{
-  name: 'Ribby'
-}])
-})
-
-app.get('/about', (req, res) => {
-  res.send('<h1>This is about page!</h1>')
-})
-
 app.get('/weather', (req, res) => {
   res.send({
     forecast: 'It is rainy',
