@@ -7,7 +7,7 @@ const app = express()
 
 // Define paths for express config
 const publicPage = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates')
+const viewsPath = path.join(__dirname, '../templates/views')
 
 // Set hbs engine and views path
 app.set('view engine', 'hbs')
