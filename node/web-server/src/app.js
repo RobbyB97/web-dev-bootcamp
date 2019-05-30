@@ -2,10 +2,10 @@
 const path = require('path')
 const express = require('express')
 
-const publicPage = path.join(__dirname, '../public')
-
 const app = express()
 
+const publicPage = path.join(__dirname, '../public')
+app.set('view engine', 'hbs')
 app.use(express.static(publicPage))
 
 app.get('/weather', (req, res) => {
