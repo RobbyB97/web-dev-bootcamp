@@ -5,9 +5,14 @@ const hbs = require('hbs')
 
 const app = express()
 
+// Define paths for express config
 const publicPage = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates')
 
+// Set hbs engine and views path
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+
 app.use(express.static(publicPage))
 
 app.get('', (req, res) => {
