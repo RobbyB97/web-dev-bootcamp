@@ -5,20 +5,19 @@ const weather = (latitude, longitude, callback) => {
 
   // Generate url
   const key = fs.readFileSync('./darkskykey.txt').toString().replace(' ', '')
-//  const coords = '/' + coordinates['latitude'] + ',' + coordinates['longitude']
   let url = 'https://api.darksky.net/forecast/' + key + '/' + latitude + ',' + longitude
   url = url.replace('\n', '')
 
   // Request data from darksky
-  request({url: url, json: true}, (error, response) => {
+  request({url, json: true}, (error, {body}) => {
     if (error) {
       console.log('Could not reach DarkSky')
-    } else if (response.body.error) {
+    } else if (body.error) {
       console.log('Something went wrong with DarkSky')
     } else {
-      const temp = response.body.currently.temperature.toString()
-      const rainChance = response.body.currently.precipProbability.toString()
-      const string = response.body.daily.data[0].summary + ' It is currently ' + temp + ' degrees out. There is a ' + rainChance + '% chance of rain.'
+      const temp = body.currently.temperature.toString()
+      const rainChance = body.currently.precipProbability.toString()
+      const string = body.daily.data[0].summary + ' It is currently ' + temp + ' degrees out. There is a ' + rainChance + '% chance of rain.'
       callback(undefined, string)
     }
   })

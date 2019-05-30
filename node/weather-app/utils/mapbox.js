@@ -9,16 +9,16 @@ const geocode = (address, callback) => {
   url = url.replace('\n', '')
 
   // Request data from mapbox
-  request({url: url, json: true}, (error, response) => {
+  request({url, json: true}, (error, {body}) => {
     if (error) {
       callback('Unable to connect to mapbox...', undefined)
-    } else if (response.body.features.length === 0) {
+    } else if (body.features.length === 0) {
       callback('Could not find location...', undefined)
     } else {
-      const coordinates = response.body.features[0].geometry['coordinates']
+      const coordinates = body.features[0].geometry['coordinates']
       const latitude = coordinates[1]
       const longitude = coordinates[0]
-      const place_name = response.body.features[0].place_name
+      const place_name = body.features[0].place_name
       callback(undefined, {
         latitude: latitude,
         longitude: longitude,
