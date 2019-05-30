@@ -8,13 +8,17 @@ const app = express()
 // Define paths for express config
 const publicPage = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
 
 // Set hbs engine and views path
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
 
+// Set directory to serve
 app.use(express.static(publicPage))
 
+// Homepage
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather App',
@@ -22,6 +26,7 @@ app.get('', (req, res) => {
   })
 })
 
+// About page
 app.get('/about', (req, res) => {
   res.render('about/index', {
     title: 'The About page',
@@ -29,6 +34,7 @@ app.get('/about', (req, res) => {
   })
 })
 
+// Help page
 app.get('/help', (req, res) => {
   res.render('help/index', {
     title: 'The Help page',
@@ -37,6 +43,7 @@ app.get('/help', (req, res) => {
   })
 })
 
+// Weather page
 app.get('/weather', (req, res) => {
   res.send({
     forecast: 'It is rainy',
@@ -44,6 +51,7 @@ app.get('/weather', (req, res) => {
   })
 })
 
+// 404 page
 app.get('/*', (req, res) => {
   res.send('404 lol')
   console.log('Invalid link...')
