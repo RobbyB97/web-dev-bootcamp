@@ -1,5 +1,8 @@
+// Other libraries
 const request = require('request')
 const fs = require('fs')
+
+// Local utils
 const geocode = require('./utils/mapbox')
 const weather = require('./utils/darksky')
 
