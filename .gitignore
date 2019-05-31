@@ -5,3 +5,4 @@ react/*/node_modules/*
 
 #API keys
 node/weather-app/*key.txt
+node/web-server/*key.txt
