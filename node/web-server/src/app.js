@@ -51,10 +51,20 @@ app.get('/weather', (req, res) => {
   })
 })
 
-// 404 page
+// 404 pages
+app.get('/help/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Ribster',
+    message: 'Help page not found.'
+  })
+})
 app.get('/*', (req, res) => {
-  res.send('404 lol')
-  console.log('Invalid link...')
+  res.render('404', {
+    title: '404',
+    name: 'Ribster',
+    message: 'Page not found.'
+  })
 })
 
 app.listen(3000, () => {
