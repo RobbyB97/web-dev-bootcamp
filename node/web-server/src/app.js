@@ -51,6 +51,21 @@ app.get('/weather', (req, res) => {
   })
 })
 
+// Products page
+app.get('/products', (req, res) => {
+  if (!req.query.search) {
+    return res.send({
+      error: 'You must provide search term'
+    })
+  }
+
+  console.log(req.query.search)
+  res.send({
+    products: [],
+    games: ['lol']
+  })
+})
+
 // 404 pages
 app.get('/help/*', (req, res) => {
   res.render('404', {
