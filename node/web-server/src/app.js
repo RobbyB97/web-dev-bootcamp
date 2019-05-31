@@ -3,6 +3,10 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
+// utils
+const geocode = require('./utils/mapbox')
+const weather = require('./utils/darksky')
+
 const app = express()
 
 // Define paths for express config
@@ -45,9 +49,28 @@ app.get('/help', (req, res) => {
 
 // Weather page
 app.get('/weather', (req, res) => {
-  res.send({
-    forecast: 'It is rainy',
-    location: 'North Haven'
+
+  const place = geocode(req.query.address, (error, {latitude, longitude, location}) => {
+    if (!req.query.address) {
+      return res.send({
+        error: 'Must provide an address!'
+      })
+    }
+
+    if (error) {
+      return res.send(error)
+    }
+
+    weather(latitude, longitude, (error, weatherData) => {
+      if (error) {
+        return res.send(error)
+      }
+
+      return res.send({
+        location: location,
+        data: weatherData
+      })
+    })
   })
 })
 
