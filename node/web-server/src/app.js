@@ -50,7 +50,7 @@ app.get('/help', (req, res) => {
 // Weather page
 app.get('/weather', (req, res) => {
 
-  const place = geocode(req.query.address, (error, {latitude, longitude, location}) => {
+  const place = geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
     if (!req.query.address) {
       return res.send({
         error: 'Must provide an address!'
@@ -58,7 +58,9 @@ app.get('/weather', (req, res) => {
     }
 
     if (error) {
-      return res.send(error)
+      return res.send({
+        error: 'Something went wrong. Try another location'
+      })
     }
 
     weather(latitude, longitude, (error, weatherData) => {
