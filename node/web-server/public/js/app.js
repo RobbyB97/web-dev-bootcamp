@@ -6,7 +6,7 @@ const search = document.querySelector('input')
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()  // Prevent page from refreshing
 
-  const location = search.value
+  const location = search.value.replace(' ', '-')
   console.log(location)
 
   // Generate query URL
