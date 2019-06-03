@@ -12,17 +12,20 @@ weatherForm.addEventListener('submit', (e) => {
   const location = search.value.replace(' ', '-')
   console.log(location)
 
+  pOne.innerHTML = 'Loading...'
+  pTwo.innerHTML = ''
+
   // Generate query URL
   const queryURL = 'http://localhost:3000/weather?address=' + location
 
   // Fetch data and log json object
   fetch(queryURL).then((response) => {
+
     response.json().then((data) => {
       console.log('Dynamic query')
       if (data.error) {
         console.log(data.error)
         pOne.innerHTML = data.error
-        pTwo.innerHTML = ''
       } else {
         pOne.innerHTML = data.location
         pTwo.innerHTML = data.data
