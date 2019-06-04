@@ -9,20 +9,22 @@ const pTwo = document.querySelector('#pTwo')
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()  // Prevent page from refreshing
 
+  if (search.value.replace(' ', '') === '') {
+    pOne.innerHTML = 'Cannot get weather without a location!'
+    return
+  }
   const location = search.value.replace(' ', '-')
-  console.log(location)
 
   pOne.innerHTML = 'Loading...'
   pTwo.innerHTML = ''
 
   // Generate query URL
-  const queryURL = 'http://localhost:3000/weather?address=' + location
+  const queryURL = '/weather?address=' + location
 
   // Fetch data and log json object
   fetch(queryURL).then((response) => {
 
     response.json().then((data) => {
-      console.log('Dynamic query')
       if (data.error) {
         console.log(data.error)
         pOne.innerHTML = data.error
@@ -30,9 +32,6 @@ weatherForm.addEventListener('submit', (e) => {
         pOne.innerHTML = data.location
         pTwo.innerHTML = data.data
       }
-      console.log('End dynamic query')
     })
   })
-
-  console.log('Form submitted!')
 })
