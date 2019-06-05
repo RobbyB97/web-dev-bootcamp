@@ -26,6 +26,14 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
     console.log('Users:')
     console.log(users)
   })
+  db.collection('users').insertOne({
+    name: 'Robo Ribby',
+    age: 80
+  }).then((result) => {
+    console.log('Success')
+  }).catch((error) => {
+    console.log('Oh no :(')
+  })
 
 //  db.collection('users').updateOne({
 //    _id: new ObjectID('5cf6c08f1e968d6fe62df761')
@@ -56,8 +64,8 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
   db.collection('tasks').deleteOne({
     task: 'Wake up'
   }).then((result) => {
-    console.log(result)
+    console.log('Delete success')
   }).catch((error) => {
-    console.log(error)
+    console.log('Delete error')
   })
 })
