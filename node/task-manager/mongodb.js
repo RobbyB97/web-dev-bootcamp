@@ -17,50 +17,5 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
 
   const db = client.db(databaseName)
 
-  db.collection('users').insertOne({
-    _id: id,
-    name: 'Ribby Reptar',
-    age: 220
-  }, (error, result) => {
-    if (error) {
-      return console.log('Unable to insert user')
-    }
-  console.log(result.ops)
-})
-
-  //db.collection('users').insertMany([
-  //  {
-  //    name: 'Jim',
-  //    age: 40
-  //  }, {
-  //    name: 'Luther',
-  //    age: 780
-  //  }
-  //], (error, result) => {
-  //  if (error) {
-  //    return console.log('Couldn\'t insert documents')
-  //  }
-  //  console.log(result.ops)
-  //})
-  //
-  //db.collection('tasks').insertMany([
-  //  {
-  //    task: 'Wake up',
-  //    completed: false
-  //  }, {
-  //    task: 'Grab a brush',
-  //    completed: false
-  //  }, {
-  //    task: 'Put on a little makeup',
-  //    completed: false
-  //  }
-  //], (error, result) => {
-  //  if (error) {
-  //    return console.log('Couldn\'t store tasks')
-  //  }
-  //  console.log(result.ops)
-  //})
-
-
-
+  
 })
