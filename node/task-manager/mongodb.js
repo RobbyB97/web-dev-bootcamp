@@ -17,7 +17,7 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
 
   const db = client.db(databaseName)
 
-  db.collection('tasks').find({completed: false}).toArray((error, tasks) => {
+  db.collection('tasks').find({}).toArray((error, tasks) => {
     console.log(tasks)
   })
 })
