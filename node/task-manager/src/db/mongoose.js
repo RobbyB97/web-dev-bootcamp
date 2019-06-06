@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
   useNewUrlParser: true,
@@ -18,6 +19,15 @@ const User = mongoose.model('User', {
       }
       if (value < 18) {
         throw new Error('You must be 18 years or older')
+      }
+    }
+  },
+  email: {
+    type: String,
+    required: true,
+    validate(value) {
+      if (!validator.isEmail()) {
+        throw new Error('Invalid email!')
       }
     }
   }
