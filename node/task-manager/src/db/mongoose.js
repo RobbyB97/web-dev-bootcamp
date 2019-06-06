@@ -7,23 +7,32 @@ mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
 
 const User = mongoose.model('User', {
   name: {
-    type: String
+    type: String,
+    required: true
   },
   age: {
-    type: Number
+    type: Number,
+    validate(value) {
+      if (value < 0) {
+        throw new Error('You can\'t be negative years old')
+      }
+      if (value < 18) {
+        throw new Error('You must be 18 years or older')
+      }
+    }
   }
 })
 
-//const me = new User({
-//  name: 'Robby',
-//  age: 22
-//})
-//
-//me.save().then((result) => {
-//  console.log(me)
-//}).catch((error) => {
-//  console.log('Error: ', error)
-//})
+const me = new User({
+  name: 'Ribster',
+  age: 16
+})
+
+me.save().then((result) => {
+  console.log(me)
+}).catch((error) => {
+  console.log('Error: ', error)
+})
 
 const Task = mongoose.model('Task', {
   task: {
