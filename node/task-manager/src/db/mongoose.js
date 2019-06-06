@@ -26,7 +26,7 @@ const User = mongoose.model('User', {
     type: String,
     required: true,
     validate(value) {
-      if (!validator.isEmail()) {
+      if (!validator.isEmail(value)) {
         throw new Error('Invalid email!')
       }
     }
@@ -35,7 +35,8 @@ const User = mongoose.model('User', {
 
 const me = new User({
   name: 'Ribster',
-  age: 16
+  age: 22,
+  email: 'bergersr@my.easternct.edu'
 })
 
 me.save().then((result) => {
