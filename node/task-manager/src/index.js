@@ -3,10 +3,12 @@ require('./db/mongoose')
 const User = require('./models/user.js')
 const Task = require('./models/task.js')
 
+
 // Connect to server
 const app = express()
 const port = process.env.PORT || 3000
 app.use(express.json())
+
 
 // CRUD users
 app.post('/users', (req, res) => {
@@ -40,6 +42,7 @@ app.get('/users/:id', (req, res) => {
   })
 })
 
+
 // CRUD tasks
 app.post('/tasks', (req, res) => {
   const task = new Task(req.body)
@@ -51,6 +54,29 @@ app.post('/tasks', (req, res) => {
   })
 })
 
+app.get('/tasks', (req, res) => {
+  Task.find({}).then((tasks) => {
+    res.send(tasks)
+  }).catch((e) => {
+    res.status(500).send()
+  })
+})
+
+app.get('/tasks/:id', (req, res) => {
+  const _id = req.params.id
+  Task.findById(_id).then((task) => {
+    if (!task) {
+      return res.status(404).send()
+    }
+
+    res.send(task)
+  }).catch((e) => {
+    return res.status(500).send()
+  })
+})
+
+
+// Run server
 app.listen(port, () => {
   console.log('Server is up on port ', port)
 })
