@@ -43,7 +43,7 @@ const User = mongoose.model('User', {
       if (value.length <= 6) {
         throw new Error('Password too short!')
       }
-      if (value.includes('password')) {
+      if (value.toLowerCase().includes('password')) {
         throw new Error('Password cannot contain password!')
       }
     }
@@ -54,7 +54,7 @@ const me = new User({
   name: 'Ribster',
   age: 22,
   email: 'bergersr@my.easternct.edu',
-  password: 'dfdsxxx'
+  password: 'dfdsxxPassword'
 })
 
 me.save().then((result) => {
