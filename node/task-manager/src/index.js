@@ -3,12 +3,12 @@ require('./db/mongoose')
 const User = require('./models/user.js')
 const Task = require('./models/task.js')
 
-
+// Connect to server
 const app = express()
 const port = process.env.PORT || 3000
-
 app.use(express.json())
 
+// CRUD users
 app.post('/users', (req, res) => {
   const user = new User(req.body)
 
@@ -19,6 +19,15 @@ app.post('/users', (req, res) => {
   })
 })
 
+app.get('/users', (req, res) => {
+  User.find({}).then((users) => {
+    res.send(users)
+  }).catch((e) => {
+    res.status(500).send()
+  })
+})
+
+// CRUD tasks
 app.post('/tasks', (req, res) => {
   const task = new Task(req.body)
 
