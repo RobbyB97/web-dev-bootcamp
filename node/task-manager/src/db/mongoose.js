@@ -54,7 +54,7 @@ const me = new User({
   name: 'Ribster',
   age: 22,
   email: 'bergersr@my.easternct.edu',
-  password: 'dfdsxxPassword'
+  password: 'dfdsxxssword'
 })
 
 me.save().then((result) => {
@@ -65,16 +65,18 @@ me.save().then((result) => {
 
 const Task = mongoose.model('Task', {
   task: {
-    type: String
+    type: String,
+    required: true,
+    trim: true
   },
   completed: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 })
 
 const task = new Task({
-  task: 'Do homework!',
-  completed: false
+  task: 'Do work'
 })
 
 task.save().then(() => {
