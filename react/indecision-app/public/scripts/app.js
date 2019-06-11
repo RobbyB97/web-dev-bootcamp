@@ -2,18 +2,23 @@
 
 console.log('app.js is running');
 
+var app = {
+  title: 'Indecision App',
+  subtitle: 'Some info'
+};
+
 var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'JSX h1 tag'
+    app.title
   ),
   React.createElement(
     'p',
     null,
-    'JSX P tag'
+    app.subtitle
   ),
   React.createElement(
     'ol',
@@ -65,4 +70,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
