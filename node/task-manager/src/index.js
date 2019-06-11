@@ -11,7 +11,7 @@ app.use(express.json())
 
 
 // CRUD users
-app.post('/users', async (req, res) => {
+app.post('/users', async (req, res) => {    //Create user
   const user = new User(req.body)
 
   try {
@@ -22,7 +22,7 @@ app.post('/users', async (req, res) => {
   }
 })
 
-app.get('/users', async (req, res) => {
+app.get('/users', async (req, res) => {     // Read Users collection
 
   try {
     const users = await User.find({})
@@ -32,7 +32,7 @@ app.get('/users', async (req, res) => {
   }
 })
 
-app.get('/users/:id', async (req, res) => {
+app.get('/users/:id', async (req, res) => {   // Find User by ID
   const _id = req.params.id
 
   try {
@@ -46,7 +46,7 @@ app.get('/users/:id', async (req, res) => {
   }
 })
 
-app.patch('/users/:id', async (req, res) => {
+app.patch('/users/:id', async (req, res) => {   // Update User by ID
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'email', 'password', 'age'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -66,9 +66,22 @@ app.patch('/users/:id', async (req, res) => {
   }
 })
 
+app.delete('/users/:id', async (req, res) => {    // Delete User by ID
+
+    try {
+      const user = await User.findByIdAndDelete(req.params.id)
+      if (!user) {
+        return res.status(404).send()
+      }
+      res.send(user)
+    } catch(e) {
+      res.status(500).send()
+    }
+})
+
 
 // CRUD tasks
-app.post('/tasks', async (req, res) => {
+app.post('/tasks', async (req, res) => {    // Create new Task
   const task = new Task(req.body)
 
   try {
@@ -79,7 +92,7 @@ app.post('/tasks', async (req, res) => {
   }
 })
 
-app.get('/tasks', async (req, res) => {
+app.get('/tasks', async (req, res) => {     // Read Tasks collection
 
   try {
     const tasks = await Task.find({})
@@ -89,7 +102,7 @@ app.get('/tasks', async (req, res) => {
   }
 })
 
-app.get('/tasks/:id', async (req, res) => {
+app.get('/tasks/:id', async (req, res) => {   // Find Task by ID
   const _id = req.params.id
 
   try {
@@ -103,7 +116,7 @@ app.get('/tasks/:id', async (req, res) => {
   }
 })
 
-app.patch('/tasks/:id', async (req, res) => {
+app.patch('/tasks/:id', async (req, res) => {   // Update Task by ID
   const updates = Object.keys(req.body)
   const allowedUpdates = ['task', 'completed']
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
