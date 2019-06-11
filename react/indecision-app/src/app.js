@@ -11,9 +11,11 @@ const template = (
   </div>
 )
 
+const userName = 'Rob'
+
 const templateTwo = (
   <div>
-    <h1> Robby </h1>
+    <h1> {userName.toUpperCase() + '!'} </h1>
     <p> Age: 22 </p>
     <p> Location: Willimantic </p>
   </div>

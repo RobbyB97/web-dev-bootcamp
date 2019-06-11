@@ -31,13 +31,17 @@ var template = React.createElement(
   )
 );
 
+var userName = 'Rob';
+
 var templateTwo = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    ' Robby '
+    ' ',
+    userName.toUpperCase() + '!',
+    ' '
   ),
   React.createElement(
     'p',
