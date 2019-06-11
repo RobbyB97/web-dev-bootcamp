@@ -22,14 +22,22 @@ const user = {
   location: 'Willimantic'
 }
 
+const getLocation = location => {
+  if (location) {
+    return location
+  } else {
+    return 'Who knows?'
+  }
+}
+
 const templateTwo = (
   <div>
     <h1> {user.name.toUpperCase() + '!'} </h1>
     <p> Age: {user.age} </p>
-    <p> Location: {user.location} </p>
+    <p> Location: {getLocation(user.location)} </p>
   </div>
 )
 
 const appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
