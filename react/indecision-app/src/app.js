@@ -1,6 +1,6 @@
 console.log('app.js is running')
 
-let template = (
+const template = (
   <div>
     <h1>JSX h1 tag</h1>
     <p>JSX P tag</p>
@@ -11,6 +11,14 @@ let template = (
   </div>
 )
 
+const templateTwo = (
+  <div>
+    <h1> Robby </h1>
+    <p> Age: 22 </p>
+    <p> Location: Willimantic </p>
+  </div>
+)
+
 const appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
