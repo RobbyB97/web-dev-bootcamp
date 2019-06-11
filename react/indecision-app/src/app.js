@@ -11,13 +11,17 @@ const template = (
   </div>
 )
 
-const userName = 'Rob'
+const user = {
+  name: 'Rob',
+  age: 22,
+  location: 'Willimantic'
+}
 
 const templateTwo = (
   <div>
-    <h1> {userName.toUpperCase() + '!'} </h1>
-    <p> Age: 22 </p>
-    <p> Location: Willimantic </p>
+    <h1> {user.name.toUpperCase() + '!'} </h1>
+    <p> Age: {user.age} </p>
+    <p> Location: {user.location} </p>
   </div>
 )
 
