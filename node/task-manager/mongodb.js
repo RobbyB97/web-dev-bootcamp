@@ -44,6 +44,16 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
     return console.log(result)
   })
 
+  // Drop database
+  db.dropDatabase('users', (err, result) => {
+    if (err) {
+      return console.log(err)
+    }
+
+    return console.log(result)
+  })
+
+
 //  db.collection('users').updateOne({
 //    _id: new ObjectID('5cf6c08f1e968d6fe62df761')
 //  }, {
