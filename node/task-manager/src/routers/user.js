@@ -6,6 +6,7 @@ const router = new express.Router()
 // CRUD users
 router.post('/users', async (req, res) => {    //Create user
   const user = new User(req.body)
+  const token = await user.generateAuthToken()
 
   try {
     await user.save()
