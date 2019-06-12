@@ -6,6 +6,12 @@ const taskRouter = require('./routers/task')
 // Connect to server and routers
 const app = express()
 const port = process.env.PORT || 3000
+
+// Maintenance mode
+//app.use((req, res, next) => {
+//  return res.status(503).send('Site currently in maintenance mode.')
+//})
+
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
