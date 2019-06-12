@@ -27,6 +27,18 @@ router.post('/users/login', async (req, res) => {   // Login
   }
 })
 
+router.post('/users/logout', auth, async (req, res) => {    // Logout
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.token
+    })
+    await req.user.save()
+    res.send()
+  } catch(e) {
+    res.status(500).send()
+  }
+})
+
 router.get('/users', auth, async (req, res) => {     // Read Users collection
 
   try {
