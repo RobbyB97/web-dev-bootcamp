@@ -1,5 +1,6 @@
 const User = require('../models/user')
 const express = require('express')
+const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
@@ -26,7 +27,7 @@ router.post('/users/login', async (req, res) => {   // Login
   }
 })
 
-router.get('/users', async (req, res) => {     // Read Users collection
+router.get('/users', auth, async (req, res) => {     // Read Users collection
 
   try {
     const users = await User.find({})
