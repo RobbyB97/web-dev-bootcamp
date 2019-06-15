@@ -7,11 +7,6 @@ const taskRouter = require('./routers/task')
 const app = express()
 const port = process.env.PORT || 3000
 
-// Maintenance mode
-//app.use((req, res, next) => {
-//  return res.status(503).send('Site currently in maintenance mode.')
-//})
-
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
@@ -21,14 +16,14 @@ app.listen(port, () => {
   console.log('Server is up on port ', port)
 })
 
-const jwt = require('jsonwebtoken')
+const Task = require('./models/task')
+const User = require('./models/user')
 
-const myFunc = async () => {
-  const token = jwt.sign({_id: 'abc123'}, 'thisisasecret', {expiresIn: '7 days'})
-  console.log(token)
-
-  const data = jwt.verify(token, 'thisisasecret')
-  console.log(data)
+const main = async () => {
+  const task = await Task.findById('5d0504177487962608abce38')
+  console.log(task.user)
+  const user = await User.findById(task.user)
+  console.log(user)
 }
 
-myFunc()
+main()
