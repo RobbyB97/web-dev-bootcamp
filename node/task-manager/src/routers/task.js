@@ -1,11 +1,15 @@
 const Task = require('../models/task')
 const express = require('express')
+const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
 // CRUD tasks
-router.post('/tasks', async (req, res) => {    // Create new Task
-  const task = new Task(req.body)
+router.post('/tasks', auth, async (req, res) => {    // Create new Task
+  const task = new Task({
+    ...req.body,
+    user: req.user._id
+  })
 
   try {
     await task.save()
