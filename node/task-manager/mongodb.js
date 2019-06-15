@@ -36,13 +36,13 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
   })
 
   // Drop users collection
-  db.dropCollection('users', (err, result) => {
-    if (err) {
-      return console.log(err)
-    }
+//  db.dropCollection('users', (err, result) => {
+//    if (err) {
+//      return console.log(err)
+//    }
 
-    return console.log(result)
-  })
+//    return console.log(result)
+//  })
 
   // Drop database
   db.dropDatabase('users', (err, result) => {
