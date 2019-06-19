@@ -22,8 +22,13 @@ router.post('/tasks', auth, async (req, res) => {    // Create new Task
 router.get('/tasks', auth, async (req, res) => {     // Read Tasks collection
 
   try {
-    const tasks = await Task.find({user: req.user._id})
-    res.send(tasks)
+    await req.user.populate({
+      path: 'tasks',
+      match: {
+        completed: false
+      }
+    }).execPopulate()
+    res.send(req.user.tasks)
   } catch(e) {
     res.status(500).send()
   }
