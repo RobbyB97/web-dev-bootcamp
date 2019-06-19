@@ -38,7 +38,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    timestamps: true,
     validate(value) {
       if (value.length <= 6) {
         throw new Error('Password too short!')
@@ -54,6 +53,8 @@ const userSchema = new mongoose.Schema({
       required: true
     }
   }]
+}, {
+  timestamps: true
 })
 
 // Virtual fields
