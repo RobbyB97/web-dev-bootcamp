@@ -1,7 +1,12 @@
 const User = require('../models/user')
 const express = require('express')
 const auth = require('../middleware/auth')
+const multer = require('multer')
 const router = new express.Router()
+
+const avatars = multer({
+  dest: 'avatars'
+})
 
 
 // CRUD users
@@ -108,6 +113,10 @@ router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
     } catch(e) {
       res.status(500).send()
     }
+})
+
+router.post('/users/me/avatar', avatars.single('avatar'), (req, res) => {  // Upload avatar
+  res.send()
 })
 
 module.exports = router
