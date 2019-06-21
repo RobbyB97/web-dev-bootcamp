@@ -10,13 +10,11 @@ const avatars = multer({
     fileSize: 1000000
   },
   fileFilter(req, file, cb) { // cb = callback
-    if (!file.originalname.endsWith('.jpg')) {
-      return cb(new Error('File must be a .jpg image'))
+    if (!file.originalname.match(/\.(png|jpg)$/)) {
+      return cb(new Error('File must be an image'))
     }
 
     cb(undefined, true)
-    //cb(new Error('File must be an image'))  // Bad upload
-    //cb(undefined, true) // Good upload
   }
 })
 
