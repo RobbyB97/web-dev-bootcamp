@@ -5,7 +5,6 @@ const multer = require('multer')
 const router = new express.Router()
 
 const avatars = multer({
-  dest: 'avatars',
   limits: {
     fileSize: 1000000
   },
@@ -125,7 +124,9 @@ router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
     }
 })
 
-router.post('/users/me/avatar', auth, avatars.single('avatar'), (req, res) => {  // Upload avatar
+router.post('/users/me/avatar', auth, avatars.single('avatar'), async (req, res) => {  // Upload avatar
+  req.user.avatar = req.file.buffer
+  await req.user.save()
   res.send()
 }, (error, req, res, next) => {
   res.status(400).send({error: error.message})
