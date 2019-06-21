@@ -3,6 +3,10 @@ node_modules/*
 node/*/node_modules/*
 react/*/node_modules/*
 
-#API keys
+# API keys
 node/weather-app/*key.txt
 node/web-server/*key.txt
+
+# Task Manager
+node/task-manager/images/
+node/task-manager/avatars/
