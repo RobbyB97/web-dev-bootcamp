@@ -5,7 +5,19 @@ const multer = require('multer')
 const router = new express.Router()
 
 const avatars = multer({
-  dest: 'avatars'
+  dest: 'avatars',
+  limits: {
+    fileSize: 1000000
+  },
+  fileFilter(req, file, cb) { // cb = callback
+    if (!file.originalname.endsWith('.jpg')) {
+      return cb(new Error('File must be a .jpg image'))
+    }
+
+    cb(undefined, true)
+    //cb(new Error('File must be an image'))  // Bad upload
+    //cb(undefined, true) // Good upload
+  }
 })
 
 
