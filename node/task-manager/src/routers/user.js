@@ -10,7 +10,7 @@ const avatars = multer({
     fileSize: 1000000
   },
   fileFilter(req, file, cb) { // cb = callback
-    if (!file.originalname.match(/\.(png|jpg)$/)) {
+    if (!file.originalname.match(/\.(png|jpg|jpeg)$/)) {
       return cb(new Error('File must be an image'))
     }
 
