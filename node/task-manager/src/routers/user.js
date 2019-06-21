@@ -127,6 +127,8 @@ router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
 
 router.post('/users/me/avatar', avatars.single('avatar'), (req, res) => {  // Upload avatar
   res.send()
+}, (error, req, res, next) => {
+  res.status(400).send({error: error.message})
 })
 
 module.exports = router
