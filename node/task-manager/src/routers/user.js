@@ -124,6 +124,22 @@ router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
     }
 })
 
+router.get('/users/:id/avatar', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+
+    if (!user || !user.avatar) {
+      throw new Error()
+    }
+
+    res.set('Content-Type', 'image/jpg')
+    res.send(user.avatar)
+
+  } catch(e) {
+    res.status(404).send()
+  }
+})
+
 router.post('/users/me/avatar', auth, avatars.single('avatar'), async (req, res) => {  // Upload avatar
   req.user.avatar = req.file.buffer
   await req.user.save()
