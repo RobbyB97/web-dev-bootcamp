@@ -14,6 +14,16 @@ const welcome = (email, name) => {
   })
 }
 
+const goodbye = (email, name) => {
+  sgMail.send({
+    to: email,
+    from: 'bergersr@my.easternct.edu',
+    subject: 'One more thing, before you go.',
+    text: `We're sorry to see you leave the task app, ${name}. We would appreciate if you let us know why you decided to leave, so we can improve our service. Thank you for your time.`
+  })
+}
+
 module.exports = {
-  welcome
+  welcome,
+  goodbye
 }
