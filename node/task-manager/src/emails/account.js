@@ -5,9 +5,15 @@ const sgMail = require('@sendgrid/mail')
 const sendgridkey = fs.readFileSync('src/emails/sendgrid2key.txt').toString().replace(' ', '').replace('\n', '')
 sgMail.setApiKey(sendgridkey)
 
-sgMail.send({
-  to: 'bergersr@my.easternct.edu',
-  from: 'bergersr@my.easternct.edu',
-  subject: 'This is a test',
-  text: 'Please just work'
-})
+const sendWelcomeEmail = (email, name) => {
+  sgMail.send({
+    to: email,
+    from: 'bergersr@my.easternct.edu',
+    subject: 'Thanks for joining the task app!',
+    text: `Welcome to the app, ${name}. Let me know how you get along with the app.`
+  })
+}
+
+module.exports = {
+  sendWelcomeEmail
+}
