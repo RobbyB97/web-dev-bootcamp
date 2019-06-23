@@ -4,7 +4,7 @@ const multer = require('multer')
 
 const User = require('../models/user')
 const auth = require('../middleware/auth')
-const {sendWelcomeEmail} = require('../emails/account')
+const emailer = require('../emails/account')
 const router = new express.Router()
 
 const avatars = multer({
@@ -27,7 +27,7 @@ router.post('/users', async (req, res) => {    //Create user
 
   try {
     await user.save()
-    sendWelcomeEmail(user.email, user.name)
+    emailer.welcome(user.email, user.name)
     const token = await user.generateAuthToken()
     res.status(201).send({user, token})
   } catch(e) {

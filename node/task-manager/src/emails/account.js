@@ -5,7 +5,7 @@ const sgMail = require('@sendgrid/mail')
 const sendgridkey = fs.readFileSync('src/emails/sendgrid2key.txt').toString().replace(' ', '').replace('\n', '')
 sgMail.setApiKey(sendgridkey)
 
-const sendWelcomeEmail = (email, name) => {
+const welcome = (email, name) => {
   sgMail.send({
     to: email,
     from: 'bergersr@my.easternct.edu',
@@ -15,5 +15,5 @@ const sendWelcomeEmail = (email, name) => {
 }
 
 module.exports = {
-  sendWelcomeEmail
+  welcome
 }
