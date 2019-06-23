@@ -121,8 +121,10 @@ router.patch('/users/me', auth, async (req, res) => {   // Update User by ID
 router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
 
     try {
-      emailer.goodbye(req.user.email, req.user.name)
+      const uName = req.user.name
+      const uEmail = req.user.email
       await req.user.remove()
+      emailer.goodbye(uEmail, uName)
       res.send(req.user)
     } catch(e) {
       res.status(500).send()
