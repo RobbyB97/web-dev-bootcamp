@@ -11,3 +11,6 @@ node/task-manager/src/emails/*key.txt
 # Task Manager
 node/task-manager/images/
 node/task-manager/avatars/
+
+# Ignore environments (manually remake for security)
+*.env
