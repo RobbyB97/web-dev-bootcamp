@@ -121,6 +121,7 @@ router.patch('/users/me', auth, async (req, res) => {   // Update User by ID
 router.delete('/users/me', auth, async (req, res) => {    // Delete User by ID
 
     try {
+      emailer.goodbye(req.user.email, req.user.name)
       await req.user.remove()
       res.send(req.user)
     } catch(e) {
