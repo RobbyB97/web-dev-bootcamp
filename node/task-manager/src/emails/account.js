@@ -1,9 +1,7 @@
-const fs = require('fs')
 const sgMail = require('@sendgrid/mail')
 
 // Set API key
-const sendgridkey = fs.readFileSync('src/emails/sendgrid2key.txt').toString().replace(' ', '').replace('\n', '')
-sgMail.setApiKey(sendgridkey)
+sgMail.setApiKey(process.env.SENDGRID_KEY)
 
 const welcome = (email, name) => {
   sgMail.send({
