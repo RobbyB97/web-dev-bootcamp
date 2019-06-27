@@ -1,6 +1,12 @@
 const request = require('supertest')
 const app = require('../src/app')
 
+beforeEach(() => {
+  await User.deleteMany() // Delete User collection
+})
+
+
+
 test('Should sign up a new user', async () => {
   await request(app).post('/users').send({
     name: 'Robby',
