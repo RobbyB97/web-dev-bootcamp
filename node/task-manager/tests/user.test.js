@@ -26,7 +26,7 @@ test('Should sign up a new user', async () => {
     .post('/users')
     .send({
       name: 'Robby',
-      email: 'bergersr@my.easternct.edu',
+      email: 'test@example.com',
       password: 'passport1'
     })
     .expect(201)
@@ -58,4 +58,11 @@ test('Should get profile for user', async () => {
     .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
     .send()
     .expect(200)
+})
+
+test('Should not get profile for unauthenticated user', async () => {
+  await request(app)
+  .get('/users/me')
+  .send()
+  .expect(401)
 })
