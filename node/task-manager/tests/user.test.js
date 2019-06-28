@@ -7,6 +7,7 @@ const User = require('../src/models/user')
 const userOneId = new mongoose.Types.ObjectId()
 
 const testUserOne = {
+  _id: userOneId,
   name: 'Rob',
   email: 'rob@example.com',
   password: 'passeeword1',
