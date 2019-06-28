@@ -22,7 +22,7 @@ beforeEach(async () => {
 })
 
 test('Should sign up a new user', async () => {
-  await request(app)
+  const response = await request(app)
     .post('/users')
     .send({
       name: 'Robby',
@@ -30,6 +30,17 @@ test('Should sign up a new user', async () => {
       password: 'passport1'
     })
     .expect(201)
+  
+    // Assert database was updated
+    const user = await User.findById(response.body.user._id)
+    expect(user).not.toBeNull()
+    expect(response.body).toMatchObject({
+      user: {
+        name: 'Robby',
+        email: 'test@example.com'
+      },
+      token: user.tokens[0].token
+    })
 })
 
 test('Should log in existing user', async () => {
