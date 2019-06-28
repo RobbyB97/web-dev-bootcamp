@@ -21,25 +21,34 @@ beforeEach(async () => {
 })
 
 test('Should sign up a new user', async () => {
-  await request(app).post('/users').send({
-    name: 'Robby',
-    email: 'bergersr@my.easternct.edu',
-    password: 'passport1'
-  }).expect(201)
+  await request(app)
+    .post('/users')
+    .send({
+      name: 'Robby',
+      email: 'bergersr@my.easternct.edu',
+      password: 'passport1'
+    })
+    .expect(201)
 })
 
 test('Should log in existing user', async () => {
-  await request(app).post('/users/login').send({
-    email: testUserOne.email,
-    password: testUserOne.password
-  }).expect(200)
+  await request(app)
+    .post('/users/login')
+    .send({
+      email: testUserOne.email,
+      password: testUserOne.password
+    })
+    .expect(200)
 })
 
 test('Should not login nonexistent user', async () => {
-  await request(app).post('/users/login').send({
-    email: testUserOne.email,
-    password: '12345678'
-  }).expect(400)
+  await request(app)
+    .post('/users/login')
+    .send({
+      email: testUserOne.email,
+      password: '12345678'
+    })
+    .expect(400)
 })
 
 test('Should get profile for user', async () => {
