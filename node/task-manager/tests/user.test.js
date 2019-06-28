@@ -117,6 +117,15 @@ test('Should update user name', async () => {
   const user = await User.findById(userOneId)
   expect(user.name).toBe('Roopert')
 })
+test('Should not update invalid user field', async () => {
+  const response = await request(app)
+    .patch('/users/me')
+    .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+    .send({
+      notname: 'Rob'
+    })
+    .expect(400)
+})
 
 // POST /users/me/avatar
 test('Should upload avatar image', async () => {
