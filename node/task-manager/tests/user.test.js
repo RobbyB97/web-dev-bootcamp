@@ -41,3 +41,7 @@ test('Should not login nonexistent user', async () => {
     password: '12345678'
   }).expect(400)
 })
+
+test('Should get profile for user', async () => {
+  await request(app).get('/users/me').send().expect(200)
+})
