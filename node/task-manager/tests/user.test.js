@@ -21,6 +21,7 @@ beforeEach(async () => {
   await new User(testUserOne).save()
 })
 
+// POST /users
 test('Should sign up a new user', async () => {
   const response = await request(app)
     .post('/users')
@@ -44,6 +45,7 @@ test('Should sign up a new user', async () => {
     expect(user.password).not.toBe('passport1')
 })
 
+// POST /users/login
 test('Should log in existing user', async () => {
   const newToken = jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
   const response = await request(app)
@@ -60,7 +62,6 @@ test('Should log in existing user', async () => {
     const user = await User.findById(response.body.user._id)
     expect(user.tokens[1].token).toBe(newToken)
 })
-
 test('Should not login nonexistent user', async () => {
   await request(app)
     .post('/users/login')
@@ -71,6 +72,7 @@ test('Should not login nonexistent user', async () => {
     .expect(400)
 })
 
+// GET /users/me
 test('Should get profile for user', async () => {
   await request(app)
     .get('/users/me')
@@ -78,7 +80,6 @@ test('Should get profile for user', async () => {
     .send()
     .expect(200)
 })
-
 test('Should not get profile for unauthenticated user', async () => {
   await request(app)
     .get('/users/me')
@@ -86,6 +87,7 @@ test('Should not get profile for unauthenticated user', async () => {
     .expect(401)
 })
 
+// DELETE /users/me
 test('Should delete account for user', async () => {
   const response = await request(app)
     .delete('/users/me')
@@ -95,7 +97,6 @@ test('Should delete account for user', async () => {
   
   expect(await User.findById(userOneId)).toBeNull()
 })
-
 test('Should not delete account for unauthenticated user', async () => {
   await request(app)
     .delete('/users/me')
@@ -103,6 +104,21 @@ test('Should not delete account for unauthenticated user', async () => {
     .expect(401)
 })
 
+// PATCH /users/me
+test('Should update user name', async () => {
+  const response = await request(app)
+    .patch('/users/me')
+    .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+    .send({
+      name: 'Roopert'
+    })
+    .expect(200)
+  
+  const user = await User.findById(userOneId)
+  expect(user.name).toBe('Roopert')
+})
+
+// POST /users/me/avatar
 test('Should upload avatar image', async () => {
   await request(app)
     .post('/users/me/avatar')
