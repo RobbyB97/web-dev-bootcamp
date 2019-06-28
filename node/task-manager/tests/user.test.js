@@ -41,16 +41,24 @@ test('Should sign up a new user', async () => {
       },
       token: user.tokens[0].token
     })
+    expect(user.password).not.toBe('passport1')
 })
 
 test('Should log in existing user', async () => {
-  await request(app)
+  const newToken = jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
+  const response = await request(app)
     .post('/users/login')
     .send({
       email: testUserOne.email,
-      password: testUserOne.password
+      password: testUserOne.password,
+      tokens: [{
+        token: newToken
+      }]
     })
     .expect(200)
+  
+    const user = await User.findById(response.body.user._id)
+    expect(user.tokens[1].token).toBe(newToken)
 })
 
 test('Should not login nonexistent user', async () => {
