@@ -10,7 +10,7 @@ test('Should create task for user', async () => {
         .post('/tasks')
         .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
         .send({
-            description: 'From test'
+            task: 'From test'
         })
         .expect(201)
 })
