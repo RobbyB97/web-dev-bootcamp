@@ -1,25 +1,8 @@
 const request = require('supertest')
-const jwt = require('jsonwebtoken')
-const mongoose = require('mongoose')
 const app = require('../src/app')
 const User = require('../src/models/user')
+const {userOneId, testUserOne, setupDatabase} = require('./fixtures/db')
 
-const userOneId = new mongoose.Types.ObjectId()
-
-const testUserOne = {
-  _id: userOneId,
-  name: 'Rob',
-  email: 'rob@example.com',
-  password: 'passeeword1',
-  tokens: [{
-    token: jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
-  }]
-}
-
-beforeEach(async () => {
-  await User.deleteMany() // Delete User collection
-  await new User(testUserOne).save()
-})
 
 // POST /users
 test('Should sign up a new user', async () => {
@@ -31,23 +14,23 @@ test('Should sign up a new user', async () => {
       password: 'passport1'
     })
     .expect(201)
-  
-    // Assert database was updated
-    const user = await User.findById(response.body.user._id)
-    expect(user).not.toBeNull()
-    expect(response.body).toMatchObject({
-      user: {
-        name: 'Robby',
-        email: 'test@example.com'
-      },
-      token: user.tokens[0].token
-    })
-    expect(user.password).not.toBe('passport1')
+
+  // Assert database was updated
+  const user = await User.findById(response.body.user._id)
+  expect(user).not.toBeNull()
+  expect(response.body).toMatchObject({
+    user: {
+      name: 'Robby',
+      email: 'test@example.com'
+    },
+    token: user.tokens[0].token
+  })
+  expect(user.password).not.toBe('passport1')
 })
 
 // POST /users/login
 test('Should log in existing user', async () => {
-  const newToken = jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
+  const newToken = jwt.sign({ _id: userOneId }, process.env.JWT_SECRET)
   const response = await request(app)
     .post('/users/login')
     .send({
@@ -58,9 +41,9 @@ test('Should log in existing user', async () => {
       }]
     })
     .expect(200)
-  
-    const user = await User.findById(response.body.user._id)
-    expect(user.tokens[1].token).toBe(newToken)
+
+  const user = await User.findById(response.body.user._id)
+  expect(user.tokens[1].token).toBe(newToken)
 })
 test('Should not login nonexistent user', async () => {
   await request(app)
@@ -94,7 +77,7 @@ test('Should delete account for user', async () => {
     .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
     .send()
     .expect(200)
-  
+
   expect(await User.findById(userOneId)).toBeNull()
 })
 test('Should not delete account for unauthenticated user', async () => {
@@ -113,7 +96,7 @@ test('Should update user name', async () => {
       name: 'Roopert'
     })
     .expect(200)
-  
+
   const user = await User.findById(userOneId)
   expect(user.name).toBe('Roopert')
 })
