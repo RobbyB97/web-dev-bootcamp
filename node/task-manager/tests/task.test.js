@@ -6,5 +6,11 @@ const {userOneId, testUserOne, setupDatabase} = require('./fixtures/db')
 beforeEach(setupDatabase)
 
 test('Should create task for user', async () => {
-
+    const response = await request(app)
+        .post('/tasks')
+        .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+        .send({
+            description: 'From test'
+        })
+        .expect(201)
 })
