@@ -27,5 +27,5 @@ test('Should return tasks for a user', async () => {
         .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
         .send()
         .expect(200)
-    console.log(response)
+    console.log(`Length: ${response.body.length}`)
 })
