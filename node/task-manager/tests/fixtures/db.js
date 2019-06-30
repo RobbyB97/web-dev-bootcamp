@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../../src/models/user')
 const Task = require('../../src/models/task')
 
+
 const userOneId = new mongoose.Types.ObjectId()
 const testUserOne = {
     _id: userOneId,
@@ -23,6 +24,27 @@ const testUserTwo = {
     tokens: [{
         token: jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
     }]
+}
+
+const taskOne = {
+    _id: new mongoose.Types.ObjectId(),
+    description: 'Task One',
+    completed: false,
+    user: testUserOne._id
+}
+
+const taskTwo = {
+    _id: new mongoose.Types.ObjectId(),
+    description: 'Task Two',
+    completed: true,
+    user: testUserOne._id
+}
+
+const taskThree = {
+    _id: new mongoose.Types.ObjectId(),
+    description: 'Task Three',
+    completed: false,
+    user: testUserTwo._id
 }
 
 const setupDatabase = async () => {
