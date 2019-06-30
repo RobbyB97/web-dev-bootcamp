@@ -19,3 +19,13 @@ test('Should create task for user', async () => {
     expect(task).not.toBeNull()     // Ensure task found
     expect(task.completed).toEqual(false)   // Ensure proper default value
 })
+
+// GET /tasks
+test('Should return tasks for a user', async () => {
+    const response = await request(app)
+        .get('/tasks')
+        .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+        .send()
+        .expect(200)
+    console.log(response)
+})
