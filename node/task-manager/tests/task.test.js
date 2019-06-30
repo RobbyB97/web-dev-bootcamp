@@ -38,4 +38,6 @@ test('Shouldn\'t allow user to delete other user\'s task', async () => {
     .set('Authorization', `Bearer ${testUserTwo.tokens[0].token}`)
     .send()
     .expect(404)
+  const task = await Task.findById(taskOne._id)
+  expect(task).not.toBeNull()
 })
