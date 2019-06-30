@@ -4,6 +4,7 @@ const app = require('../src/app')
 const User = require('../src/models/user')
 const {userOneId, testUserOne, setupDatabase} = require('./fixtures/db')
 
+beforeEach(setupDatabase)
 
 // POST /users
 test('Should sign up a new user', async () => {
