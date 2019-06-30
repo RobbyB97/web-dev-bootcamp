@@ -5,6 +5,7 @@ const {userOneId, testUserOne, setupDatabase} = require('./fixtures/db')
 
 beforeEach(setupDatabase)
 
+// POST /tasks
 test('Should create task for user', async () => {
     const response = await request(app)
         .post('/tasks')
@@ -13,4 +14,8 @@ test('Should create task for user', async () => {
             task: 'From test'
         })
         .expect(201)
+
+    const task = await(Task.findById(response.body._id))
+    expect(task).not.toBeNull()     // Ensure task found
+    expect(task.completed).toEqual(false)   // Ensure proper default value
 })
