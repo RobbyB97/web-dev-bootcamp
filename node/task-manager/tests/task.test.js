@@ -1,7 +1,7 @@
 const request = require('supertest')
 const app = require('../src/app')
 const Task = require('../src/models/task')
-const {userOneId, testUserOne, testUserTwo, setupDatabase} = require('./fixtures/db')
+const {userOneId, testUserOne, testUserTwo, taskOne, setupDatabase} = require('./fixtures/db')
 
 beforeEach(setupDatabase)
 
@@ -28,4 +28,14 @@ test('Should return tasks for a user', async () => {
         .send()
         .expect(200)
     expect(response.body.length).toBe(2)
+})
+
+// DELETE /tasks/:id
+test('Shouldn\'t allow user to delete other user\'s task', async () => {
+  const taskId = taskOne._id
+  const response = await request(app)
+    .delete(`/tasks/${taskId}`)
+    .set('Authorization', `Bearer ${testUserTwo.tokens[0].token}`)
+    .send()
+    .expect(404)
 })
