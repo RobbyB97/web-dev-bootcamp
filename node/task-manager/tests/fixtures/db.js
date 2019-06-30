@@ -28,6 +28,7 @@ const testUserTwo = {
 const setupDatabase = async () => {
     await User.deleteMany() // Delete User collection
     await new User(testUserOne).save()
+    await new User(testUserTwo).save()
 }
 
 module.exports = {
