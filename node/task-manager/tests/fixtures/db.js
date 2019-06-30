@@ -54,11 +54,14 @@ const setupDatabase = async () => {
     await new User(testUserTwo).save()
     await new Task(taskOne).save()
     await new Task(taskTwo).save()
-    await new Task(taskThree).save()
+    await new Task(taskThree).save(
+
+    )
 }
 
 module.exports = {
     userOneId,
     testUserOne,
+    testUserTwo,
     setupDatabase
 }
