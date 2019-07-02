@@ -1,0 +1,11 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Chat App",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "env-cmd ./config/test.env node ./src/index.js"
+  },
+  "author": "Robby",
+  "license": "ISC"
+}
