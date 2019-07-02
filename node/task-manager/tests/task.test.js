@@ -61,9 +61,17 @@ test('Should return tasks for a user', async () => {
 test('Should not fetch user task by id if unauthenticated', async () => {
   const taskId = taskOne._id
   await request(app)
-  .get(`/tasks/${taskId}`)
-  .send()
-  .expect(401)
+    .get(`/tasks/${taskId}`)
+    .send()
+    .expect(401)
+})
+test('Should not fetch other user task by id', async () => {
+  const taskId = taskOne._id
+  await request(app)
+    .get(`/tasks/${taskId}`)
+    .set('Authorization', `Bearer ${testUserTwo._id}`)
+    .send()
+    .expect(401)
 })
 
 // DELETE /tasks/:id
