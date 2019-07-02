@@ -134,13 +134,21 @@ test('Should update user name', async () => {
   expect(user.name).toBe('Roopert')
 })
 test('Should not update invalid user field', async () => {
-  const response = await request(app)
+  await request(app)
     .patch('/users/me')
     .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
     .send({
       notname: 'Rob'
     })
     .expect(400)
+})
+test('Should not update user if unauthenticated', async () => {
+  await request(app)
+    .patch('/users/me')
+    .send({
+      name: 'Jim'
+    })
+    .expect(401)
 })
 
 // POST /users/me/avatar
