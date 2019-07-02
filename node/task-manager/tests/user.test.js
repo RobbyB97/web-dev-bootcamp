@@ -30,6 +30,36 @@ test('Should sign up a new user', async () => {
   })
   expect(user.password).not.toBe('passport1')
 })
+test('Should not create user with weak password', async () => {
+  await request(app)
+    .post('/users')
+    .send({
+      name: 'Robby',
+      email: 'test@example.com',
+      password: 'short'
+    })
+    .expect(400)
+})
+test('Should not create user with invalid name', async () => {
+  await request(app)
+    .post('/users')
+    .send({
+      name: '',
+      email: 'test@example.com',
+      password: 'longenough'
+    })
+    .expect(400)
+})
+test('Should not create user with invalid email', async () => {
+  await request(app)
+    .post('/users')
+    .send({
+      name: 'Robby',
+      email: 'invalid email',
+      password: 'longenough'
+    })
+    .expect(400)
+})
 
 // POST /users/login
 test('Should log in existing user', async () => {
