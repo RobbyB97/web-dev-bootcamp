@@ -57,10 +57,19 @@ test('Should return tasks for a user', async () => {
   expect(response.body.length).toBe(2)
 })
 
+// GET /tasks/:id
+test('Should not fetch user task by id if unauthenticated', async () => {
+  const taskId = taskOne._id
+  await request(app)
+  .get(`/tasks/${taskId}`)
+  .send()
+  .expect(401)
+})
+
 // DELETE /tasks/:id
 test('Should delete user task', async () => {
   taskId = taskOne._id
-  const response = await request(app)
+  await request(app)
     .delete(`/tasks/${taskId}`)
     .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
     .send()
@@ -70,7 +79,7 @@ test('Should delete user task', async () => {
 })
 test('Should not allow user to delete other user task', async () => {
   const taskId = taskOne._id
-  const response = await request(app)
+  await request(app)
     .delete(`/tasks/${taskId}`)
     .set('Authorization', `Bearer ${testUserTwo.tokens[0].token}`)
     .send()
