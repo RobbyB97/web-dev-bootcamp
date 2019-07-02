@@ -19,6 +19,33 @@ test('Should create task for user', async () => {
   expect(task).not.toBeNull()     // Ensure task found
   expect(task.completed).toEqual(false)   // Ensure proper default value
 })
+test('Should not create task for unauthenticated user', async () => {
+  await request(app)
+    .post('/tasks')
+    .send({
+      task: 'test'
+    })
+    .expect(401)
+})
+test('Should not create task with invalid completed', async () => {
+  await request(app)
+    .post('/tasks')
+    .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+    .send({
+      task: 'test',
+      completed: 'completed'
+    })
+    .expect(400)
+})
+test('Should not create task without task field', async () => {
+  await request(app)
+    .post('/tasks')
+    .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+    .send({
+      completed: true
+    })
+    .expect(400)
+})
 
 // GET /tasks
 test('Should return tasks for a user', async () => {
