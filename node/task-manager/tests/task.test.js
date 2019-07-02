@@ -58,7 +58,17 @@ test('Should return tasks for a user', async () => {
 })
 
 // DELETE /tasks/:id
-test('Shouldn\'t allow user to delete other user\'s task', async () => {
+test('Should delete user task', async () => {
+  taskId = taskOne._id
+  const response = await request(app)
+    .delete(`/tasks/${taskId}`)
+    .set('Authorization', `Bearer ${testUserOne.tokens[0].token}`)
+    .send()
+    .expect(200)
+  const task = await Task.findById(taskOne._id)
+  expect(task).toBeNull()
+})
+test('Should not allow user to delete other user task', async () => {
   const taskId = taskOne._id
   const response = await request(app)
     .delete(`/tasks/${taskId}`)
