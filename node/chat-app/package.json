@@ -5,8 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "test": "env-cmd ./config/test.env node ./src/index.js",
-    "start": "env-cmd ./confix/prod.env node ./src/index.js"
+    "start": "env-cmd ./config/prod.env node ./src/index.js"
   },
   "author": "Robby",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
