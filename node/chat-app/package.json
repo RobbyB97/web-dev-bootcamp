@@ -4,8 +4,8 @@
   "description": "Chat App",
   "main": "src/index.js",
   "scripts": {
-    "test": "env-cmd ./config/test.env node ./src/index.js",
-    "start": "env-cmd ./config/prod.env node ./src/index.js"
+    "dev": "env-cmd ./config/test.env nodemon ./src/index.js -e html,css,js",
+    "start": "env-cmd ./config/prod.env nodemon ./src/index.js -e html,css,js"
   },
   "author": "Robby",
   "license": "ISC",
