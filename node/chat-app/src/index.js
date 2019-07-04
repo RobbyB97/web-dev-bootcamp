@@ -18,6 +18,10 @@ app.get('', (req, res) => {
   res.send('index')
 })
 
+io.on('connection', () => {
+  console.log('New web socket connection')
+})
+
 // Run server
 server.listen(port, () => {
   console.log(`Server is up on port ${port}`)
