@@ -28,7 +28,9 @@ io.on('connection', (socket) => {
 
   socket.on('increment', () => {  // When increment button is clicked
     count += 145
-    socket.emit('countUpdated', count)
+    // socket = this connection. io = all connections
+    // socket.emit('countUpdated', count)
+    io.emit('countUpdated', count)
   })
 })
 
