@@ -1,4 +1,5 @@
 const express = require('express')
+const socketio = require('socket.io')
 const http = require('http')
 const path = require('path')
 
@@ -7,7 +8,10 @@ const publicPage = path.join(__dirname, '../public')
 const port = process.env.PORT
 const app = express()
 app.use(express.static(publicPage))
+
+// Socket.io config
 const server = http.createServer(app)
+const io = socketio(server)
 
 // Routes
 app.get('', (req, res) => {
