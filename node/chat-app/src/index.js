@@ -18,8 +18,13 @@ app.get('', (req, res) => {
   res.send('index')
 })
 
-io.on('connection', () => {
+let count = 0 // Count connections to server
+
+io.on('connection', (socket) => {
   console.log('New web socket connection')
+
+  socket.emit('countUpdated', count)
+  count += 1
 })
 
 // Run server
