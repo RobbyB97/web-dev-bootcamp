@@ -25,6 +25,11 @@ io.on('connection', (socket) => {
 
   socket.emit('countUpdated', count)
   count += 1
+
+  socket.on('increment', () => {  // When increment button is clicked
+    count += 145
+    socket.emit('countUpdated', count)
+  })
 })
 
 // Run server
