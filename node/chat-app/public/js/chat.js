@@ -1,5 +1,9 @@
 const socket = io()
 
+socket.on('message', message => {
+  console.log(message)
+})
+
 //const count_num = document.querySelector('#count')
 //const count_but = document.querySelector('#increment')
 

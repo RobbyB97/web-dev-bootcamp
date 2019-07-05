@@ -23,6 +23,8 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   console.log('New web socket connection')
 
+  io.emit('message', 'Welcome!')
+
 //  socket.emit('countUpdated', count)
 //  count += 1
 
