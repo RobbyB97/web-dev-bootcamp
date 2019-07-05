@@ -18,20 +18,20 @@ app.get('', (req, res) => {
   res.send('index')
 })
 
-let count = 0 // Count connections to server
+//let count = 0 // Count connections to server
 
 io.on('connection', (socket) => {
   console.log('New web socket connection')
 
-  socket.emit('countUpdated', count)
-  count += 1
+//  socket.emit('countUpdated', count)
+//  count += 1
 
-  socket.on('increment', () => {  // When increment button is clicked
-    count += 145
+//  socket.on('increment', () => {  // When increment button is clicked
+//    count += 145
     // socket = this connection. io = all connections
     // socket.emit('countUpdated', count)
-    io.emit('countUpdated', count)
-  })
+//    io.emit('countUpdated', count)
+//  })
 })
 
 // Run server
