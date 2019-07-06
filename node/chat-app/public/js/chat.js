@@ -11,13 +11,16 @@ const chatMessage = document.querySelector('#chatMessage')
 chatForm.addEventListener('submit', e => {
   e.preventDefault()
 
-  if (chatMessage.value.replace(' ', '') === '') {
+  const message = e.target.elements.message
+
+
+  if (message.value.replace(' ', '') === '') {
     alert('Cannot send empty message')
     return
   }
 
-  socket.emit('sentMessage', chatMessage.value) // Emit message
-  chatMessage.value = ''  // Clear input
+  socket.emit('sendMessage', message.value) // Emit message
+  message.value = ''  // Clear input
 })
 
 socket.on('emitMessage', message => {

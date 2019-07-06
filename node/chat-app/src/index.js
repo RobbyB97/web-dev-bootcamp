@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
 
   io.emit('message', 'Welcome!')
 
-  socket.on('sentMessage', (message) => {
+  socket.on('sendMessage', (message) => {
     console.log(`Got ${message} as message`)
     io.emit('emitMessage', message)
   })
