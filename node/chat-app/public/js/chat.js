@@ -37,6 +37,15 @@ locationButton.addEventListener('click', () => {
   if (!navigator.geolocation) {
     return alert('Geolocation service is not compatible with your browser')
   }
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    // Get coordinates
+    const userPos = {}
+    userPos.latitude = position.coords.latitude
+    userPos.longitude = position.coords.longitude
+
+    socket.emit('sendLocation', userPos)
+  })
 })
 
 //const count_num = document.querySelector('#count')
