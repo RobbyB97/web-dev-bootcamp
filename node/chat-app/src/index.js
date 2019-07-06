@@ -25,6 +25,10 @@ io.on('connection', (socket) => {
 
   io.emit('message', 'Welcome!')
 
+  socket.on('sentMessage', (message) => {
+    console.log(`Got ${message} as message`)
+    io.emit('emitMessage', message)
+  })
 //  socket.emit('countUpdated', count)
 //  count += 1
 
@@ -35,7 +39,6 @@ io.on('connection', (socket) => {
 //    io.emit('countUpdated', count)
 //  })
 })
-
 // Run server
 server.listen(port, () => {
   console.log(`Server is up on port ${port}`)

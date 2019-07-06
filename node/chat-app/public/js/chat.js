@@ -20,6 +20,10 @@ chatForm.addEventListener('submit', e => {
   chatMessage.value = ''  // Clear input
 })
 
+socket.on('emitMessage', message => {
+  alert(message)
+})
+
 //const count_num = document.querySelector('#count')
 //const count_but = document.querySelector('#increment')
 
