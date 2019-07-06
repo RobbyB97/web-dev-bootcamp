@@ -23,7 +23,8 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   console.log('New web socket connection')
 
-  io.emit('message', 'Welcome!')
+  socket.emit('message', 'Welcome!')
+  socket.broadcast.emit('message', 'A new user has joined!')
 
   socket.on('sendMessage', (message) => {
     console.log(`Got ${message} as message`)
