@@ -17,7 +17,11 @@ chatForm.addEventListener('submit', e => {
   }
 
   socket.emit('sentMessage', chatMessage.value) // Emit message
+<<<<<<< HEAD
   chatMessage.value = ''  // Clear input
+=======
+  chatMessage.value = ''
+>>>>>>> 6d81ec2a478b82c0d4fc40abf27e5de8323b1996
 })
 
 //const count_num = document.querySelector('#count')
