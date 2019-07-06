@@ -24,7 +24,7 @@ chatForm.addEventListener('submit', e => {
 })
 
 socket.on('emitMessage', message => {
-  alert(message)
+  console.log(message)
 })
 
 //const count_num = document.querySelector('#count')
