@@ -28,8 +28,10 @@ chatForm.addEventListener('submit', e => {
     return
   }
 
-  socket.emit('sendMessage', message.value) // Emit message
-  message.value = ''  // Clear input
+  socket.emit('sendMessage', message.value, () => {
+    console.log('Message delivered! :)')
+    message.value = ''  // Clear input
+  })
 })
 
 // Send location

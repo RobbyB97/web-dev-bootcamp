@@ -26,9 +26,10 @@ io.on('connection', (socket) => {
   socket.emit('message', 'Welcome!')
   socket.broadcast.emit('message', 'A new user has joined!')
 
-  socket.on('sendMessage', (message) => {
+  socket.on('sendMessage', (message, callback) => {
     console.log(`Got ${message} as message`)
     io.emit('emitMessage', message)
+    callback()
   })
 
   socket.on('sendLocation', (userPos) => {
