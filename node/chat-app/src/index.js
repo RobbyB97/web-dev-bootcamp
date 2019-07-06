@@ -30,6 +30,10 @@ io.on('connection', (socket) => {
     console.log(`Got ${message} as message`)
     io.emit('emitMessage', message)
   })
+
+  socket.on('disconnect', () => {
+    io.emit('message', 'A user bailed :(')
+  })
 //  socket.emit('countUpdated', count)
 //  count += 1
 
