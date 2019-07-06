@@ -31,6 +31,10 @@ io.on('connection', (socket) => {
     io.emit('emitMessage', message)
   })
 
+  socket.on('sendLocation', (userPos) => {
+    io.emit('message', `Location: ${userPos.latitude}, ${userPos.longitude}`)
+  })
+
   socket.on('disconnect', () => {
     io.emit('message', 'A user bailed :(')
   })
