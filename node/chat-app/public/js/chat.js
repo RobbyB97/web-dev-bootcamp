@@ -1,5 +1,6 @@
 const socket = io()
 
+// Receive message from server
 socket.on('message', message => {
   console.log(message)
 })
@@ -7,7 +8,15 @@ socket.on('message', message => {
 // Page Elements
 const chatForm = document.querySelector('#chatForm')
 const chatMessage = document.querySelector('#chatMessage')
+const locationButton = document.querySelector('#sendLocation')
 
+// Receive user message
+socket.on('emitMessage', message => {
+  console.log(message)
+})
+
+
+// Send user message
 chatForm.addEventListener('submit', e => {
   e.preventDefault()
 
@@ -23,8 +32,11 @@ chatForm.addEventListener('submit', e => {
   message.value = ''  // Clear input
 })
 
-socket.on('emitMessage', message => {
-  console.log(message)
+// Send location
+locationButton.addEventListener('click', () => {
+  if (!navigator.geolocation) {
+    return alert('Geolocation service is not compatible with your browser')
+  }
 })
 
 //const count_num = document.querySelector('#count')
