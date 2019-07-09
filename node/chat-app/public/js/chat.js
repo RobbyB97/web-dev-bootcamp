@@ -28,8 +28,9 @@ chatForm.addEventListener('submit', e => {
     return
   }
 
-  socket.emit('sendMessage', message.value, () => {
+  socket.emit('sendMessage', message.value, (msg) => {
     console.log('Message delivered! :)')
+    console.log(msg)
     message.value = ''  // Clear input
   })
 })

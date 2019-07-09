@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', (message, callback) => {
     console.log(`Got ${message} as message`)
     io.emit('emitMessage', message)
-    callback()
+    callback('Delivered')
   })
 
   socket.on('sendLocation', (userPos) => {
