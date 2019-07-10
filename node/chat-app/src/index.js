@@ -1,5 +1,6 @@
 const express = require('express')
 const socketio = require('socket.io')
+const Filter = require('bad-words')
 const http = require('http')
 const path = require('path')
 
@@ -21,13 +22,19 @@ app.get('', (req, res) => {
 //let count = 0 // Count connections to server
 
 io.on('connection', (socket) => {
+  // New connection messages
   console.log('New web socket connection')
-
   socket.emit('message', 'Welcome!')
   socket.broadcast.emit('message', 'A new user has joined!')
 
   socket.on('sendMessage', (message, callback) => {
     console.log(`Got ${message} as message`)
+    // Filter for bad words
+    const filter = new Filter()
+    if (filter.isProfane(message)) {
+      return callback('Ooooh you said a bad wooooord!')
+    }
+    // Send message
     io.emit('emitMessage', message)
     callback('Delivered')
   })
