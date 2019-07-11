@@ -50,7 +50,12 @@ locationButton.addEventListener('click', () => {
     userPos.latitude = position.coords.latitude
     userPos.longitude = position.coords.longitude
 
-    socket.emit('sendLocation', userPos)
+    socket.emit('sendLocation', userPos, (error) => {
+      if (error) {
+        return console.log(error)
+      }
+      console.log('Location shared!')
+    })
   })
 })
 
