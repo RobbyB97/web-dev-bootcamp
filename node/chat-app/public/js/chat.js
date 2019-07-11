@@ -33,7 +33,6 @@ chatForm.addEventListener('submit', e => {
       return console.log(error)
     }
     console.log('Message delivered! :)')
-    console.log(message.value)
     message.value = ''  // Clear input
   })
 })

@@ -32,16 +32,16 @@ io.on('connection', (socket) => {
     // Filter for bad words
     const filter = new Filter()
     if (filter.isProfane(message)) {
-      return callback('Ooooh you said a bad wooooord!')
+      return callback('Ooooh you said a bad wooooord!') // callback = error
     }
     // Send message
     io.emit('emitMessage', message)
-    callback('Delivered')
+    callback()  // Empty callback = no error
   })
 
   socket.on('sendLocation', (userPos, callback) => {
     io.emit('message', `https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`)
-    callback('Location shared')
+    callback()
   })
 
   socket.on('disconnect', () => {
