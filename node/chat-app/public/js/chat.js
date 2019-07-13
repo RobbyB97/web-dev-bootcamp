@@ -7,7 +7,8 @@ socket.on('message', message => {
 
 // Page Elements
 const $chatForm = document.querySelector('#chatForm')
-const $chatMessage = document.querySelector('#chatMessage')
+const $chatMessage = $chatForm.querySelector('input')
+const $chatButton = $chatForm.querySelector('button')
 const $locationButton = document.querySelector('#sendLocation')
 
 // Receive user message
@@ -20,23 +21,20 @@ socket.on('emitMessage', message => {
 $chatForm.addEventListener('submit', e => {
   e.preventDefault()
 
-  const message = e.target.elements.message
-
-
-  if (message.value.replace(' ', '') === '') {
+  if ($chatMessage.value.replace(' ', '') === '') {
     alert('Cannot send empty message')
     return
   }
 
-  socket.emit('sendMessage', message.value, (error) => {
+  socket.emit('sendMessage', $chatMessage.value, (error) => {
     if (error) {
       if (error === 'Bad word...') {
-        message.value = ''
+        $chatMessage.value = ''
       }
       return console.log(error)
     }
     console.log('Message delivered! :)')
-    message.value = ''  // Clear input
+    $chatMessage.value = ''  // Clear input
   })
 })
 
