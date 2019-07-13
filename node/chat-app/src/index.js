@@ -28,7 +28,6 @@ io.on('connection', (socket) => {
   socket.broadcast.emit('emitMessage', 'A new user has joined!')
 
   socket.on('sendMessage', (message, callback) => {
-    console.log(`Got ${message} as message`)
     // Filter for bad words
     const filter = new Filter()
     if (filter.isProfane(message)) {
