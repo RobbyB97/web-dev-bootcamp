@@ -45,6 +45,8 @@ $chatForm.addEventListener('submit', e => {
 
 // Send location
 $locationButton.addEventListener('click', () => {
+  $locationButton.setAttribute('disabled', 'disabled')
+
   if (!navigator.geolocation) {
     return alert('Geolocation service is not compatible with your browser')
   }
@@ -56,6 +58,7 @@ $locationButton.addEventListener('click', () => {
     userPos.longitude = position.coords.longitude
 
     socket.emit('sendLocation', userPos, (error) => {
+      $locationButton.removeAttribute('disabled')
       if (error) {
         return console.log(error)
       }
