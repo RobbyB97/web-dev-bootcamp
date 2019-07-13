@@ -33,9 +33,12 @@ $chatForm.addEventListener('submit', e => {
   socket.emit('sendMessage', $chatMessage.value, (error) => {
     $chatButton.removeAttribute('disabled')
     $chatMessage.value = ''
+    $chatMessage.focus()
+
     if (error) {
       return console.log(error)
     }
+
     console.log('Message delivered! :)')
   })
 })
