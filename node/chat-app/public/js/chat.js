@@ -10,10 +10,18 @@ const $chatForm = document.querySelector('#chatForm')
 const $chatMessage = $chatForm.querySelector('input')
 const $chatButton = $chatForm.querySelector('button')
 const $locationButton = document.querySelector('#sendLocation')
+const $messages = document.querySelector('#messages')
+
+// Templates
+const messageTemplate = document.querySelector('#messageTemplate').innerHTML
 
 // Receive user message
 socket.on('emitMessage', message => {
   console.log(message)
+  const html = Mustache.render(messageTemplate, {
+    message
+  })
+  $messages.insertAdjacentHTML('beforeend', html)
 })
 
 
