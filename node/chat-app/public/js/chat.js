@@ -21,6 +21,9 @@ socket.on('emitMessage', message => { // Chat app message
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
+socket.on('emitLocation', message => {  // Location message
+  console.log(message)
+})
 
 // Event listeners
 $chatForm.addEventListener('submit', e => { // Send message
