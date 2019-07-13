@@ -21,20 +21,22 @@ socket.on('emitMessage', message => {
 $chatForm.addEventListener('submit', e => {
   e.preventDefault()
 
+  // Disable chat button until message is processed/delivered
+  $chatButton.setAttribute('disabled', 'disabled')
+
   if ($chatMessage.value.replace(' ', '') === '') {
+    $chatButton.removeAttribute('disabled')
     alert('Cannot send empty message')
     return
   }
 
   socket.emit('sendMessage', $chatMessage.value, (error) => {
+    $chatButton.removeAttribute('disabled')
+    $chatMessage.value = ''
     if (error) {
-      if (error === 'Bad word...') {
-        $chatMessage.value = ''
-      }
       return console.log(error)
     }
     console.log('Message delivered! :)')
-    $chatMessage.value = ''  // Clear input
   })
 })
 
