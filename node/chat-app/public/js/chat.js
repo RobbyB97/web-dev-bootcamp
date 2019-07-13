@@ -30,6 +30,9 @@ $chatForm.addEventListener('submit', e => {
 
   socket.emit('sendMessage', message.value, (error) => {
     if (error) {
+      if (error === 'Bad word...') {
+        message.value = ''
+      }
       return console.log(error)
     }
     console.log('Message delivered! :)')

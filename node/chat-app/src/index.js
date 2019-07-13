@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
     // Filter for bad words
     const filter = new Filter()
     if (filter.isProfane(message)) {
-      return callback('Ooooh you said a bad wooooord!') // callback = error
+      return callback('Bad word...') // callback = error
     }
     // Send message
     io.emit('emitMessage', message)
