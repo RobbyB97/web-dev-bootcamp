@@ -24,8 +24,8 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   // New connection messages
   console.log('New web socket connection')
-  socket.emit('message', 'Welcome!')
-  socket.broadcast.emit('message', 'A new user has joined!')
+  socket.emit('emitMessage', 'Welcome!')
+  socket.broadcast.emit('emitMessage', 'A new user has joined!')
 
   socket.on('sendMessage', (message, callback) => {
     console.log(`Got ${message} as message`)
@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('sendLocation', (userPos, callback) => {
-    io.emit('emitMessage', `https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`)
+    io.emit('emitLocation', `https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`)
     callback()
   })
 
