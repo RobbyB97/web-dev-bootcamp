@@ -1,10 +1,5 @@
 const socket = io()
 
-// Receive message from server
-socket.on('message', message => {
-  console.log(message)
-})
-
 // Page Elements
 const $chatForm = document.querySelector('#chatForm')
 const $chatMessage = $chatForm.querySelector('input')
@@ -15,8 +10,11 @@ const $messages = document.querySelector('#messages')
 // Templates
 const messageTemplate = document.querySelector('#messageTemplate').innerHTML
 
-// Receive user message
-socket.on('emitMessage', message => {
+// Events
+socket.on('message', message => { // System message
+  console.log(message)
+})
+socket.on('emitMessage', message => { // Chat app message
   console.log(message)
   const html = Mustache.render(messageTemplate, {
     message
@@ -24,9 +22,8 @@ socket.on('emitMessage', message => {
   $messages.insertAdjacentHTML('beforeend', html)
 })
 
-
-// Send user message
-$chatForm.addEventListener('submit', e => {
+// Event listeners
+$chatForm.addEventListener('submit', e => { // Send message
   e.preventDefault()
 
   // Disable chat button until message is processed/delivered
@@ -50,9 +47,7 @@ $chatForm.addEventListener('submit', e => {
     console.log('Message delivered! :)')
   })
 })
-
-// Send location
-$locationButton.addEventListener('click', () => {
+$locationButton.addEventListener('click', () => { // Send location
   $locationButton.setAttribute('disabled', 'disabled')
 
   if (!navigator.geolocation) {
