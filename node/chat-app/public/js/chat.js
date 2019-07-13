@@ -9,6 +9,7 @@ const $messages = document.querySelector('#messages')
 
 // Templates
 const messageTemplate = document.querySelector('#messageTemplate').innerHTML
+const locationTemplate = document.querySelector('#locationTemplate').innerHTML
 
 // Events
 socket.on('message', message => { // System message
@@ -21,8 +22,12 @@ socket.on('emitMessage', message => { // Chat app message
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
-socket.on('emitLocation', message => {  // Location message
-  console.log(message)
+socket.on('emitLocation', url => {  // Location message
+  console.log(url)
+  const html = Mustache.render(locationTemplate, {
+    url
+  })
+  $messages.insertAdjacentHTML('beforeend', html)
 })
 
 // Event listeners
