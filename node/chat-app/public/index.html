@@ -13,12 +13,19 @@
 
   <body>
     Chat App
-    <div>
-    </div>
+    
+    <div id="messages"></div>
+
     <form id="chatForm">
       <input name="message" type="text" size="40" placeholder="Enter your message"/>
       <button id="chatFormSubmit">Submit</button>
     </form>
     <button id="sendLocation">Send Location</button>
+
+    <script id="message-template" type="text/html">
+      <div>
+        <p> This is a message </p>
+      </div>
+    </script>
   </body>
 </html>
