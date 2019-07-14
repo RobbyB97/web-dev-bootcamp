@@ -24,7 +24,10 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   // New connection messages
   console.log('New web socket connection')
-  socket.emit('emitMessage', 'Welcome!')
+  socket.emit('emitMessage', {
+    text: 'Welcome!',
+    createdAt: new Date().getTime()
+  })
   socket.broadcast.emit('emitMessage', 'A new user has joined!')
 
   socket.on('sendMessage', (message, callback) => {
