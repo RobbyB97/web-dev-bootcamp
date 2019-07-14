@@ -5,7 +5,7 @@ const http = require('http')
 const path = require('path')
 
 // Utils
-const {generateMessage} = require('./utils/messages')
+const {generateMessage, generateLocationMessage} = require('./utils/messages')
 
 // Express config
 const publicPage = path.join(__dirname, '../public')
@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('sendLocation', (userPos, callback) => {
-    io.emit('emitLocation', `https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`)
+    io.emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
     callback()
   })
 

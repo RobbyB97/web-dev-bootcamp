@@ -26,7 +26,8 @@ socket.on('emitMessage', message => { // Chat app message
 socket.on('emitLocation', url => {  // Location message
   console.log(url)
   const html = Mustache.render(locationTemplate, {
-    url
+    url,
+    createdAt: moment(url.createdAt).format('h:mm a')
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
