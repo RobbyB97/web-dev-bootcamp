@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
       return callback('Bad word...') // callback = error
     }
     // Send message
-    io.emit('emitMessage', message)
+    io.emit('emitMessage', generateMessage(message))
     callback()  // Empty callback = no error
   })
 
@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    io.emit('message', 'A user bailed :(')
+    io.emit('message', generateMessage('A user bailed :('))
   })
 //  socket.emit('countUpdated', count)
 //  count += 1
