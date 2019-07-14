@@ -18,7 +18,8 @@ socket.on('message', message => { // System message
 socket.on('emitMessage', message => { // Chat app message
   console.log(message)
   const html = Mustache.render(messageTemplate, {
-    message: message.text
+    message: message.text,
+    createdAt: message.createdAt
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
