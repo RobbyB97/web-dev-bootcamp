@@ -4,6 +4,9 @@ const Filter = require('bad-words')
 const http = require('http')
 const path = require('path')
 
+// Utils
+const {generateMessage} = require('./utils/messages')
+
 // Express config
 const publicPage = path.join(__dirname, '../public')
 const port = process.env.PORT
@@ -24,10 +27,7 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   // New connection messages
   console.log('New web socket connection')
-  socket.emit('emitMessage', {
-    text: 'Welcome!',
-    createdAt: new Date().getTime()
-  })
+  socket.emit('emitMessage',generateMessage('Welcome!'))
   socket.broadcast.emit('emitMessage', 'A new user has joined!')
 
   socket.on('sendMessage', (message, callback) => {
