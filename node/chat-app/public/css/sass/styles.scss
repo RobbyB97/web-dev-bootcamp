@@ -2,6 +2,11 @@
     Variables
 ***/
 
+//Breakpoints
+$phone: "only screen and (min-width: 200px)";
+$tablet: "only screen and (min-width: 768px)";
+$desktop: "only screen and (min-width: 1200px)";
+
 // Colors
 $gray1: #1c1c1c;
 $gray2: #3d3d3d;
