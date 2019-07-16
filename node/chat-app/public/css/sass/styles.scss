@@ -2,7 +2,7 @@
     Variables
 ***/
 
-//Breakpoints
+// Breakpoints
 $phone: "only screen and (min-width: 200px)";
 $tablet: "only screen and (min-width: 768px)";
 $desktop: "only screen and (min-width: 1200px)";
@@ -14,3 +14,6 @@ $gray3: #454545;
 $text1: #fff;
 $text2: #dedede;
 $accent1: #57688f;
+
+// Paths
+$images: "../images/"
