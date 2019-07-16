@@ -17,3 +17,7 @@ node/task-manager/avatars/
 
 # Ignore logs
 *.log
+
+# Ignore SASS build files
+.sass-cache/
+*.map
