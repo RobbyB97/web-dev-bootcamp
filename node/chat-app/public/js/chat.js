@@ -11,6 +11,9 @@ const $messages = document.querySelector('#messages')
 const messageTemplate = document.querySelector('#messageTemplate').innerHTML
 const locationTemplate = document.querySelector('#locationTemplate').innerHTML
 
+// Options
+const {username, room} = Qs.parse(location.search, {ignoreQueryPrefix: true})
+
 // Events
 socket.on('message', message => { // System message
   console.log(message)
@@ -80,6 +83,7 @@ $locationButton.addEventListener('click', () => { // Send location
   })
 })
 
+socket.emit('join', {username, room})
 //const count_num = document.querySelector('#count')
 //const count_but = document.querySelector('#increment')
 
