@@ -17,15 +17,23 @@
   </head>
 
   <body>
+    <div class="chat">
+      <div class="chat__sidebar">
+
+      </div>
+      <div class="chat__main">
+        <div id="messages"></div>
+
+        <form id="chatForm">
+          <input name="message" type="text" placeholder="Enter your message"/>
+          <button id="chatFormSubmit">Submit</button>
+        </form>
+
+        <button id="sendLocation">Send Location</button>
+      </div>
+    </div>
+
     Chat App
-
-    <div id="messages"></div>
-
-    <form id="chatForm">
-      <input name="message" type="text" size="40" placeholder="Enter your message"/>
-      <button id="chatFormSubmit">Submit</button>
-    </form>
-    <button id="sendLocation">Send Location</button>
 
     <!-- Templates -->
     <script id="messageTemplate" type="text/html">
