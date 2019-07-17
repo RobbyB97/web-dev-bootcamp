@@ -27,9 +27,8 @@ app.get('', (req, res) => {
 io.on('connection', (socket) => {
   // New connection messages
   console.log('New web socket connection')
-  socket.emit('emitMessage',generateMessage('Welcome!'))
-  socket.broadcast.emit('emitMessage', generateMessage('A new user has joined!'))
 
+  // On sent user message
   socket.on('sendMessage', (message, callback) => {
     // Filter for bad words
     const filter = new Filter()
@@ -41,11 +40,21 @@ io.on('connection', (socket) => {
     callback()  // Empty callback = no error
   })
 
+  // On send location
   socket.on('sendLocation', (userPos, callback) => {
     io.emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
     callback()
   })
 
+  // On user joining room
+  socket.on('join', ({username, room}) => {
+    socket.join(room)
+
+    socket.emit('emitMessage',generateMessage('Welcome!'))
+    socket.broadcast.to(room).emit('emitMessage', generateMessage(`${username} has joined!`))
+  })
+
+  // On user disconnect
   socket.on('disconnect', () => {
     io.emit('message', generateMessage('A user bailed :('))
   })

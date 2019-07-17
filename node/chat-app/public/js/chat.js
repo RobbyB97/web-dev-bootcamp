@@ -82,8 +82,8 @@ $locationButton.addEventListener('click', () => { // Send location
     })
   })
 })
-
 socket.emit('join', {username, room})
+
 //const count_num = document.querySelector('#count')
 //const count_but = document.querySelector('#increment')
 
