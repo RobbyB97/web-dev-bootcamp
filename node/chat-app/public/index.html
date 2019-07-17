@@ -24,24 +24,33 @@
       <div class="chat__main">
         <div id="messages" class="chat__messages"></div>
 
-        <form id="chatForm">
-          <input name="message" type="text" placeholder="Enter your message"/>
-          <button id="chatFormSubmit">Submit</button>
-        </form>
-
-        <button id="sendLocation">Send Location</button>
+        <div class="compose">
+          <form id="chatForm">
+            <input name="message" type="text" placeholder="Enter your message"/>
+            <button id="chatFormSubmit">Submit</button>
+          </form>
+          <button id="sendLocation">Send Location</button>
+        </div>
       </div>
     </div>
-    
+
     <!-- Templates -->
     <script id="messageTemplate" type="text/html">
-      <div>
-        <p> <span class="timestamp">{{createdAt}}- </span>{{message}}</p>
+      <div class="message">
+        <p>
+          <span class="message__name">User Name</span>
+          <span class="timestamp">{{createdAt}}</span>
+        </p>
+        <p>{{message}}</p>
       </div>
     </script>
     <script id="locationTemplate" type="text/html">
-      <div>
-        <p> <span class="timestamp">{{createdAt}}- </span><a href="{{url}}" target="_blank">My current location</a></p>
+      <div class="message">
+        <p>
+          <span class="message__name">User Name</span>
+          <span class="timestamp">{{createdAt}}</span>
+        </p>
+        <p><a href="{{url}}" target="_blank">My current location</a></p>
       </div>
     </script>
   </body>
