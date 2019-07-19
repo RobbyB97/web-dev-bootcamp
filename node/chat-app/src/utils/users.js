@@ -31,8 +31,19 @@ const addUser = ({id, username, room}) => {
   return {user}
 }
 
+const removeUser = (id) => {
+  // Find user
+  const index = users.findIndex((user) => user.id === id)
+
+  // Remove user (if exists)
+  if (index !== -1) {
+    return users.splice(index, 1)[0]
+  }
+}
+
 // Test functions
 const test = () => {
+  // addUser tests
   addUser({
     id: 22,
     username: 'Robby',
@@ -48,8 +59,7 @@ const test = () => {
     username: '',
     room: ''
   })
-
-  console.log(copy)
-  console.log(e)
-  console.log(users)
+  console.log(copy) // Return error
+  console.log(e)  // Return error
+  console.log(users)  // Return 1 object in array
 }
