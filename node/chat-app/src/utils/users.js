@@ -30,3 +30,26 @@ const addUser = ({id, username, room}) => {
   users.push(user)
   return {user}
 }
+
+// Test functions
+const test = () => {
+  addUser({
+    id: 22,
+    username: 'Robby',
+    room: 'CT'
+  })
+  const copy = addUser({
+    id: 22,
+    username: 'Robby',
+    room: 'CT'
+  })
+  const empty = addUser({
+    id: 23,
+    username: '',
+    room: ''
+  })
+
+  console.log(copy)
+  console.log(e)
+  console.log(users)
+}
