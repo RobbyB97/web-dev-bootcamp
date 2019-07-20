@@ -56,14 +56,15 @@ io.on('connection', (socket) => {
     }
 
     // Send message
-    io.to(user.room).emit('emitMessage', generateMessage(message))
+    io.to(user.room).emit('emitMessage', generateMessage(user.username, message))
     callback()  // Empty callback = no error
   })
 
   // On send location
   socket.on('sendLocation', (userPos, callback) => {
     const user = getUser(socket.id)
-    io.to(user.room).emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
+    const url = `https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`
+    io.to(user.room).emit('emitLocation', generateLocationMessage(user.username, url))
     callback()
   })
 
