@@ -42,8 +42,12 @@ const removeUser = (id) => {
 }
 
 const getUser = (id) => {
-  const user = users.findIndex((user) => user.id === id)
-  console.log(user)
+  return users.find((user) => user.id === id)
+}
+
+const getUsersInRoom = (room) => {
+  room = room.trim().toLowerCase()
+  return users.filter((user) => user.room === room)
 }
 
 // Test functions
@@ -71,6 +75,33 @@ const test = () => {
   // removeUser test
   removeUser(22)
   console.log(users)  // Return empty array
+
+  // getUser test
+  addUser({
+    id: 22,
+    username: 'Robby',
+    room: 'CT'
+  })
+  addUser({
+    id: 23,
+    username: 'Roby',
+    room: 'CT'
+  })
+  addUser({
+    id: 24,
+    username: 'Robdby',
+    room: 'CZ'
+  })
+  const gotUser = getUser(23)  // Return object with an id of 23
+  console.log(`gotUser = ${gotUser.username}`)  // Return 'Roby'
+
+  // getUsersInRoom test
+  console.log(`getUsersInRoom = ${getUsersInRoom('CT').length}`)  // Return 2
 }
 
-test()
+module.exports = {
+  addUser,
+  removeUser,
+  getUser,
+  getUsersInRoom
+}
