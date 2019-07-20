@@ -29,6 +29,14 @@ io.on('connection', (socket) => {
   // New connection messages
   console.log('New web socket connection')
 
+  // On user joining room
+  socket.on('join', ({username, room}) => {
+    socket.join(room)
+
+    socket.emit('emitMessage',generateMessage('Welcome!'))
+    socket.broadcast.to(room).emit('emitMessage', generateMessage(`${username} has joined!`))
+  })
+
   // On sent user message
   socket.on('sendMessage', (message, callback) => {
     // Filter for bad words
@@ -45,14 +53,6 @@ io.on('connection', (socket) => {
   socket.on('sendLocation', (userPos, callback) => {
     io.emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
     callback()
-  })
-
-  // On user joining room
-  socket.on('join', ({username, room}) => {
-    socket.join(room)
-
-    socket.emit('emitMessage',generateMessage('Welcome!'))
-    socket.broadcast.to(room).emit('emitMessage', generateMessage(`${username} has joined!`))
   })
 
   // On user disconnect
