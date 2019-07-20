@@ -34,6 +34,7 @@ socket.on('emitMessage', message => { // Chat app message
 socket.on('emitLocation', url => {  // Location message
   console.log(url)
   const html = Mustache.render(locationTemplate, {
+    username: url.username,
     url,
     createdAt: moment(url.createdAt).format('h:mm a')
   })
