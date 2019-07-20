@@ -36,11 +36,11 @@ io.on('connection', (socket) => {
     if (error) {
       return callback(error)
     }
-    socket.join(room)
+    socket.join(user.room)
 
     // New connection chat messages
     socket.emit('emitMessage',generateMessage('Welcome!'))
-    socket.broadcast.to(room).emit('emitMessage', generateMessage(`${username} has joined!`))
+    socket.broadcast.to(user.room).emit('emitMessage', generateMessage(`${user.username} has joined!`))
 
     callback()
   })
