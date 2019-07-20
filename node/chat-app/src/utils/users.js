@@ -41,6 +41,11 @@ const removeUser = (id) => {
   }
 }
 
+const getUser = (id) => {
+  const user = users.findIndex((user) => user.id === id)
+  console.log(user)
+}
+
 // Test functions
 const test = () => {
   // addUser tests
