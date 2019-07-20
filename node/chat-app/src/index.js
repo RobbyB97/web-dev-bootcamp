@@ -65,7 +65,13 @@ io.on('connection', (socket) => {
 
   // On user disconnect
   socket.on('disconnect', () => {
-    io.emit('message', generateMessage('A user bailed :('))
+    const user = removeUser(socket.id)
+
+    if (user) {
+      // User disconnect chat message
+      io.to(user.room).emit('emitMessage', generateMessage(`${user.username} has left the room.`))
+    }
+
   })
 //  socket.emit('countUpdated', count)
 //  count += 1
