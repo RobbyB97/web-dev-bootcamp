@@ -6,11 +6,13 @@ const $chatMessage = $chatForm.querySelector('input')
 const $chatButton = $chatForm.querySelector('button')
 const $locationButton = document.querySelector('#sendLocation')
 const $messages = document.querySelector('#messages')
+const $sidebar = document.querySelector('#sidebar')
 
 
 // Templates
 const messageTemplate = document.querySelector('#messageTemplate').innerHTML
 const locationTemplate = document.querySelector('#locationTemplate').innerHTML
+const sidebarTemplate = document.querySelector('#sidebarTemplate').innerHTML
 
 
 // Options
@@ -45,6 +47,11 @@ socket.on('emitLocation', url => {  // Location message
 socket.on('roomData', ({room, users}) => {  // Room and users in sidebar
   console.log(room)
   console.log(users)
+  const html = Mustache.render(sidebarTemplate, {
+    room,
+    users
+  })
+  $sidebar.innerHTML = html
 })
 
 
