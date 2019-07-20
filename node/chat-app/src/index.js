@@ -26,15 +26,23 @@ app.get('', (req, res) => {
 //let count = 0 // Count connections to server
 
 io.on('connection', (socket) => {
-  // New connection messages
+  // New connection system messages
   console.log('New web socket connection')
 
   // On user joining room
-  socket.on('join', ({username, room}) => {
+  socket.on('join', ({username, room}, callback) => {
+    // Add user to room
+    const {error, user} = addUser({id: socket.id, username, room})
+    if (error) {
+      return callback(error)
+    }
     socket.join(room)
 
+    // New connection chat messages
     socket.emit('emitMessage',generateMessage('Welcome!'))
     socket.broadcast.to(room).emit('emitMessage', generateMessage(`${username} has joined!`))
+
+    callback()
   })
 
   // On sent user message
