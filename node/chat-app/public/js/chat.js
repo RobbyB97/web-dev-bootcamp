@@ -7,17 +7,21 @@ const $chatButton = $chatForm.querySelector('button')
 const $locationButton = document.querySelector('#sendLocation')
 const $messages = document.querySelector('#messages')
 
+
 // Templates
 const messageTemplate = document.querySelector('#messageTemplate').innerHTML
 const locationTemplate = document.querySelector('#locationTemplate').innerHTML
 
+
 // Options
 const {username, room} = Qs.parse(location.search, {ignoreQueryPrefix: true})
+
 
 // Events
 socket.on('message', message => { // System message
   console.log(message)
 })
+
 socket.on('emitMessage', message => { // Chat app message
   console.log(message)
   const html = Mustache.render(messageTemplate, {
@@ -26,6 +30,7 @@ socket.on('emitMessage', message => { // Chat app message
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
+
 socket.on('emitLocation', url => {  // Location message
   console.log(url)
   const html = Mustache.render(locationTemplate, {
@@ -34,6 +39,7 @@ socket.on('emitLocation', url => {  // Location message
   })
   $messages.insertAdjacentHTML('beforeend', html)
 })
+
 
 // Event listeners
 $chatForm.addEventListener('submit', e => { // Send message
@@ -60,6 +66,7 @@ $chatForm.addEventListener('submit', e => { // Send message
     console.log('Message delivered! :)')
   })
 })
+
 $locationButton.addEventListener('click', () => { // Send location
   $locationButton.setAttribute('disabled', 'disabled')
 
@@ -82,6 +89,7 @@ $locationButton.addEventListener('click', () => { // Send location
     })
   })
 })
+
 socket.emit('join', {username, room})
 
 //const count_num = document.querySelector('#count')
