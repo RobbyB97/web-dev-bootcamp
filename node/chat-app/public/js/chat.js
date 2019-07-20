@@ -42,6 +42,11 @@ socket.on('emitLocation', url => {  // Location message
   $messages.insertAdjacentHTML('beforeend', html)
 })
 
+socket.on('roomData', ({room, users}) => {  // Room and users in sidebar
+  console.log(room)
+  console.log(users)
+})
+
 
 // Event listeners
 $chatForm.addEventListener('submit', e => { // Send message
