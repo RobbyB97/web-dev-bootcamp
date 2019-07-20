@@ -60,6 +60,12 @@ const test = () => {
     room: ''
   })
   console.log(copy) // Return error
-  console.log(e)  // Return error
+  console.log(empty)  // Return error
   console.log(users)  // Return 1 object in array
+
+  // removeUser test
+  removeUser(22)
+  console.log(users)  // Return empty array
 }
+
+test()
