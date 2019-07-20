@@ -6,6 +6,7 @@ const path = require('path')
 
 // Utils
 const {generateMessage, generateLocationMessage} = require('./utils/messages')
+const {addUser, removeUser, getUser, getUsersInRoom} = require('./utils/users')
 
 // Express config
 const publicPage = path.join(__dirname, '../public')
