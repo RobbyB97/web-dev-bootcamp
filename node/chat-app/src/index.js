@@ -47,19 +47,23 @@ io.on('connection', (socket) => {
 
   // On sent user message
   socket.on('sendMessage', (message, callback) => {
+    const user = getUser(socket.id)
+
     // Filter for bad words
     const filter = new Filter()
     if (filter.isProfane(message)) {
       return callback('Bad word...') // callback = error
     }
+
     // Send message
-    io.emit('emitMessage', generateMessage(message))
+    io.to(user.room).emit('emitMessage', generateMessage(message))
     callback()  // Empty callback = no error
   })
 
   // On send location
   socket.on('sendLocation', (userPos, callback) => {
-    io.emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
+    const user = getUser(socket.id)
+    io.to(user.room).emit('emitLocation', generateLocationMessage(`https://google.com/maps?q=${userPos.latitude},${userPos.longitude}`))
     callback()
   })
 
@@ -71,7 +75,6 @@ io.on('connection', (socket) => {
       // User disconnect chat message
       io.to(user.room).emit('emitMessage', generateMessage(`${user.username} has left the room.`))
     }
-
   })
 //  socket.emit('countUpdated', count)
 //  count += 1
