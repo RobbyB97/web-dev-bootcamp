@@ -18,6 +18,9 @@ app.use(express.static(publicPage))
 const server = http.createServer(app)
 const io = socketio(server)
 
+// Chat App config
+const adminUsername = 'Chat App'
+
 // Routes
 app.get('', (req, res) => {
   res.send('index')
@@ -39,8 +42,8 @@ io.on('connection', (socket) => {
     socket.join(user.room)
 
     // New connection chat messages
-    socket.emit('emitMessage',generateMessage('Welcome!'))
-    socket.broadcast.to(user.room).emit('emitMessage', generateMessage(`${user.username} has joined!`))
+    socket.emit('emitMessage',generateMessage(adminUsername, 'Welcome!'))
+    socket.broadcast.to(user.room).emit('emitMessage', generateMessage(adminUsername, `${user.username} has joined!`))
 
     callback()
   })
@@ -56,7 +59,7 @@ io.on('connection', (socket) => {
     }
 
     // Send message
-    io.to(user.room).emit('emitMessage', generateMessage(message))
+    io.to(user.room).emit('emitMessage', generateMessage(user.username, message))
     callback()  // Empty callback = no error
   })
 
@@ -73,7 +76,7 @@ io.on('connection', (socket) => {
 
     if (user) {
       // User disconnect chat message
-      io.to(user.room).emit('emitMessage', generateMessage(`${user.username} has left the room.`))
+      io.to(user.room).emit('emitMessage', generateMessage(adminUsername, `${user.username} has left the room.`))
     }
   })
 //  socket.emit('countUpdated', count)
