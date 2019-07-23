@@ -42,8 +42,7 @@ var onFormSubmit = function onFormSubmit(e) {
   renderCounterApp();
 };
 
-var wipeOptions = function wipeOptions(e) {
-  e.preventDefault();
+var wipeOptions = function wipeOptions() {
   app.options = [];
   renderCounterApp();
 };

@@ -36,8 +36,7 @@ const onFormSubmit = e => {
   renderCounterApp()
 }
 
-const wipeOptions = e => {
-  e.preventDefault()
+const wipeOptions = () => {
   app.options = []
   renderCounterApp()
 }
