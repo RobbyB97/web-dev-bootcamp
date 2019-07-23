@@ -42,6 +42,7 @@ let count = 0
 const countTemplate = (
   <div>
     <h1>Count: {count}</h1>
+    <button id="count-button">+1</button>
   </div>
 )
 

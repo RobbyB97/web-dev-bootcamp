@@ -89,6 +89,11 @@ var countTemplate = React.createElement(
     null,
     'Count: ',
     count
+  ),
+  React.createElement(
+    'button',
+    { id: 'count-button' },
+    '+1'
   )
 );
 
