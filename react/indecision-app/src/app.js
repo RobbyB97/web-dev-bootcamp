@@ -36,22 +36,28 @@ const onFormSubmit = e => {
 
 
 // Templates
-const template = (
-  <div>
-    <h1>{app.title}</h1>
-    {app.subtitle && <p>{app.subtitle}</p>}
-    <p>{(app.options.length > 0) ? "Here are your options" : "No options"}</p>
-    <ol>
-      <li> Item one </li>
-      <li> Item two </li>
-    </ol>
-    <form onSubmit={onFormSubmit}>
-      <input type="text" name="option"/>
-      <button>Add Option</button>
-    </form>
-  </div>
-)
 
 
-// Render App
-ReactDOM.render(template, $appRoot)
+// Render Functions
+const renderCounterApp = () => {
+  const template = (
+    <div>
+      <h1>{app.title}</h1>
+      {app.subtitle && <p>{app.subtitle}</p>}
+      <p>{(app.options.length > 0) ? "Here are your options" : "No options"}</p>
+      <p>{app.options.length}</p>
+      <ol>
+        <li> Item one </li>
+        <li> Item two </li>
+      </ol>
+      <form onSubmit={onFormSubmit}>
+        <input type="text" name="option"/>
+        <button>Add Option</button>
+      </form>
+    </div>
+  )
+  ReactDOM.render(template, $appRoot)
+}
+
+// Script
+renderCounterApp()
