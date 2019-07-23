@@ -24,12 +24,17 @@ const getLocation = location => {
 }
 const addOne = () => {
   count++
+  renderCounterApp()
   console.log('Add One')
 }
 const minusOne = () => {
+  count--
+  renderCounterApp()
   console.log('Minus One')
 }
 const resetCount = () => {
+  count = 0
+  renderCounterApp()
   console.log('Reset Count')
 }
 

@@ -29,12 +29,17 @@ var getLocation = function getLocation(location) {
 };
 var addOne = function addOne() {
   count++;
+  renderCounterApp();
   console.log('Add One');
 };
 var minusOne = function minusOne() {
+  count--;
+  renderCounterApp();
   console.log('Minus One');
 };
 var resetCount = function resetCount() {
+  count = 0;
+  renderCounterApp();
   console.log('Reset Count');
 };
 
