@@ -13,6 +13,7 @@ var user = {
   age: 19,
   location: 'Willimantic'
 };
+
 var count = 0;
 
 // Functions
@@ -27,14 +28,17 @@ var getLocation = function getLocation(location) {
     );
   }
 };
+
 var addOne = function addOne() {
   count++;
   renderCounterApp();
 };
+
 var minusOne = function minusOne() {
   count--;
   renderCounterApp();
 };
+
 var resetCount = function resetCount() {
   count = 0;
   renderCounterApp();

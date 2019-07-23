@@ -12,8 +12,8 @@ const user = {
   age: 19,
   location: 'Willimantic'
 }
-let count = 0
 
+let count = 0
 
 
 // Functions
@@ -22,18 +22,22 @@ const getLocation = location => {
     return <p> Location: {location} </p>
   }
 }
+
 const addOne = () => {
   count++
   renderCounterApp()
 }
+
 const minusOne = () => {
   count--
   renderCounterApp()
 }
+
 const resetCount = () => {
   count = 0
   renderCounterApp()
 }
+
 
 // Templates
 const template = (
