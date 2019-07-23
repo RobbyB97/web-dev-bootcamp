@@ -28,6 +28,9 @@ const addOne = () => {
 const minusOne = () => {
   console.log('Minus One')
 }
+const resetCount = () => {
+  console.log('Reset Count')
+}
 
 // Templates
 const template = (

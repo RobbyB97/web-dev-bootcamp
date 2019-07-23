@@ -33,6 +33,9 @@ var addOne = function addOne() {
 var minusOne = function minusOne() {
   console.log('Minus One');
 };
+var resetCount = function resetCount() {
+  console.log('Reset Count');
+};
 
 // Templates
 var template = React.createElement(
