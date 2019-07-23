@@ -33,17 +33,17 @@ const onFormSubmit = e => {
     console.log(app.options)
   }
 
-  renderCounterApp()
+  render()
 }
 
 const wipeOptions = () => {
   app.options = []
-  renderCounterApp()
+  render()
 }
 
 
 // Render Functions
-const renderCounterApp = () => {
+const render = () => {
   const template = (
     <div>
       <h1>{app.title}</h1>
@@ -65,4 +65,4 @@ const renderCounterApp = () => {
 }
 
 // Script
-renderCounterApp()
+render()

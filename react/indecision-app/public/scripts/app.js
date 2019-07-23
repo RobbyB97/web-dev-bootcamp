@@ -39,16 +39,16 @@ var onFormSubmit = function onFormSubmit(e) {
     console.log(app.options);
   }
 
-  renderCounterApp();
+  render();
 };
 
 var wipeOptions = function wipeOptions() {
   app.options = [];
-  renderCounterApp();
+  render();
 };
 
 // Render Functions
-var renderCounterApp = function renderCounterApp() {
+var render = function render() {
   var template = React.createElement(
     'div',
     null,
@@ -106,4 +106,4 @@ var renderCounterApp = function renderCounterApp() {
 };
 
 // Script
-renderCounterApp();
+render();
