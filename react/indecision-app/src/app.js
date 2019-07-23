@@ -23,6 +23,11 @@ const getLocation = location => {
   }
 }
 
+const onFormSubmit = e => {
+  e.preventDefault()
+  console.log('Form Submitted')
+}
+
 
 // Templates
 const template = (
@@ -34,7 +39,7 @@ const template = (
       <li> Item one </li>
       <li> Item two </li>
     </ol>
-    <form>
+    <form onSubmit={onFormSubmit}>
       <input type="text" name="option"/>
       <button>Add Option</button>
     </form>

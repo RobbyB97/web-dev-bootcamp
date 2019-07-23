@@ -29,6 +29,11 @@ var getLocation = function getLocation(location) {
   }
 };
 
+var onFormSubmit = function onFormSubmit(e) {
+  e.preventDefault();
+  console.log('Form Submitted');
+};
+
 // Templates
 var template = React.createElement(
   'div',
@@ -64,7 +69,7 @@ var template = React.createElement(
   ),
   React.createElement(
     'form',
-    null,
+    { onSubmit: onFormSubmit },
     React.createElement('input', { type: 'text', name: 'option' }),
     React.createElement(
       'button',
