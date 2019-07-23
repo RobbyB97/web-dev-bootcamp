@@ -23,6 +23,7 @@ const getLocation = location => {
   }
 }
 const addOne = () => {
+  count++
   console.log('Add One')
 }
 const minusOne = () => {
@@ -53,16 +54,21 @@ const templateTwo = (
   </div>
 )
 
-const countTemplate = (
-  <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={minusOne}>-1</button>
-    <button onClick={resetCount}>Reset</button>
-  </div>
-)
-
 
 // Render app
 const appRoot = document.getElementById('app')
-ReactDOM.render(countTemplate, appRoot)
+//ReactDOM.render(countTemplate, appRoot)
+const renderCounterApp = () => {
+  const countTemplate = (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={resetCount}>Reset</button>
+    </div>
+  )
+
+  ReactDOM.render(countTemplate, appRoot)
+}
+
+renderCounterApp()
