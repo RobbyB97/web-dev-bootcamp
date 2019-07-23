@@ -6,7 +6,7 @@ console.log('app.js is running');
 var app = {
   title: 'Indecision App',
   subtitle: 'Some info',
-  options: ['One', 'Two']
+  options: []
 };
 var user = {
   name: 'Rob',

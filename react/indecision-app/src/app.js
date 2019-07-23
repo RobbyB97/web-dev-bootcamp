@@ -5,7 +5,7 @@ console.log('app.js is running')
 const app = {
   title: 'Indecision App',
   subtitle: 'Some info',
-  options: ['One', 'Two']
+  options: []
 }
 const user = {
   name: 'Rob',
