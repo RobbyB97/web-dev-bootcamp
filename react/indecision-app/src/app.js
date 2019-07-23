@@ -22,6 +22,9 @@ const getLocation = location => {
     return <p> Location: {location} </p>
   }
 }
+const addOne = () => {
+  console.log('Add One')
+}
 
 
 // Templates
@@ -48,11 +51,11 @@ const templateTwo = (
 const countTemplate = (
   <div>
     <h1>Count: {count}</h1>
-    <button onClick={}>+1</button>
+    <button onClick={addOne}>+1</button>
   </div>
 )
 
 
 // Render app
 const appRoot = document.getElementById('app')
-ReactDOM.render(template, appRoot)
+ReactDOM.render(countTemplate, appRoot)
