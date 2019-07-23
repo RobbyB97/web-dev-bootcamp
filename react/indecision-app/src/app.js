@@ -25,7 +25,9 @@ const getLocation = location => {
 const addOne = () => {
   console.log('Add One')
 }
-
+const minusOne = () => {
+  console.log('Minus One')
+}
 
 // Templates
 const template = (

@@ -30,6 +30,9 @@ var getLocation = function getLocation(location) {
 var addOne = function addOne() {
   console.log('Add One');
 };
+var minusOne = function minusOne() {
+  console.log('Minus One');
+};
 
 // Templates
 var template = React.createElement(
