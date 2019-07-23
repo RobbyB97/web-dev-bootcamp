@@ -32,6 +32,8 @@ const onFormSubmit = e => {
     e.target.elements.option.value = ''
     console.log(app.options)
   }
+
+  renderCounterApp()
 }
 
 
