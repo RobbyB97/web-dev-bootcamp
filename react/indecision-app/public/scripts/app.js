@@ -31,7 +31,13 @@ var getLocation = function getLocation(location) {
 
 var onFormSubmit = function onFormSubmit(e) {
   e.preventDefault();
-  console.log('Form Submitted');
+  var option = e.target.elements.option.value;
+
+  if (option) {
+    app.options.push(option);
+    e.target.elements.option.value = '';
+    console.log(app.options);
+  }
 };
 
 // Templates

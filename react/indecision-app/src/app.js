@@ -25,7 +25,13 @@ const getLocation = location => {
 
 const onFormSubmit = e => {
   e.preventDefault()
-  console.log('Form Submitted')
+  const option = e.target.elements.option.value
+
+  if (option) {
+    app.options.push(option)
+    e.target.elements.option.value = ''
+    console.log(app.options)
+  }
 }
 
 
