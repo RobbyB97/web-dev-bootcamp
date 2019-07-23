@@ -80,6 +80,18 @@ var templateTwo = React.createElement(
   getLocation(user.location)
 );
 
+var count = 0;
+var countTemplate = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Count: ',
+    count
+  )
+);
+
 var appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
