@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     "build": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "babel-preset-react": "^6.24.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "live-server": "^1.2.1"
   }
 }
