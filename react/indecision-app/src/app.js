@@ -1,11 +1,30 @@
 console.log('app.js is running')
 
+
+// Variables
 const app = {
   title: 'Indecision App',
   subtitle: 'Some info',
   options: ['One', 'Two']
 }
+const user = {
+  name: 'Rob',
+  age: 19,
+  location: 'Willimantic'
+}
+let count = 0
 
+
+
+// Functions
+const getLocation = location => {
+  if (location) {
+    return <p> Location: {location} </p>
+  }
+}
+
+
+// Templates
 const template = (
   <div>
     <h1>{app.title}</h1>
@@ -18,18 +37,6 @@ const template = (
   </div>
 )
 
-const user = {
-  name: 'Rob',
-  age: 19,
-  location: 'Willimantic'
-}
-
-const getLocation = location => {
-  if (location) {
-    return <p> Location: {location} </p>
-  }
-}
-
 const templateTwo = (
   <div>
     <h1> {user.name ? user.name : 'Anonymous'} </h1>
@@ -38,14 +45,14 @@ const templateTwo = (
   </div>
 )
 
-let count = 0
 const countTemplate = (
   <div>
     <h1>Count: {count}</h1>
-    <button id="count-button">+1</button>
+    <button onClick={}>+1</button>
   </div>
 )
 
-const appRoot = document.getElementById('app')
 
+// Render app
+const appRoot = document.getElementById('app')
 ReactDOM.render(template, appRoot)
