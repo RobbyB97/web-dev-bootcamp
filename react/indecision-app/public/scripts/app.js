@@ -16,8 +16,6 @@ var user = {
 
 var $appRoot = document.getElementById('app');
 
-var count = 0;
-
 // Functions
 var getLocation = function getLocation(location) {
   if (location) {
@@ -29,21 +27,6 @@ var getLocation = function getLocation(location) {
       ' '
     );
   }
-};
-
-var addOne = function addOne() {
-  count++;
-  renderCounterApp();
-};
-
-var minusOne = function minusOne() {
-  count--;
-  renderCounterApp();
-};
-
-var resetCount = function resetCount() {
-  count = 0;
-  renderCounterApp();
 };
 
 // Templates
@@ -81,56 +64,5 @@ var template = React.createElement(
   )
 );
 
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    ' ',
-    user.name ? user.name : 'Anonymous',
-    ' '
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    ' Age: ',
-    user.age,
-    ' '
-  ),
-  getLocation(user.location)
-);
-
-// Render app
-var renderCounterApp = function renderCounterApp() {
-  var countTemplate = React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'h1',
-      null,
-      'Count: ',
-      count
-    ),
-    React.createElement(
-      'button',
-      { onClick: addOne },
-      '+1'
-    ),
-    React.createElement(
-      'button',
-      { onClick: minusOne },
-      '-1'
-    ),
-    React.createElement(
-      'button',
-      { onClick: resetCount },
-      'Reset'
-    )
-  );
-
-  ReactDOM.render(countTemplate, $appRoot);
-};
-
 // Render App
-renderCounterApp();
+reactDOM.render(template, $appRoot);
