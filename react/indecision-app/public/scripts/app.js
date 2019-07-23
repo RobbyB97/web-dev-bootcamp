@@ -105,6 +105,16 @@ var countTemplate = React.createElement(
     'button',
     { onClick: addOne },
     '+1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: minusOne },
+    '-1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: resetCount },
+    'Reset'
   )
 );
 
