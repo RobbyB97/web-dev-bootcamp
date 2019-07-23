@@ -36,8 +36,11 @@ const onFormSubmit = e => {
   renderCounterApp()
 }
 
-
-// Templates
+const wipeOptions = e => {
+  e.preventDefault()
+  app.options = []
+  renderCounterApp()
+}
 
 
 // Render Functions
@@ -48,6 +51,7 @@ const renderCounterApp = () => {
       {app.subtitle && <p>{app.subtitle}</p>}
       <p>{(app.options.length > 0) ? "Here are your options" : "No options"}</p>
       <p>{app.options.length}</p>
+      <button onClick={wipeOptions}>Delete Options</button>
       <ol>
         <li> Item one </li>
         <li> Item two </li>

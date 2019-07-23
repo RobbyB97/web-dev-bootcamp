@@ -42,8 +42,11 @@ var onFormSubmit = function onFormSubmit(e) {
   renderCounterApp();
 };
 
-// Templates
-
+var wipeOptions = function wipeOptions(e) {
+  e.preventDefault();
+  app.options = [];
+  renderCounterApp();
+};
 
 // Render Functions
 var renderCounterApp = function renderCounterApp() {
@@ -69,6 +72,11 @@ var renderCounterApp = function renderCounterApp() {
       'p',
       null,
       app.options.length
+    ),
+    React.createElement(
+      'button',
+      { onClick: wipeOptions },
+      'Delete Options'
     ),
     React.createElement(
       'ol',
