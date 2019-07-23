@@ -13,6 +13,8 @@ const user = {
   location: 'Willimantic'
 }
 
+const $appRoot = document.getElementById('app')
+
 let count = 0
 
 
@@ -62,8 +64,6 @@ const templateTwo = (
 
 
 // Render app
-const appRoot = document.getElementById('app')
-//ReactDOM.render(countTemplate, appRoot)
 const renderCounterApp = () => {
   const countTemplate = (
     <div>
@@ -74,7 +74,9 @@ const renderCounterApp = () => {
     </div>
   )
 
-  ReactDOM.render(countTemplate, appRoot)
+  ReactDOM.render(countTemplate, $appRoot)
 }
 
+
+// Render App
 renderCounterApp()

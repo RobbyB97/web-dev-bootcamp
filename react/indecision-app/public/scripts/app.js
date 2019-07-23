@@ -14,6 +14,8 @@ var user = {
   location: 'Willimantic'
 };
 
+var $appRoot = document.getElementById('app');
+
 var count = 0;
 
 // Functions
@@ -100,8 +102,6 @@ var templateTwo = React.createElement(
 );
 
 // Render app
-var appRoot = document.getElementById('app');
-//ReactDOM.render(countTemplate, appRoot)
 var renderCounterApp = function renderCounterApp() {
   var countTemplate = React.createElement(
     'div',
@@ -129,7 +129,8 @@ var renderCounterApp = function renderCounterApp() {
     )
   );
 
-  ReactDOM.render(countTemplate, appRoot);
+  ReactDOM.render(countTemplate, $appRoot);
 };
 
+// Render App
 renderCounterApp();
