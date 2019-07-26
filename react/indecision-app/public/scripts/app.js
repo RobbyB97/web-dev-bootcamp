@@ -16,6 +16,8 @@ var user = {
 
 var $appRoot = document.getElementById('app');
 
+var numbers = [5, 11, 22, 60];
+
 // Functions
 var getLocation = function getLocation(location) {
   if (location) {
@@ -77,19 +79,14 @@ var render = function render() {
       { onClick: wipeOptions },
       'Delete Options'
     ),
-    [React.createElement(
-      'p',
-      { key: '1' },
-      'a'
-    ), React.createElement(
-      'p',
-      { key: '2' },
-      'b'
-    ), React.createElement(
-      'p',
-      { key: '3' },
-      'c'
-    )],
+    numbers.map(function (number) {
+      return React.createElement(
+        'p',
+        { key: number },
+        'Number: ',
+        number * 2
+      );
+    }),
     React.createElement(
       'ol',
       null,
