@@ -77,6 +77,19 @@ var render = function render() {
       { onClick: wipeOptions },
       'Delete Options'
     ),
+    [React.createElement(
+      'p',
+      { key: '1' },
+      'a'
+    ), React.createElement(
+      'p',
+      { key: '2' },
+      'b'
+    ), React.createElement(
+      'p',
+      { key: '3' },
+      'c'
+    )],
     React.createElement(
       'ol',
       null,
