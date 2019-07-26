@@ -36,6 +36,11 @@ const onFormSubmit = e => {
   render()
 }
 
+const onMakeDecision = () => {
+  const randomNum = Math.floor(Math.random() * app.options.length)
+  console.log(randomNum)
+}
+
 const wipeOptions = () => {
   app.options = []
   render()
@@ -49,7 +54,7 @@ const render = () => {
       <h1>{app.title}</h1>
       {app.subtitle && <p>{app.subtitle}</p>}
       <p>{(app.options.length > 0) ? "Here are your options" : "No options"}</p>
-      <p>{app.options.length}</p>
+      <button onClick={onMakeDecision}>What should I do?</button>
       <button onClick={wipeOptions}>Delete Options</button>
       <ol>
         {
