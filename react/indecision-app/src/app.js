@@ -15,8 +15,6 @@ const user = {
 
 const $appRoot = document.getElementById('app')
 
-const numbers = [5, 11, 22, 60]
-
 
 // Functions
 const getLocation = location => {
@@ -53,11 +51,6 @@ const render = () => {
       <p>{(app.options.length > 0) ? "Here are your options" : "No options"}</p>
       <p>{app.options.length}</p>
       <button onClick={wipeOptions}>Delete Options</button>
-      {
-        numbers.map((number) => {
-          return <p key={number}>Number: {number * 2}</p>
-        })
-      }
       <ol>
         {
           app.options.map((option) => {
