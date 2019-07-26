@@ -38,7 +38,8 @@ const onFormSubmit = e => {
 
 const onMakeDecision = () => {
   const randomNum = Math.floor(Math.random() * app.options.length)
-  console.log(randomNum)
+  const option = app.options[randomNum]
+  console.log(option)
 }
 
 const wipeOptions = () => {

@@ -44,7 +44,8 @@ var onFormSubmit = function onFormSubmit(e) {
 
 var onMakeDecision = function onMakeDecision() {
   var randomNum = Math.floor(Math.random() * app.options.length);
-  console.log(randomNum);
+  var option = app.options[randomNum];
+  console.log(option);
 };
 
 var wipeOptions = function wipeOptions() {
