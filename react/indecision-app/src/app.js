@@ -51,13 +51,4 @@ class AddOption extends React.Component {
 const $appRoot = document.getElementById('app')
 
 
-// JSX
-const jsx = (
-    <div>
-      <h1>Title</h1>
-      <IndecisionApp />
-    </div>
-)
-
-
-ReactDOM.render(jsx, $appRoot)
+ReactDOM.render(<IndecisionApp />, $appRoot)

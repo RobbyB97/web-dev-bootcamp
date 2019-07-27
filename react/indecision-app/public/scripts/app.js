@@ -145,16 +145,4 @@ var AddOption = function (_React$Component5) {
 
 var $appRoot = document.getElementById('app');
 
-// JSX
-var jsx = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Title'
-  ),
-  React.createElement(IndecisionApp, null)
-);
-
-ReactDOM.render(jsx, $appRoot);
+ReactDOM.render(React.createElement(IndecisionApp, null), $appRoot);
