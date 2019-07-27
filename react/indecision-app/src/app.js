@@ -12,6 +12,7 @@ class IndecisionApp extends React.Component {
         <Action />
         <Options options={options} />
         <AddOption />
+        <RemoveOptions />
       </div>
     )
   }
@@ -67,6 +68,19 @@ class AddOption extends React.Component {
     return (
       <div>
         AddOption Component
+      </div>
+    )
+  }
+}
+
+class RemoveOptions extends React.Component {
+  onRemoveOptions() {
+    console.log('onRemoveOptions called')
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.onRemoveOptions}>Delete Options</button>
       </div>
     )
   }

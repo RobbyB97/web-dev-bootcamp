@@ -31,7 +31,8 @@ var IndecisionApp = function (_React$Component) {
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
         React.createElement(Options, { options: options }),
-        React.createElement(AddOption, null)
+        React.createElement(AddOption, null),
+        React.createElement(RemoveOptions, null)
       );
     }
   }]);
@@ -174,6 +175,38 @@ var AddOption = function (_React$Component6) {
   }]);
 
   return AddOption;
+}(React.Component);
+
+var RemoveOptions = function (_React$Component7) {
+  _inherits(RemoveOptions, _React$Component7);
+
+  function RemoveOptions() {
+    _classCallCheck(this, RemoveOptions);
+
+    return _possibleConstructorReturn(this, (RemoveOptions.__proto__ || Object.getPrototypeOf(RemoveOptions)).apply(this, arguments));
+  }
+
+  _createClass(RemoveOptions, [{
+    key: 'onRemoveOptions',
+    value: function onRemoveOptions() {
+      console.log('onRemoveOptions called');
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          { onClick: this.onRemoveOptions },
+          'Delete Options'
+        )
+      );
+    }
+  }]);
+
+  return RemoveOptions;
 }(React.Component);
 
 // Variables
