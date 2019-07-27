@@ -1,5 +1,18 @@
 
 // Components
+class IndecisionApp extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOption />
+      </div>
+    )
+  }
+}
+
 class Header extends React.Component {
   render() {
     return (
@@ -42,10 +55,7 @@ const $appRoot = document.getElementById('app')
 const jsx = (
     <div>
       <h1>Title</h1>
-      <Header />
-      <Action />
-      <Options />
-      <AddOption />
+      <IndecisionApp />
     </div>
 )
 
