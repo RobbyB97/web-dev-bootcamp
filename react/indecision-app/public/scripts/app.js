@@ -22,13 +22,15 @@ var IndecisionApp = function (_React$Component) {
     key: 'render',
     value: function render() {
       var title = 'Indecision';
-      var subtitle = 'Put your life in the hands of a computer.';
+      var subtitle = 'Put your life in the hands of a computer!';
+      var options = ['Thing one', 'Thing two', 'Thing three'];
+
       return React.createElement(
         'div',
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -111,8 +113,10 @@ var Options = function (_React$Component4) {
       return React.createElement(
         'div',
         null,
-        'Options Component',
-        React.createElement(Option, null)
+        this.props.options.length,
+        this.props.options.map(function (option) {
+          return React.createElement(Option, { option: option });
+        })
       );
     }
   }]);
@@ -135,7 +139,7 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Option Component'
+        this.props.option
       );
     }
   }]);
