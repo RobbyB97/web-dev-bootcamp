@@ -1,101 +1,52 @@
 'use strict';
 
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// Components
+var Header = function (_React$Component) {
+  _inherits(Header, _React$Component);
 
-var Person = function () {
-  function Person() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'This one';
-    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  function Header() {
+    _classCallCheck(this, Header);
 
-    _classCallCheck(this, Person);
-
-    this.name = name;
-    this.age = age;
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
   }
 
-  _createClass(Person, [{
-    key: 'getGreeting',
-    value: function getGreeting() {
-      return 'Hello ' + this.name + '!';
-    }
-  }, {
-    key: 'getDescription',
-    value: function getDescription() {
-      return this.name + ' is ' + this.age + ' years old.';
+  _createClass(Header, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'p',
+        null,
+        'This is a header component.'
+      );
     }
   }]);
 
-  return Person;
-}();
+  return Header;
+}(React.Component);
 
-var Student = function (_Person) {
-  _inherits(Student, _Person);
+// Variables
 
-  function Student(name, age, major) {
-    _classCallCheck(this, Student);
 
-    var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this));
+var $appRoot = document.getElementById('app');
 
-    _this.major = major;
-    return _this;
-  }
+// JSX
+var jsx = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Title'
+  ),
+  React.createElement(Header, null)
+);
 
-  _createClass(Student, [{
-    key: 'getDescription',
-    value: function getDescription() {
-      var description = _get(Student.prototype.__proto__ || Object.getPrototypeOf(Student.prototype), 'getDescription', this).call(this);
-      description += this.hasMajor() ? ' ' + this.major + ' major.' : ' Undeclared major.';
-      return description;
-    }
-  }, {
-    key: 'hasMajor',
-    value: function hasMajor() {
-      return !!this.major;
-    }
-  }]);
-
-  return Student;
-}(Person);
-
-var Traveler = function (_Person2) {
-  _inherits(Traveler, _Person2);
-
-  function Traveler(name, age, homeLocation) {
-    _classCallCheck(this, Traveler);
-
-    var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this));
-
-    _this2.homeLocation = homeLocation;
-    return _this2;
-  }
-
-  _createClass(Traveler, [{
-    key: 'getGreeting',
-    value: function getGreeting() {
-      var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
-      greeting += this.homeLocation ? ' I\'m visiting from ' + this.homeLocation : '';
-      return greeting;
-    }
-  }, {
-    key: 'hasLocation',
-    value: function hasLocation() {
-      return !!this.homeLocation;
-    }
-  }]);
-
-  return Traveler;
-}(Person);
-
-var me = new Traveler('Robby Bergers', 22, 'Connecticut');
-console.log(me.getGreeting());
-
-var other = new Traveler();
-console.log(other.getGreeting());
+ReactDOM.render(jsx, $appRoot);
