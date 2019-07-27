@@ -139,6 +139,7 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'p',
         null,
+        'Option: ',
         this.props.option
       );
     }
