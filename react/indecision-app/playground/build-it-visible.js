@@ -18,8 +18,8 @@ const render = () => {
   const template = (
     <div>
       <h1>Visibility Toggle</h1>
-      <button onClick={onBtnClick}>Show details</button>
-      <p>{(visible === 0) ? "":"Here are some more details m8"}</p>
+      <button onClick={onBtnClick}>{visible ? 'Hide details':'Show details'}</button>
+      <p>{visible ? "":"Here are some more details m8"}</p>
     </div>
   )
   ReactDOM.render(template, $appRoot)

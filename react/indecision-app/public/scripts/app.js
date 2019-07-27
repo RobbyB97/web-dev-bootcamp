@@ -27,12 +27,12 @@ var render = function render() {
     React.createElement(
       'button',
       { onClick: onBtnClick },
-      'Show details'
+      visible ? 'Hide details' : 'Show details'
     ),
     React.createElement(
       'p',
       null,
-      visible === 0 ? "" : "Here are some more details m8"
+      visible ? "" : "Here are some more details m8"
     )
   );
   ReactDOM.render(template, $appRoot);
