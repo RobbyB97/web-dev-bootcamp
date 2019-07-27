@@ -65,8 +65,37 @@ var Student = function (_Person) {
   return Student;
 }(Person);
 
-var me = new Student('Robby Bergers', 22, 'Computer Science');
-console.log(me.getDescription());
+var Traveler = function (_Person2) {
+  _inherits(Traveler, _Person2);
 
-var other = new Student();
-console.log(other.getDescription());
+  function Traveler(name, age, homeLocation) {
+    _classCallCheck(this, Traveler);
+
+    var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this));
+
+    _this2.homeLocation = homeLocation;
+    return _this2;
+  }
+
+  _createClass(Traveler, [{
+    key: 'getGreeting',
+    value: function getGreeting() {
+      var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreeting', this).call(this);
+      greeting += this.homeLocation ? ' I\'m visiting from ' + this.homeLocation : '';
+      return greeting;
+    }
+  }, {
+    key: 'hasLocation',
+    value: function hasLocation() {
+      return !!this.homeLocation;
+    }
+  }]);
+
+  return Traveler;
+}(Person);
+
+var me = new Traveler('Robby Bergers', 22, 'Connecticut');
+console.log(me.getGreeting());
+
+var other = new Traveler();
+console.log(other.getGreeting());
