@@ -2,7 +2,12 @@
 // Components
 class Header extends React.Component {
   render() {
-    return <p>This is a header component.</p>
+    return (
+      <div>
+        <h1>Indecision</h1>
+        <h2>Put your life in the hands of a computer.</h2>
+      </div>
+    )
   }
 }
 
@@ -16,6 +21,18 @@ class Action extends React.Component {
   }
 }
 
+class Options extends React.Component {
+  render() {
+    return <p>Options class</p>
+  }
+}
+
+class AddOption extends React.Component {
+  render() {
+    return <p>AddOption Class</p>
+  }
+}
+
 
 // Variables
 const $appRoot = document.getElementById('app')
@@ -25,7 +42,10 @@ const $appRoot = document.getElementById('app')
 const jsx = (
     <div>
       <h1>Title</h1>
-      <Header/>
+      <Header />
+      <Action />
+      <Options />
+      <AddOption />
     </div>
 )
 
