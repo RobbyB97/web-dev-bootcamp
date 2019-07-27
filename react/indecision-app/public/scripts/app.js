@@ -32,6 +32,33 @@ var Header = function (_React$Component) {
   return Header;
 }(React.Component);
 
+var Action = function (_React$Component2) {
+  _inherits(Action, _React$Component2);
+
+  function Action() {
+    _classCallCheck(this, Action);
+
+    return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
+  }
+
+  _createClass(Action, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          null,
+          'Who\'s job is it?'
+        )
+      );
+    }
+  }]);
+
+  return Action;
+}(React.Component);
+
 // Variables
 
 

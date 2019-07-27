@@ -6,6 +6,16 @@ class Header extends React.Component {
   }
 }
 
+class Action extends React.Component {
+  render() {
+    return (
+      <div>
+        <button>Who's job is it?</button>
+      </div>
+    )
+  }
+}
+
 
 // Variables
 const $appRoot = document.getElementById('app')
