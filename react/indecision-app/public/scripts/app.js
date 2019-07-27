@@ -37,9 +37,7 @@ var Person = function () {
 var Student = function (_Person) {
   _inherits(Student, _Person);
 
-  function Student(name, age) {
-    var major = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "Undecided";
-
+  function Student(name, age, major) {
     _classCallCheck(this, Student);
 
     var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this));
@@ -51,7 +49,12 @@ var Student = function (_Person) {
   _createClass(Student, [{
     key: 'getDescription',
     value: function getDescription() {
-      return this.name + ' is a ' + this.age + ' year old ' + this.major + ' student.';
+      return this.name + ' is a ' + this.age + ' year old student.';
+    }
+  }, {
+    key: 'hasMajor',
+    value: function hasMajor() {
+      return !!this.major;
     }
   }]);
 
@@ -59,7 +62,7 @@ var Student = function (_Person) {
 }(Person);
 
 var me = new Student('Robby Bergers', 22, 'Computer Science');
-console.log(me.getDescription());
+console.log(me.hasMajor());
 
 var other = new Student();
 console.log(other);
