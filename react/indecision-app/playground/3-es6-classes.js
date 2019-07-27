@@ -18,7 +18,9 @@ class Student extends Person {
     this.major = major
   }
   getDescription() {
-    return `${this.name} is a ${this.age} year old student.`
+    let description = super.getDescription()
+    description += this.hasMajor() ? ` ${this.major} major.`:' Undeclared major.'
+    return description
   }
   hasMajor() {
     return !!this.major
@@ -26,7 +28,7 @@ class Student extends Person {
 }
 
 const me = new Student('Robby Bergers', 22, 'Computer Science')
-console.log(me.hasMajor())
+console.log(me.getDescription())
 
 const other = new Student()
-console.log(other)
+console.log(other.getDescription())
