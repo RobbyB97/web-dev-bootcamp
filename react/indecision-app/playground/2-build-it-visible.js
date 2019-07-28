@@ -51,7 +51,9 @@ class ToggleVisibility extends React.Component {
       <div>
         <h1>Visibility Toggle</h1>
         <button onClick={this.onToggle}>{this.state.visibility ? 'Hide details':'Show details'}</button>
-        <p>{this.state.visibility ? 'Here are some more details!':''}</p>
+        {this.state.visibility && (
+          <p>{this.state.visibility ? 'Here are some more details!':''}</p>
+        )}
       </div>
     )
   }
