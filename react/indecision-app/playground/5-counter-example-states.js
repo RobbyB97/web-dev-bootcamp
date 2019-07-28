@@ -19,7 +19,11 @@ class Counter extends React.Component {
     })
   }
   onDecrement() {
-    console.log('On Decrement')
+    this.setState((prevState) => {
+      return {
+        count: prevState.count -= 1
+      }
+    })
   }
   onReset() {
     console.log('On Reset')

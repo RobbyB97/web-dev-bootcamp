@@ -39,7 +39,11 @@ var Counter = function (_React$Component) {
   }, {
     key: 'onDecrement',
     value: function onDecrement() {
-      console.log('On Decrement');
+      this.setState(function (prevState) {
+        return {
+          count: prevState.count -= 1
+        };
+      });
     }
   }, {
     key: 'onReset',
