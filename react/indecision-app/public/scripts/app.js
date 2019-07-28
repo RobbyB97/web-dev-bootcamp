@@ -203,6 +203,9 @@ var AddOption = function (_React$Component6) {
     var _this6 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
     _this6.onFormSubmit = _this6.onFormSubmit.bind(_this6);
+    _this6.state = {
+      error: undefined
+    };
     return _this6;
   }
 
@@ -210,12 +213,16 @@ var AddOption = function (_React$Component6) {
     key: 'onFormSubmit',
     value: function onFormSubmit(e) {
       e.preventDefault();
+
       var option = e.target.elements.option.value.trim();
+      var error = this.props.handleAddOption(option);
       e.target.elements.option.value = '';
-      if (option) {
-        this.props.handleAddOption(option);
-      }
-      console.log('On Form Submit');
+
+      this.setState(function () {
+        return {
+          error: error
+        };
+      });
     }
   }, {
     key: 'render',
@@ -223,6 +230,11 @@ var AddOption = function (_React$Component6) {
       return React.createElement(
         'div',
         null,
+        React.createElement(
+          'p',
+          null,
+          this.state.error
+        ),
         React.createElement(
           'form',
           { onSubmit: this.onFormSubmit },
