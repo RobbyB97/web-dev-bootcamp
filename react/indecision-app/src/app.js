@@ -44,6 +44,7 @@ class IndecisionApp extends React.Component {
           handlePick={this.handlePick}
         />
         <Options
+          handleDeleteOption={this.handleDeleteOption}
           options={this.state.options}
         />
         <AddOption
@@ -105,20 +106,29 @@ const Action = (props) => {
     </div>
   )
 }
-
+//{props.options.map((option) => {
+//  return <Option option={option} key={option} />
+//})}
 const Options = (props) => {
   return (
     <div>
-      {props.options.map((option) => {
-        return <Option option={option} key={option} />
-      })}
+      {props.options.map((option) => (
+        <Option
+          key={option}
+          option={option}
+          handleDeleteOption={props.handleDeleteOption}
+        />
+      ))}
     </div>
   )
 }
 
 const Option = (props) => {
   return (
-    <p>Option: {props.option}</p>
+    <div>
+      <p>Option: {props.option}</p>
+      <button onClick={props.handleDeleteOption}>Remove option</button>
+    </div>
   )
 }
 
