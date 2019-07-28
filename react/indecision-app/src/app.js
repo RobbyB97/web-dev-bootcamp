@@ -64,10 +64,21 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  onFormSubmit(e) {
+    e.preventDefault()
+    const option = e.target.elements.option.value
+    if (option.length === 0) {
+      alert('You gotta something in the text field')
+    }
+    console.log('On Form Submit')
+  }
   render() {
     return (
       <div>
-        AddOption Component
+        <form onSubmit={this.onFormSubmit}>
+          <input type="text" name="option"/>
+          <button>Add Option</button>
+        </form>
       </div>
     )
   }
