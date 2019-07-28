@@ -147,40 +147,25 @@ var AddOption = function (_React$Component2) {
 // Stateless Components
 
 
-var Header = function (_React$Component3) {
-  _inherits(Header, _React$Component3);
+var Header = function Header(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      props.title
+    ),
+    React.createElement(
+      'h2',
+      null,
+      props.subtitle
+    )
+  );
+};
 
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'h1',
-          null,
-          this.props.title
-        ),
-        React.createElement(
-          'h2',
-          null,
-          this.props.subtitle
-        )
-      );
-    }
-  }]);
-
-  return Header;
-}(React.Component);
-
-var Action = function (_React$Component4) {
-  _inherits(Action, _React$Component4);
+var Action = function (_React$Component3) {
+  _inherits(Action, _React$Component3);
 
   function Action() {
     _classCallCheck(this, Action);
@@ -206,8 +191,8 @@ var Action = function (_React$Component4) {
   return Action;
 }(React.Component);
 
-var Options = function (_React$Component5) {
-  _inherits(Options, _React$Component5);
+var Options = function (_React$Component4) {
+  _inherits(Options, _React$Component4);
 
   function Options() {
     _classCallCheck(this, Options);
@@ -231,8 +216,8 @@ var Options = function (_React$Component5) {
   return Options;
 }(React.Component);
 
-var Option = function (_React$Component6) {
-  _inherits(Option, _React$Component6);
+var Option = function (_React$Component5) {
+  _inherits(Option, _React$Component5);
 
   function Option() {
     _classCallCheck(this, Option);
@@ -255,8 +240,8 @@ var Option = function (_React$Component6) {
   return Option;
 }(React.Component);
 
-var RemoveOptions = function (_React$Component7) {
-  _inherits(RemoveOptions, _React$Component7);
+var RemoveOptions = function (_React$Component6) {
+  _inherits(RemoveOptions, _React$Component6);
 
   function RemoveOptions() {
     _classCallCheck(this, RemoveOptions);
