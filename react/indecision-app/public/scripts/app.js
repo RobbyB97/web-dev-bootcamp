@@ -279,9 +279,24 @@ var RemoveOptions = function (_React$Component7) {
   return RemoveOptions;
 }(React.Component);
 
+var User = function User() {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'p',
+      null,
+      'Name: '
+    ),
+    React.createElement(
+      'p',
+      null,
+      'Age: '
+    )
+  );
+};
+
 // Variables
-
-
 var $appRoot = document.getElementById('app');
 
-ReactDOM.render(React.createElement(IndecisionApp, null), $appRoot);
+ReactDOM.render(React.createElement(User, null), $appRoot);

@@ -145,8 +145,18 @@ class RemoveOptions extends React.Component {
 }
 
 
+const User = () => {
+  return (
+    <div>
+      <p>Name: </p>
+      <p>Age: </p>
+    </div>
+  )
+}
+
+
 // Variables
 const $appRoot = document.getElementById('app')
 
 
-ReactDOM.render(<IndecisionApp />, $appRoot)
+ReactDOM.render(<User />, $appRoot)
