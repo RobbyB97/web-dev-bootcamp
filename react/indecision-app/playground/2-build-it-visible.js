@@ -14,7 +14,7 @@ const onBtnClick = () => {
   render()
 }
 
-class toggleVisibility extends React.Component {
+class ToggleVisibility extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -40,7 +40,7 @@ const render = () => {
       <p>{visible ? "":"Here are some more details m8"}</p>
     </div>
   )
-  ReactDOM.render(template, $appRoot)
+  ReactDOM.render(<ToggleVisibility />, $appRoot)
 }
 
 render()

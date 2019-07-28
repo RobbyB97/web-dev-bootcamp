@@ -23,13 +23,13 @@ var onBtnClick = function onBtnClick() {
   render();
 };
 
-var toggleVisibility = function (_React$Component) {
-  _inherits(toggleVisibility, _React$Component);
+var ToggleVisibility = function (_React$Component) {
+  _inherits(ToggleVisibility, _React$Component);
 
-  function toggleVisibility(props) {
-    _classCallCheck(this, toggleVisibility);
+  function ToggleVisibility(props) {
+    _classCallCheck(this, ToggleVisibility);
 
-    var _this = _possibleConstructorReturn(this, (toggleVisibility.__proto__ || Object.getPrototypeOf(toggleVisibility)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ToggleVisibility.__proto__ || Object.getPrototypeOf(ToggleVisibility)).call(this, props));
 
     _this.state = {
       visibility: false
@@ -37,7 +37,7 @@ var toggleVisibility = function (_React$Component) {
     return _this;
   }
 
-  _createClass(toggleVisibility, [{
+  _createClass(ToggleVisibility, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -62,7 +62,7 @@ var toggleVisibility = function (_React$Component) {
     }
   }]);
 
-  return toggleVisibility;
+  return ToggleVisibility;
 }(React.Component);
 
 var render = function render() {
@@ -85,7 +85,7 @@ var render = function render() {
       visible ? "" : "Here are some more details m8"
     )
   );
-  ReactDOM.render(template, $appRoot);
+  ReactDOM.render(React.createElement(ToggleVisibility, null), $appRoot);
 };
 
 render();
