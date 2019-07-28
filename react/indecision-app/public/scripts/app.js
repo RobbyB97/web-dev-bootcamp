@@ -31,12 +31,16 @@ var IndecisionApp = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       // When component gets created
-      var json = localStorage.getItem('options');
-      var options = JSON.parse(json);
-      if (options) {
-        this.setState(function () {
-          return { options: options };
-        });
+      try {
+        var json = localStorage.getItem('options');
+        var options = JSON.parse(json);
+        if (options) {
+          this.setState(function () {
+            return { options: options };
+          });
+        }
+      } catch (e) {
+        console.log('Invalid JSON');
       }
     }
   }, {
