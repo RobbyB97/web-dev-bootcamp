@@ -32,11 +32,6 @@ class Counter extends React.Component {
         count: 0
       }
     })
-    this.setState((prevState) => {
-      return {
-        count: prevState.count + 1
-      }
-    })
   }
   render() {
     return (
