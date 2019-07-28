@@ -13,10 +13,15 @@ console.log('counter-example-states.js');
 var Counter = function (_React$Component) {
   _inherits(Counter, _React$Component);
 
-  function Counter() {
+  function Counter(props) {
     _classCallCheck(this, Counter);
 
-    return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+    _this.onIncrement = _this.onIncrement.bind(_this);
+    _this.onDecrement = _this.onDecrement.bind(_this);
+    _this.onReset = _this.onReset.bind(_this);
+    return _this;
   }
 
   _createClass(Counter, [{

@@ -2,6 +2,12 @@ console.log('counter-example-states.js')
 
 
 class Counter extends React.Component {
+  constructor(props) {
+    super(props)
+    this.onIncrement = this.onIncrement.bind(this)
+    this.onDecrement = this.onDecrement.bind(this)
+    this.onReset = this.onReset.bind(this)
+  }
   onIncrement() {
     console.log('On Increment')
   }
