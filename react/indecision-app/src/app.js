@@ -28,11 +28,9 @@ class IndecisionApp extends React.Component {
     })
   }
   handleDeleteOptions() {
-    this.setState(() => {
-      return {
-        options: []
-      }
-    })
+    this.setState(() => ({
+      options: []
+    }))
   }
   render() {
     const subtitle = 'Put your life in the hands of a computer!'
