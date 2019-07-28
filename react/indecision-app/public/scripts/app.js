@@ -20,6 +20,21 @@ var Counter = function (_React$Component) {
   }
 
   _createClass(Counter, [{
+    key: 'onIncrement',
+    value: function onIncrement() {
+      console.log('On Increment');
+    }
+  }, {
+    key: 'onDecrement',
+    value: function onDecrement() {
+      console.log('On Decrement');
+    }
+  }, {
+    key: 'onReset',
+    value: function onReset() {
+      console.log('On Reset');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -32,17 +47,17 @@ var Counter = function (_React$Component) {
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.onIncrement },
           '+1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.onDecrement },
           '-1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.onReset },
           'Reset'
         )
       );
