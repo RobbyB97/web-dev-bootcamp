@@ -18,6 +18,7 @@ var IndecisionApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
+    _this.handlePick = _this.handlePick.bind(_this);
     _this.state = {
       options: ['Thing one', 'Thing two', 'Thing three']
     };
@@ -25,6 +26,12 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
+    key: 'handlePick',
+    value: function handlePick() {
+      var num = Math.random() * this.state.options.length;
+      return console.log(this.state.options[num]);
+    }
+  }, {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {

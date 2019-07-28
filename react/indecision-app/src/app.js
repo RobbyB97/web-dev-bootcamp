@@ -4,9 +4,14 @@ class IndecisionApp extends React.Component {
   constructor(props) {
     super(props)
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
+    this.handlePick = this.handlePick.bind(this)
     this.state = {
       options: ['Thing one', 'Thing two', 'Thing three']
     }
+  }
+  handlePick() {
+    let num = Math.random() * this.state.options.length
+    return console.log(this.state.options[num])
   }
   handleDeleteOptions() {
     this.setState(() => {
