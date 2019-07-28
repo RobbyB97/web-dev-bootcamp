@@ -18,6 +18,7 @@ var IndecisionApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
     _this.handleAddOption = _this.handleAddOption.bind(_this);
+    _this.handleDeleteOption = _this.handleAddOption.bind(_this);
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.state = {
@@ -45,6 +46,11 @@ var IndecisionApp = function (_React$Component) {
           options: prevState.options.concat(option)
         };
       });
+    }
+  }, {
+    key: 'handleDeleteOption',
+    value: function handleDeleteOption(option) {
+      console.log('handleDeleteOption', option);
     }
   }, {
     key: 'handleDeleteOptions',
