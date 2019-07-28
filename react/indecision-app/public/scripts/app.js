@@ -24,6 +24,15 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
+    key: 'handleDeleteOptions',
+    value: function handleDeleteOptions() {
+      this.setState(function () {
+        return {
+          options: []
+        };
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var title = 'Indecision';
@@ -34,7 +43,10 @@ var IndecisionApp = function (_React$Component) {
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, { hasOptions: this.state.options.length === 0 }),
-        React.createElement(Options, { options: this.state.options }),
+        React.createElement(Options, {
+          options: this.state.options,
+          handleDeleteOptions: this.handleDeleteOptions
+        }),
         React.createElement(AddOption, null),
         React.createElement(RemoveOptions, null)
       );
