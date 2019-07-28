@@ -12,6 +12,7 @@ console.log('build-it-visible.js is running..');
 
 var $appRoot = document.getElementById('app');
 
+// Basic Method
 var visible = 0;
 
 var onBtnClick = function onBtnClick() {
@@ -22,6 +23,34 @@ var onBtnClick = function onBtnClick() {
   }
   render();
 };
+
+var render = function render() {
+  var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Visibility Toggle'
+    ),
+    React.createElement(
+      'button',
+      { onClick: onBtnClick },
+      visible ? 'Hide details' : 'Show details'
+    ),
+    React.createElement(
+      'p',
+      null,
+      visible ? "" : "Here are some more details m8"
+    )
+  );
+  ReactDOM.render(template, $appRoot);
+};
+
+//render()
+
+
+// Class Method
 
 var ToggleVisibility = function (_React$Component) {
   _inherits(ToggleVisibility, _React$Component);
@@ -75,27 +104,4 @@ var ToggleVisibility = function (_React$Component) {
   return ToggleVisibility;
 }(React.Component);
 
-var render = function render() {
-  var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'h1',
-      null,
-      'Visibility Toggle'
-    ),
-    React.createElement(
-      'button',
-      { onClick: onBtnClick },
-      visible ? 'Hide details' : 'Show details'
-    ),
-    React.createElement(
-      'p',
-      null,
-      visible ? "" : "Here are some more details m8"
-    )
-  );
-  ReactDOM.render(React.createElement(ToggleVisibility, null), $appRoot);
-};
-
-render();
+ReactDOM.render(React.createElement(ToggleVisibility, null), $appRoot);
