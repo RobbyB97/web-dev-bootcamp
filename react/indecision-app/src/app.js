@@ -11,6 +11,12 @@ class IndecisionApp extends React.Component {
       options: props.options
     }
   }
+  componentDidMount() { // When component gets created
+    console.log('Component did mount')
+  }
+  componentDidUpdate() {  // When component is updated
+    console.log('componentDidUpdate')
+  }
   handlePick() {
     let num = Math.floor(Math.random() * this.state.options.length)
     return alert(this.state.options[num])
