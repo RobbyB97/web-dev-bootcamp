@@ -66,7 +66,8 @@ class Option extends React.Component {
 class AddOption extends React.Component {
   onFormSubmit(e) {
     e.preventDefault()
-    const option = e.target.elements.option.value
+    const option = e.target.elements.option.value.trim()
+    e.target.elements.option.value = ''
     if (option) {
       alert(option)
     }
