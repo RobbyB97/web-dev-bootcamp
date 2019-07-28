@@ -85,10 +85,6 @@ var IndecisionApp = function (_React$Component) {
   return IndecisionApp;
 }(React.Component);
 
-IndecisionApp.defaultProps = {
-  options: ['ok']
-};
-
 var AddOption = function (_React$Component2) {
   _inherits(AddOption, _React$Component2);
 
@@ -166,9 +162,6 @@ var Header = function Header(props) {
     )
   );
 };
-Header.defaultProps = {
-  title: 'Indecision'
-};
 
 var Action = function Action(props) {
   return React.createElement(
@@ -213,7 +206,15 @@ var RemoveOptions = function RemoveOptions(props) {
   );
 };
 
-// Variables
-var $appRoot = document.getElementById('app');
+// Default props
+IndecisionApp.defaultProps = {
+  options: ['ok']
+};
+
+Header.defaultProps = {
+  title: 'Indecision'
+
+  // Variables
+};var $appRoot = document.getElementById('app');
 
 ReactDOM.render(React.createElement(IndecisionApp, null), $appRoot);

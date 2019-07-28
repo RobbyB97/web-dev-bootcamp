@@ -57,9 +57,6 @@ class IndecisionApp extends React.Component {
     )
   }
 }
-IndecisionApp.defaultProps = {
-  options: ['ok']
-}
 
 class AddOption extends React.Component {
   constructor(props) {
@@ -105,9 +102,6 @@ const Header = (props) => {
     </div>
   )
 }
-Header.defaultProps = {
-  title: 'Indecision'
-}
 
 const Action = (props) => {
   return (
@@ -139,6 +133,16 @@ const RemoveOptions = (props) => {
       <button onClick={props.handleDeleteOptions}>Delete Options</button>
     </div>
   )
+}
+
+
+// Default props
+IndecisionApp.defaultProps = {
+  options: ['ok']
+}
+
+Header.defaultProps = {
+  title: 'Indecision'
 }
 
 
