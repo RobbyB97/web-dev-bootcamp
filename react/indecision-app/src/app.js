@@ -25,10 +25,11 @@ class IndecisionApp extends React.Component {
         <Action hasOptions={this.state.options.length === 0}/>
         <Options
           options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
         />
         <AddOption />
-        <RemoveOptions />
+        <RemoveOptions
+          handleDeleteOptions={this.handleDeleteOptions}
+        />
       </div>
     )
   }
