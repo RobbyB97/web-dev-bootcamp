@@ -8,7 +8,8 @@ class Counter extends React.Component {
     this.onDecrement = this.onDecrement.bind(this)
     this.onReset = this.onReset.bind(this)
     this.state = {
-      count: 0
+      count: 0,
+      title: 'Count: '
     }
   }
   onIncrement() {
@@ -31,7 +32,7 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <h1>Count: {this.state.count}</h1>
+        <h1>{this.state.title}{this.state.count}</h1>
         <button onClick={this.onIncrement}>+1</button>
         <button onClick={this.onDecrement}>-1</button>
         <button onClick={this.onReset}>Reset</button>

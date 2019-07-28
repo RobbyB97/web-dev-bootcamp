@@ -22,7 +22,8 @@ var Counter = function (_React$Component) {
     _this.onDecrement = _this.onDecrement.bind(_this);
     _this.onReset = _this.onReset.bind(_this);
     _this.state = {
-      count: 0
+      count: 0,
+      title: 'Count: '
     };
     return _this;
   }
@@ -59,7 +60,7 @@ var Counter = function (_React$Component) {
         React.createElement(
           'h1',
           null,
-          'Count: ',
+          this.state.title,
           this.state.count
         ),
         React.createElement(
