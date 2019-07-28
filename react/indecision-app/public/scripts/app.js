@@ -49,7 +49,11 @@ var Counter = function (_React$Component) {
   }, {
     key: 'onReset',
     value: function onReset() {
-      console.log('On Reset');
+      this.setState(function (prevState) {
+        return {
+          count: prevState.count = 0
+        };
+      });
     }
   }, {
     key: 'render',
