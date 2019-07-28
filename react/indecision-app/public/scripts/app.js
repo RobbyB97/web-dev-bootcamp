@@ -31,6 +31,7 @@ var ToggleVisibility = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ToggleVisibility.__proto__ || Object.getPrototypeOf(ToggleVisibility)).call(this, props));
 
+    _this.onToggle = _this.onToggle.bind(_this);
     _this.state = {
       visibility: false
     };
@@ -38,6 +39,11 @@ var ToggleVisibility = function (_React$Component) {
   }
 
   _createClass(ToggleVisibility, [{
+    key: 'onToggle',
+    value: function onToggle() {
+      console.log('onToggle');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -50,7 +56,7 @@ var ToggleVisibility = function (_React$Component) {
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.onToggle },
           this.state.visibility ? 'Hide details' : 'Show details'
         ),
         React.createElement(

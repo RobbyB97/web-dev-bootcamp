@@ -17,15 +17,19 @@ const onBtnClick = () => {
 class ToggleVisibility extends React.Component {
   constructor(props) {
     super(props)
+    this.onToggle = this.onToggle.bind(this)
     this.state = {
       visibility: false
     }
+  }
+  onToggle() {
+    console.log('onToggle')
   }
   render() {
     return (
       <div>
         <h1>Visibility Toggle</h1>
-        <button>{this.state.visibility ? 'Hide details':'Show details'}</button>
+        <button onClick={this.onToggle}>{this.state.visibility ? 'Hide details':'Show details'}</button>
         <p>{this.state.visibility ? 'Here are some more details!':''}</p>
       </div>
     )
