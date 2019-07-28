@@ -49,9 +49,9 @@ var Counter = function (_React$Component) {
   }, {
     key: 'onReset',
     value: function onReset() {
-      this.setState(function (prevState) {
+      this.setState(function () {
         return {
-          count: prevState.count = 0
+          count: 0
         };
       });
     }
