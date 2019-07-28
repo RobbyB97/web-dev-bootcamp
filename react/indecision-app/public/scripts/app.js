@@ -31,13 +31,17 @@ var IndecisionApp = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       // When component gets created
-      console.log('Component did mount');
+      console.log('Fetching data');
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps, prevState) {
       // When component is updated
-      console.log('componentDidUpdate');
+      if (prevState.options.length !== this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        localStorage.setItem('options', json);
+        console.log('Saving data');
+      }
     }
   }, {
     key: 'componentWillUnmount',
