@@ -160,7 +160,6 @@ var Options = function (_React$Component4) {
       return React.createElement(
         'div',
         null,
-        this.props.options.length,
         this.props.options.map(function (option) {
           return React.createElement(Option, { option: option, key: option });
         })

@@ -20,7 +20,7 @@ class IndecisionApp extends React.Component {
     } else if (this.state.options.indexOf(option) > -1) {
       return 'Option already exists!'
     }
-    
+
     this.setState((prevState) => {
       return {
         options: prevState.options.concat(option)
@@ -84,7 +84,6 @@ class Options extends React.Component {
   render() {
     return (
       <div>
-        {this.props.options.length}
         {this.props.options.map((option) => {
           return <Option option={option} key={option} />
         })}
