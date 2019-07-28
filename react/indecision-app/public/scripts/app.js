@@ -8,59 +8,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-console.log('counter-example-states.js');
+console.log('build-it-visible.js is running..');
 
-var Counter = function (_React$Component) {
-  _inherits(Counter, _React$Component);
+var $appRoot = document.getElementById('app');
 
-  function Counter(props) {
-    _classCallCheck(this, Counter);
+var visible = 0;
 
-    var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+var onBtnClick = function onBtnClick() {
+  if (visible === 0) {
+    visible = 1;
+  } else {
+    visible = 0;
+  }
+  render();
+};
 
-    _this.onIncrement = _this.onIncrement.bind(_this);
-    _this.onDecrement = _this.onDecrement.bind(_this);
-    _this.onReset = _this.onReset.bind(_this);
+var toggleVisibility = function (_React$Component) {
+  _inherits(toggleVisibility, _React$Component);
+
+  function toggleVisibility(props) {
+    _classCallCheck(this, toggleVisibility);
+
+    var _this = _possibleConstructorReturn(this, (toggleVisibility.__proto__ || Object.getPrototypeOf(toggleVisibility)).call(this, props));
+
     _this.state = {
-      count: 0,
-      title: 'Count: '
+      visibility: false
     };
     return _this;
   }
 
-  _createClass(Counter, [{
-    key: 'onIncrement',
-    value: function onIncrement() {
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count + 1
-        };
-      });
-    }
-  }, {
-    key: 'onDecrement',
-    value: function onDecrement() {
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count - 1
-        };
-      });
-    }
-  }, {
-    key: 'onReset',
-    value: function onReset() {
-      this.setState(function () {
-        return {
-          count: 0
-        };
-      });
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count + 1
-        };
-      });
-    }
-  }, {
+  _createClass(toggleVisibility, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -69,29 +46,46 @@ var Counter = function (_React$Component) {
         React.createElement(
           'h1',
           null,
-          this.state.title,
-          this.state.count
+          'Visibility Toggle'
         ),
         React.createElement(
           'button',
-          { onClick: this.onIncrement },
-          '+1'
+          null,
+          this.state.visibility ? 'Show details' : 'Hide details'
         ),
         React.createElement(
-          'button',
-          { onClick: this.onDecrement },
-          '-1'
-        ),
-        React.createElement(
-          'button',
-          { onClick: this.onReset },
-          'Reset'
+          'p',
+          null,
+          this.state.visibility ? 'Here are some more details!' : ''
         )
       );
     }
   }]);
 
-  return Counter;
+  return toggleVisibility;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
+var render = function render() {
+  var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Visibility Toggle'
+    ),
+    React.createElement(
+      'button',
+      { onClick: onBtnClick },
+      visible ? 'Hide details' : 'Show details'
+    ),
+    React.createElement(
+      'p',
+      null,
+      visible ? "" : "Here are some more details m8"
+    )
+  );
+  ReactDOM.render(template, $appRoot);
+};
+
+render();

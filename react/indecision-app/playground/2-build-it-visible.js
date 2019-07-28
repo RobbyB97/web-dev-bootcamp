@@ -14,6 +14,24 @@ const onBtnClick = () => {
   render()
 }
 
+class toggleVisibility extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visibility: false
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button>{this.state.visibility ? 'Show details':'Hide details'}</button>
+        <p>{this.state.visibility ? 'Here are some more details!':''}</p>
+      </div>
+    )
+  }
+}
+
 const render = () => {
   const template = (
     <div>
