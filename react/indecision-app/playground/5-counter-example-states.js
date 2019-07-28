@@ -15,28 +15,27 @@ class Counter extends React.Component {
   onIncrement() {
     this.setState((prevState) => {
       return {
-        count: prevState.count += 1
+        count: prevState.count + 1
       }
     })
   }
   onDecrement() {
     this.setState((prevState) => {
       return {
-        count: prevState.count -= 1
+        count: prevState.count - 1
       }
     })
   }
   onReset() {
-//   this.setState(() => {
-//     return {
-//        count: 0
-//      }
-//    })
-    this.setState({
-      count: 0
+    this.setState(() => {
+      return {
+        count: 0
+      }
     })
-    this.setState({
-      count: this.state.count + 1
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1
+      }
     })
   }
   render() {
