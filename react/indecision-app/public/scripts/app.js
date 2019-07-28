@@ -230,7 +230,7 @@ var AddOption = function (_React$Component6) {
       return React.createElement(
         'div',
         null,
-        React.createElement(
+        this.state.error && React.createElement(
           'p',
           null,
           this.state.error
