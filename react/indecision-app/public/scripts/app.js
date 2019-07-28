@@ -168,8 +168,8 @@ var AddOption = function (_React$Component6) {
     value: function onFormSubmit(e) {
       e.preventDefault();
       var option = e.target.elements.option.value;
-      if (option.length === 0) {
-        alert('You gotta something in the text field');
+      if (option) {
+        alert(option);
       }
       console.log('On Form Submit');
     }

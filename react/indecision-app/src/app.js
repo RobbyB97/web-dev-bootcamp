@@ -67,8 +67,8 @@ class AddOption extends React.Component {
   onFormSubmit(e) {
     e.preventDefault()
     const option = e.target.elements.option.value
-    if (option.length === 0) {
-      alert('You gotta something in the text field')
+    if (option) {
+      alert(option)
     }
     console.log('On Form Submit')
   }
