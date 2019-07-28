@@ -14,7 +14,7 @@ class IndecisionApp extends React.Component {
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
-        <Action />
+        <Action hasOptions={this.state.options.length === 0}/>
         <Options options={this.state.options} />
         <AddOption />
         <RemoveOptions />
@@ -41,7 +41,7 @@ class Action extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handlePick}>Who's job is it?</button>
+        <button disabled={this.props.hasOptions} onClick={this.handlePick}>Who's job is it?</button>
       </div>
     )
   }
