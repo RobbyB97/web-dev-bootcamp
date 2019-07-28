@@ -41,7 +41,11 @@ var ToggleVisibility = function (_React$Component) {
   _createClass(ToggleVisibility, [{
     key: 'onToggle',
     value: function onToggle() {
-      console.log('onToggle');
+      this.setState(function (prevState) {
+        return {
+          visibility: !prevState.visibility
+        };
+      });
     }
   }, {
     key: 'render',
