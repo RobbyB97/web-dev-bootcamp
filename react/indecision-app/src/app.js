@@ -1,5 +1,5 @@
 
-// Components
+// Stateful Components
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props)
@@ -59,6 +59,42 @@ class IndecisionApp extends React.Component {
   }
 }
 
+class AddOption extends React.Component {
+  constructor(props) {
+    super(props)
+    this.onFormSubmit = this.onFormSubmit.bind(this)
+    this.state = {
+      error: undefined
+    }
+  }
+  onFormSubmit(e) {
+    e.preventDefault()
+
+    const option = e.target.elements.option.value.trim()
+    const error = this.props.handleAddOption(option)
+    e.target.elements.option.value = ''
+
+    this.setState(() => {
+      return {
+        error
+      }
+    })
+  }
+  render() {
+    return (
+      <div>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onFormSubmit}>
+          <input type="text" name="option"/>
+          <button>Add Option</button>
+        </form>
+      </div>
+    )
+  }
+}
+
+
+// Stateless Components
 class Header extends React.Component {
   render() {
     return (
@@ -100,40 +136,6 @@ class Option extends React.Component {
   }
 }
 
-class AddOption extends React.Component {
-  constructor(props) {
-    super(props)
-    this.onFormSubmit = this.onFormSubmit.bind(this)
-    this.state = {
-      error: undefined
-    }
-  }
-  onFormSubmit(e) {
-    e.preventDefault()
-
-    const option = e.target.elements.option.value.trim()
-    const error = this.props.handleAddOption(option)
-    e.target.elements.option.value = ''
-
-    this.setState(() => {
-      return {
-        error
-      }
-    })
-  }
-  render() {
-    return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onFormSubmit}>
-          <input type="text" name="option"/>
-          <button>Add Option</button>
-        </form>
-      </div>
-    )
-  }
-}
-
 class RemoveOptions extends React.Component {
   render() {
     return (
@@ -145,18 +147,8 @@ class RemoveOptions extends React.Component {
 }
 
 
-const User = (props) => {
-  return (
-    <div>
-      <p>Name: {props.name}</p>
-      <p>Age: {props.age}</p>
-    </div>
-  )
-}
-
-
 // Variables
 const $appRoot = document.getElementById('app')
 
 
-ReactDOM.render(<User name="Robby" age="22" />, $appRoot)
+ReactDOM.render(<IndecisionApp />, $appRoot)
