@@ -17,6 +17,9 @@ class IndecisionApp extends React.Component {
   componentDidUpdate() {  // When component is updated
     console.log('componentDidUpdate')
   }
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+  }
   handlePick() {
     let num = Math.floor(Math.random() * this.state.options.length)
     return alert(this.state.options[num])

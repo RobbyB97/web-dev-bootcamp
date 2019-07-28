@@ -40,6 +40,11 @@ var IndecisionApp = function (_React$Component) {
       console.log('componentDidUpdate');
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('componentWillUnmount');
+    }
+  }, {
     key: 'handlePick',
     value: function handlePick() {
       var num = Math.floor(Math.random() * this.state.options.length);
