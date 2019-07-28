@@ -145,11 +145,11 @@ class RemoveOptions extends React.Component {
 }
 
 
-const User = () => {
+const User = (props) => {
   return (
     <div>
-      <p>Name: </p>
-      <p>Age: </p>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
     </div>
   )
 }
@@ -159,4 +159,4 @@ const User = () => {
 const $appRoot = document.getElementById('app')
 
 
-ReactDOM.render(<User />, $appRoot)
+ReactDOM.render(<User name="Robby" age="22" />, $appRoot)

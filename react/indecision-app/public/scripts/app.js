@@ -279,19 +279,21 @@ var RemoveOptions = function (_React$Component7) {
   return RemoveOptions;
 }(React.Component);
 
-var User = function User() {
+var User = function User(props) {
   return React.createElement(
     'div',
     null,
     React.createElement(
       'p',
       null,
-      'Name: '
+      'Name: ',
+      props.name
     ),
     React.createElement(
       'p',
       null,
-      'Age: '
+      'Age: ',
+      props.age
     )
   );
 };
@@ -299,4 +301,4 @@ var User = function User() {
 // Variables
 var $appRoot = document.getElementById('app');
 
-ReactDOM.render(React.createElement(User, null), $appRoot);
+ReactDOM.render(React.createElement(User, { name: 'Robby', age: '22' }), $appRoot);
