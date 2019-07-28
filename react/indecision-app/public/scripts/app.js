@@ -204,7 +204,7 @@ var AddOption = function (_React$Component6) {
       var option = e.target.elements.option.value.trim();
       e.target.elements.option.value = '';
       if (option) {
-        alert(option);
+        this.props.handleAddOption(option);
       }
       console.log('On Form Submit');
     }

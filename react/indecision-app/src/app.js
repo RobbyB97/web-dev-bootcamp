@@ -101,7 +101,7 @@ class AddOption extends React.Component {
     const option = e.target.elements.option.value.trim()
     e.target.elements.option.value = ''
     if (option) {
-      alert(option)
+      this.props.handleAddOption(option)
     }
     console.log('On Form Submit')
   }
