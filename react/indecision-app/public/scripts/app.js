@@ -17,6 +17,7 @@ var IndecisionApp = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
+    _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.state = {
       options: ['Thing one', 'Thing two', 'Thing three']
     };
@@ -226,11 +227,6 @@ var RemoveOptions = function (_React$Component7) {
   }
 
   _createClass(RemoveOptions, [{
-    key: 'onRemoveOptions',
-    value: function onRemoveOptions() {
-      console.log('onRemoveOptions called');
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -238,7 +234,7 @@ var RemoveOptions = function (_React$Component7) {
         null,
         React.createElement(
           'button',
-          { onClick: this.onRemoveOptions },
+          { onClick: this.props.handleDeleteOptions },
           'Delete Options'
         )
       );

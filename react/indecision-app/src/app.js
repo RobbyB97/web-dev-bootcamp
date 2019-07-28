@@ -3,6 +3,7 @@
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props)
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.state = {
       options: ['Thing one', 'Thing two', 'Thing three']
     }
@@ -24,7 +25,7 @@ class IndecisionApp extends React.Component {
         <Action hasOptions={this.state.options.length === 0}/>
         <Options
           options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions} 
+          handleDeleteOptions={this.handleDeleteOptions}
         />
         <AddOption />
         <RemoveOptions />
@@ -105,13 +106,10 @@ class AddOption extends React.Component {
 }
 
 class RemoveOptions extends React.Component {
-  onRemoveOptions() {
-    console.log('onRemoveOptions called')
-  }
   render() {
     return (
       <div>
-        <button onClick={this.onRemoveOptions}>Delete Options</button>
+        <button onClick={this.props.handleDeleteOptions}>Delete Options</button>
       </div>
     )
   }
