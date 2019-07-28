@@ -8,7 +8,7 @@ class Counter extends React.Component {
     this.onDecrement = this.onDecrement.bind(this)
     this.onReset = this.onReset.bind(this)
     this.state = {
-      count: 0,
+      count: props.count,
       title: 'Count: '
     }
   }
@@ -44,5 +44,8 @@ class Counter extends React.Component {
     )
   }
 }
+Counter.defaultProps = {
+  count: 0
+}
 
-ReactDOM.render(<Counter />, document.getElementById('app'))
+ReactDOM.render(<Counter/>, document.getElementById('app'))
