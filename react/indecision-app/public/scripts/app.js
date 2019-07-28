@@ -28,7 +28,7 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'handlePick',
     value: function handlePick() {
-      var num = Math.random() * this.state.options.length;
+      var num = Math.floor(Math.random() * this.state.options.length);
       return console.log(this.state.options[num]);
     }
   }, {
@@ -50,7 +50,10 @@ var IndecisionApp = function (_React$Component) {
         'div',
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
-        React.createElement(Action, { hasOptions: this.state.options.length === 0 }),
+        React.createElement(Action, {
+          hasOptions: this.state.options.length === 0,
+          handlePick: this.handlePick
+        }),
         React.createElement(Options, {
           options: this.state.options
         }),
@@ -107,11 +110,6 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
-    key: 'handlePick',
-    value: function handlePick() {
-      console.log('handlePick called');
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -119,7 +117,7 @@ var Action = function (_React$Component3) {
         null,
         React.createElement(
           'button',
-          { disabled: this.props.hasOptions, onClick: this.handlePick },
+          { disabled: this.props.hasOptions, onClick: this.props.handlePick },
           'Who\'s job is it?'
         )
       );

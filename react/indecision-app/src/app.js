@@ -10,7 +10,7 @@ class IndecisionApp extends React.Component {
     }
   }
   handlePick() {
-    let num = Math.random() * this.state.options.length
+    let num = Math.floor(Math.random() * this.state.options.length)
     return console.log(this.state.options[num])
   }
   handleDeleteOptions() {
@@ -27,7 +27,10 @@ class IndecisionApp extends React.Component {
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
-        <Action hasOptions={this.state.options.length === 0}/>
+        <Action
+          hasOptions={this.state.options.length === 0}
+          handlePick={this.handlePick}
+        />
         <Options
           options={this.state.options}
         />
@@ -52,13 +55,10 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
-  handlePick() {
-    console.log('handlePick called')
-  }
   render() {
     return (
       <div>
-        <button disabled={this.props.hasOptions} onClick={this.handlePick}>Who's job is it?</button>
+        <button disabled={this.props.hasOptions} onClick={this.props.handlePick}>Who's job is it?</button>
       </div>
     )
   }
