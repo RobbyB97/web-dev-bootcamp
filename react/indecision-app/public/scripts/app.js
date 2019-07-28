@@ -225,6 +225,11 @@ var Options = function Options(props) {
   return React.createElement(
     'div',
     null,
+    props.options.length === 0 && React.createElement(
+      'p',
+      null,
+      'Add an option to get started!'
+    ),
     props.options.map(function (option) {
       return React.createElement(Option, {
         key: option,
