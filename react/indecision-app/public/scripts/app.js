@@ -29,7 +29,7 @@ var IndecisionApp = function (_React$Component) {
     key: 'handlePick',
     value: function handlePick() {
       var num = Math.floor(Math.random() * this.state.options.length);
-      return console.log(this.state.options[num]);
+      return alert(this.state.options[num]);
     }
   }, {
     key: 'handleDeleteOptions',
