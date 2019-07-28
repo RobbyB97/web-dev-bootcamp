@@ -104,44 +104,36 @@ const Header = (props) => {
   )
 }
 
-class Action extends React.Component {
-  render() {
-    return (
-      <div>
-        <button disabled={this.props.hasOptions} onClick={this.props.handlePick}>Who's job is it?</button>
-      </div>
-    )
-  }
+const Action = (props) => {
+  return (
+    <div>
+      <button disabled={props.hasOptions} onClick={props.handlePick}>Who's job is it?</button>
+    </div>
+  )
 }
 
-class Options extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.props.options.map((option) => {
-          return <Option option={option} key={option} />
-        })}
-      </div>
-    )
-  }
+const Options = (props) => {
+  return (
+    <div>
+      {props.options.map((option) => {
+        return <Option option={option} key={option} />
+      })}
+    </div>
+  )
 }
 
-class Option extends React.Component {
-  render() {
-    return (
-      <p>Option: {this.props.option}</p>
-    )
-  }
+const Option = (props) => {
+  return (
+    <p>Option: {props.option}</p>
+  )
 }
 
-class RemoveOptions extends React.Component {
-  render() {
-    return (
-      <div>
-        <button onClick={this.props.handleDeleteOptions}>Delete Options</button>
-      </div>
-    )
-  }
+const RemoveOptions = (props) => {
+  return (
+    <div>
+      <button onClick={props.handleDeleteOptions}>Delete Options</button>
+    </div>
+  )
 }
 
 
