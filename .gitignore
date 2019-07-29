@@ -21,6 +21,3 @@ node/task-manager/avatars/
 # Ignore SASS build files
 .sass-cache/
 *.map
-
-# Ignore js files built by babel
-react/indecision-app/public/scripts/app.js
