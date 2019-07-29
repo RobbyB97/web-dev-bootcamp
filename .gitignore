@@ -21,3 +21,6 @@ node/task-manager/avatars/
 # Ignore SASS build files
 .sass-cache/
 *.map
+
+# Ignore webpack build files
+bundle.js
