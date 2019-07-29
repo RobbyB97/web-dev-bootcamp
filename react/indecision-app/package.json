@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "webpack": "^3.1.0"
   }
 }
