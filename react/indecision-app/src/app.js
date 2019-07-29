@@ -1,6 +1,7 @@
 //import './utils.js'
 import cube, {square, add} from './utils.js'
 import {isAdult, canDrink} from './person.js'
+const validator = require('validator')
 
 console.log('app.js is running')
 console.log(`square: ${square(4)}`)
