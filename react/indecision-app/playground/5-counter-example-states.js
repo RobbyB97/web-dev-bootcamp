@@ -13,15 +13,13 @@ class Counter extends React.Component {
     }
   }
   componentDidMount() {
-    try {
-      const json = localStorage.getItem('count')
-      const count = JSON.parse(json)
-      if (count) {
-        this.setState(() => ({count}))
-        console.log('Got count from local storage.')
-      }
-    } catch(e) {
-      console.log('Invalid JSON')
+    const json = localStorage.getItem('count')
+    const count = parseInt(json, 10)
+    if (!isNaN(count)) {
+      this.setState(() => ({count}))
+      console.log('Got count from local storage.')
+    } else {
+      console.log('Count is not a number for some reason')
     }
   }
   componentDidUpdate(prevProps, prevState) {

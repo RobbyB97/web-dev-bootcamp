@@ -31,17 +31,15 @@ var Counter = function (_React$Component) {
   _createClass(Counter, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      try {
-        var json = localStorage.getItem('count');
-        var count = JSON.parse(json);
-        if (count) {
-          this.setState(function () {
-            return { count: count };
-          });
-          console.log('Got count from local storage.');
-        }
-      } catch (e) {
-        console.log('Invalid JSON');
+      var json = localStorage.getItem('count');
+      var count = parseInt(json, 10);
+      if (!isNaN(count)) {
+        this.setState(function () {
+          return { count: count };
+        });
+        console.log('Got count from local storage.');
+      } else {
+        console.log('Count is not a number for some reason');
       }
     }
   }, {
