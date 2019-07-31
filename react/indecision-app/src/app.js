@@ -6,12 +6,6 @@ import ReactDOM from 'react-dom'
 import Header from './components/Header'
 import IndecisionApp from './components/IndecisionApp'
 
-// Default props
-
-Header.defaultProps = {
-  title: 'Indecision'
-}
-
 
 // Variables
 const $appRoot = document.getElementById('app')
