@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 
 // Import components
 import AddOption from './components/addOption'
+import Header from './components/header'
 
 
 // Stateful Components
@@ -91,16 +92,6 @@ class IndecisionApp extends React.Component {
   }
 }
 
-
-// Stateless Components
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.title}</h1>
-      {props.subtitle && <h2>{props.subtitle}</h2>}
-    </div>
-  )
-}
 
 const Action = (props) => {
   return (
