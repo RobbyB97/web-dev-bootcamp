@@ -8,8 +8,15 @@ import Option from './Option'
 import RemoveOptions from './RemoveOptions'
 
 export default class IndecisionApp extends React.Component {
+  // Set initial state
   state = {
     options: this.props.options
+  }
+
+  // Event listeners
+  handlePick = () => {
+    let num = Math.floor(Math.random() * this.state.options.length)
+    return alert(this.state.options[num])
   }
   handleAddOption = (option) => {
     if (!option) {
@@ -33,6 +40,8 @@ export default class IndecisionApp extends React.Component {
       options: []
     }))
   }
+
+  // Lifecycle functions
   componentDidMount() { // When component gets created
     try {
       const json = localStorage.getItem('options')
@@ -54,10 +63,8 @@ export default class IndecisionApp extends React.Component {
   componentWillUnmount() {
     console.log('componentWillUnmount')
   }
-  handlePick = () => {
-    let num = Math.floor(Math.random() * this.state.options.length)
-    return alert(this.state.options[num])
-  }
+
+  // Template
   render() {
     const subtitle = 'Put your life in the hands of a computer!'
 
