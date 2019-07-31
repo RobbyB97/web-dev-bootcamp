@@ -7,9 +7,6 @@ import Header from './components/Header'
 import IndecisionApp from './components/IndecisionApp'
 
 // Default props
-IndecisionApp.defaultProps = {
-  options: ['ok']
-}
 
 Header.defaultProps = {
   title: 'Indecision'

@@ -90,3 +90,7 @@ export default class IndecisionApp extends React.Component {
     )
   }
 }
+
+IndecisionApp.defaultProps = {
+  options: ['ok']
+}
