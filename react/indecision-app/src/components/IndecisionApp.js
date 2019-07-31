@@ -11,7 +11,8 @@ import OptionModal from './OptionModal'
 export default class IndecisionApp extends React.Component {
   // Set initial state
   state = {
-    options: this.props.options
+    options: this.props.options,
+    selectedOption: undefined
   }
 
   // Event listeners
@@ -86,7 +87,9 @@ export default class IndecisionApp extends React.Component {
         <RemoveOptions
           handleDeleteOptions={this.handleDeleteOptions}
         />
-        <OptionModal/>
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+        />
       </div>
     )
   }
