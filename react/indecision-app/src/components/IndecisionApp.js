@@ -6,6 +6,7 @@ import Action from './Action'
 import Options from './Options'
 import Option from './Option'
 import RemoveOptions from './RemoveOptions'
+import OptionModal from './OptionModal'
 
 export default class IndecisionApp extends React.Component {
   // Set initial state
