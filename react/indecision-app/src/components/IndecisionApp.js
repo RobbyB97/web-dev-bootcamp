@@ -18,7 +18,9 @@ export default class IndecisionApp extends React.Component {
   // Event listeners
   handlePick = () => {
     let num = Math.floor(Math.random() * this.state.options.length)
-    return alert(this.state.options[num])
+    this.setState(() => ({
+      selectedOption: this.state.options[num]
+    }))
   }
   handleAddOption = (option) => {
     if (!option) {
