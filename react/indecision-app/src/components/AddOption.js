@@ -1,14 +1,10 @@
 import React from 'react'
 
 export default class AddOption extends React.Component {
-  constructor(props) {
-    super(props)
-    this.onFormSubmit = this.onFormSubmit.bind(this)
-    this.state = {
-      error: undefined
-    }
+  state = {
+    error: undefined
   }
-  onFormSubmit(e) {
+  onFormSubmit = (e) => {
     e.preventDefault()
 
     const option = e.target.elements.option.value.trim()
