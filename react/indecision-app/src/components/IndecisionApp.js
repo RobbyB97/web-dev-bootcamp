@@ -86,6 +86,7 @@ export default class IndecisionApp extends React.Component {
         <RemoveOptions
           handleDeleteOptions={this.handleDeleteOptions}
         />
+        <OptionModal/>
       </div>
     )
   }
