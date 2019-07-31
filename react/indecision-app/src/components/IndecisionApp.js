@@ -11,6 +11,29 @@ export default class IndecisionApp extends React.Component {
   state = {
     options: this.props.options
   }
+  handleAddOption = (option) => {
+    if (!option) {
+      return 'Enter valid value to add item'
+    } else if (this.state.options.indexOf(option) > -1) {
+      return 'Option already exists!'
+    }
+    this.setState((prevState) => ({
+      options: prevState.options.concat(option)
+    }))
+  }
+  handleDeleteOption = (optionToRemove) => {
+    console.log('handleDeleteOption', optionToRemove)
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => {
+        return optionToRemove !== option
+      })
+    }))
+  }
+  handleDeleteOptions = () => {
+    this.setState(() => ({
+      options: []
+    }))
+  }
   componentDidMount() { // When component gets created
     try {
       const json = localStorage.getItem('options')
@@ -35,29 +58,6 @@ export default class IndecisionApp extends React.Component {
   handlePick = () => {
     let num = Math.floor(Math.random() * this.state.options.length)
     return alert(this.state.options[num])
-  }
-  handleAddOption = (option) => {
-    if (!option) {
-      return 'Enter valid value to add item'
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'Option already exists!'
-    }
-    this.setState((prevState) => ({
-      options: prevState.options.concat(option)
-    }))
-  }
-  handleDeleteOption = (optionToRemove) => {
-    console.log('handleDeleteOption', optionToRemove)
-    this.setState((prevState) => ({
-      options: prevState.options.filter((option) => {
-        return optionToRemove !== option
-      })
-    }))
-  }
-  handleDeleteOptions = () => {
-    this.setState(() => ({
-      options: []
-    }))
   }
   render() {
     const subtitle = 'Put your life in the hands of a computer!'
