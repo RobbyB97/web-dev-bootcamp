@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 // Import components
 import AddOption from './components/addOption'
 import Header from './components/header'
+import Action from './components/action'
 
 
 // Stateful Components
@@ -92,14 +93,6 @@ class IndecisionApp extends React.Component {
   }
 }
 
-
-const Action = (props) => {
-  return (
-    <div>
-      <button disabled={props.hasOptions} onClick={props.handlePick}>Who's job is it?</button>
-    </div>
-  )
-}
 //{props.options.map((option) => {
 //  return <Option option={option} key={option} />
 //})}
