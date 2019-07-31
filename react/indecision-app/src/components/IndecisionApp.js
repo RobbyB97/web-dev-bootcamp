@@ -44,6 +44,11 @@ export default class IndecisionApp extends React.Component {
       options: []
     }))
   }
+  closeModal = () => {
+    this.setState(() => ({
+      selectedOption: null
+    }))
+  }
 
   // Lifecycle functions
   componentDidMount() { // When component gets created
@@ -91,6 +96,7 @@ export default class IndecisionApp extends React.Component {
         />
         <OptionModal
           selectedOption={this.state.selectedOption}
+          closeModal={this.closeModal}
         />
       </div>
     )
