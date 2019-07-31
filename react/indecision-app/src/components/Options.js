@@ -1,8 +1,7 @@
 import React from 'react'
 import Option from './Option'
 
-const Options = (props) => {
-  return (
+const Options = (props) => (
     <div>
       {props.options.length === 0 && <p>Add an option to get started!</p>}
       {props.options.map((option) => (
@@ -13,7 +12,6 @@ const Options = (props) => {
         />
       ))}
     </div>
-  )
-}
+)
 
 export default Options

@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Option = (props) => {
-  return (
+const Option = (props) => (
     <div>
       {props.option}
       <button
@@ -12,7 +11,6 @@ const Option = (props) => {
         Remove option
       </button>
     </div>
-  )
-}
+)
 
 export default Option
