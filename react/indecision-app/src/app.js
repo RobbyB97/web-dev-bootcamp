@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 
 
 // Import components
-import AddOption from './components/addOption'
-import Header from './components/header'
-import Action from './components/action'
-import Options from './components/options'
-import Option from './components/option'
-import RemoveOptions from './components/removeOptions'
-import IndecisionApp from './components/indecisionApp'
+import AddOption from './components/AddOption'
+import Header from './components/Header'
+import Action from './components/Action'
+import Options from './components/Options'
+import Option from './components/Option'
+import RemoveOptions from './components/RemoveOptions'
+import IndecisionApp from './components/IndecisionApp'
 
 // Default props
 IndecisionApp.defaultProps = {
