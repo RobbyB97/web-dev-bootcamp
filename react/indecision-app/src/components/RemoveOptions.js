@@ -4,7 +4,7 @@ import React from 'react'
 const RemoveOptions = (props) => (
     <div>
       <button
-        className="big-button"
+        className="button button--link"
         onClick={props.handleDeleteOptions}
         disabled={props.hasOptions}
       >
