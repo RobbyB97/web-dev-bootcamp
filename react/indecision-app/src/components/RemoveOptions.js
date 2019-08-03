@@ -3,7 +3,12 @@ import React from 'react'
 
 const RemoveOptions = (props) => (
     <div>
-      <button onClick={props.handleDeleteOptions}>Delete Options</button>
+      <button
+        className="big-button"
+        onClick={props.handleDeleteOptions}
+      >
+        Delete Options
+      </button>
     </div>
 )
 
