@@ -6,7 +6,7 @@ const RemoveOptions = (props) => (
       <button
         className="big-button"
         onClick={props.handleDeleteOptions}
-        disabled={!props.hasOptions}
+        disabled={props.hasOptions}
       >
         Delete Options
       </button>
