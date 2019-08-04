@@ -1,5 +1,9 @@
 .add-option {
   display: flex;
+
+  input {
+    flex-grow: 1;
+  }
 }
 
 .add-option-error {
