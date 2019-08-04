@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Option = (props) => (
-    <div>
+    <div className="option">
       {props.option}
       <button
         onClick={(e) => {
