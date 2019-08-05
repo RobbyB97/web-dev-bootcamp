@@ -34,6 +34,12 @@ const HelpPage = () => (
   </div>
 )
 
+const NotFoundPage = () => (
+  <div>
+    This is the 404 page
+  </div>
+)
+
 
 // Routes
 const routes = (
