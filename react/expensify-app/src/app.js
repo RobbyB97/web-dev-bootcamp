@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'normalize.css/normalize.css'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './sass/main.scss'
 
@@ -44,12 +44,13 @@ const NotFoundPage = () => (
 // Routes
 const routes = (
   <BrowserRouter>
-    <div>
+    <Switch>
       <Route path="/" component={ExpenseDashboard} exact={true}/>
       <Route path="/create" component={ExpenseDashboardCreate} exact={true}/>
       <Route path="/edit" component={EditPage}/>
       <Route path="/help" component={HelpPage}/>
-    </div>
+      <Route component={NotFoundPage}/>
+    </Switch>
   </BrowserRouter>
 )
 
