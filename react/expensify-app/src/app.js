@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'normalize.css/normalize.css'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 
 import './sass/main.scss'
 
@@ -36,7 +36,7 @@ const HelpPage = () => (
 
 const NotFoundPage = () => (
   <div>
-    404 - <a href="/">Go home</a>
+    404 - <Link to="/">Go Home</Link>
   </div>
 )
 
