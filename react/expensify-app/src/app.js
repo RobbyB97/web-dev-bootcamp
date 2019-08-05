@@ -26,8 +26,8 @@ const ExpenseDashboardCreate = () => (
 const routes = (
   <BrowserRouter>
     <div>
-      <Route path="/" component={ExpenseDashboard}/>
-      <Route path="/create" component={ExpenseDashboardCreate}/>
+      <Route path="/" component={ExpenseDashboard} exact={true}/>
+      <Route path="/create" component={ExpenseDashboardCreate} exact={true}/>
     </div>
   </BrowserRouter>
 )
