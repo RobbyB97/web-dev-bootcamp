@@ -10,12 +10,18 @@ import './sass/main.scss'
 const $appRoot = document.getElementById('app')
 
 
+const ExpenseDashboard = () => (
+  <div>
+    This is from my dashboard component
+  </div>
+)
+
 // Routes
 const routes = (
   <BrowserRouter>
-
+    <Route path="/" component={ExpenseDashboard}/>
   </BrowserRouter>
 )
 
 
-ReactDOM.render(<p>This is a boilerplate</p>, $appRoot)
+ReactDOM.render(routes, $appRoot)
