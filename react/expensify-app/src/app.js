@@ -36,7 +36,7 @@ const HelpPage = () => (
 
 const NotFoundPage = () => (
   <div>
-    This is the 404 page
+    404 - <a href="/">Go home</a>
   </div>
 )
 
