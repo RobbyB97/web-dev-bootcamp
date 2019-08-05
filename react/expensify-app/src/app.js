@@ -16,10 +16,19 @@ const ExpenseDashboard = () => (
   </div>
 )
 
+const ExpenseDashboardCreate = () => (
+  <div>
+    This is from my dashboard create component
+  </div>
+)
+
 // Routes
 const routes = (
   <BrowserRouter>
-    <Route path="/" component={ExpenseDashboard}/>
+    <div>
+      <Route path="/" component={ExpenseDashboard}/>
+      <Route path="/create" component={ExpenseDashboardCreate}/>
+    </div>
   </BrowserRouter>
 )
 
