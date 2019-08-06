@@ -6,13 +6,8 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 import ExpenseDashboard from '../components/ExpenseDashboard'
 import ExpenseCreate from '../components/ExpenseCreate'
 import ExpenseHelp from '../components/ExpenseHelp'
+import ExpenseEdit from '../components/ExpenseEdit'
 
-
-const EditPage = () => (
-  <div>
-    This is the edit page
-  </div>
-)
 
 const NotFoundPage = () => (
   <div>
@@ -39,7 +34,7 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={ExpenseDashboard} exact={true}/>
         <Route path="/create" component={ExpenseCreate} exact={true}/>
-        <Route path="/edit" component={EditPage}/>
+        <Route path="/edit" component={ExpenseEdit}/>
         <Route path="/help" component={ExpenseHelp}/>
         <Route component={NotFoundPage}/>
       </Switch>
