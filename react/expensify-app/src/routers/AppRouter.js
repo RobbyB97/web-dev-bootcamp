@@ -4,13 +4,8 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 
 //Components
 import ExpenseDashboard from '../components/ExpenseDashboard'
+import ExpenseCreate from '../components/ExpenseCreate'
 
-
-const ExpenseDashboardCreate = () => (
-  <div>
-    This is from my dashboard create component
-  </div>
-)
 
 const EditPage = () => (
   <div>
@@ -48,7 +43,7 @@ const AppRouter = () => (
       <Header/>
       <Switch>
         <Route path="/" component={ExpenseDashboard} exact={true}/>
-        <Route path="/create" component={ExpenseDashboardCreate} exact={true}/>
+        <Route path="/create" component={ExpenseCreate} exact={true}/>
         <Route path="/edit" component={EditPage}/>
         <Route path="/help" component={HelpPage}/>
         <Route component={NotFoundPage}/>
