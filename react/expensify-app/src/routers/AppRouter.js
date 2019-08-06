@@ -43,7 +43,7 @@ const Header = () => (
 
 
 // Routes
-const routes = (
+const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Header/>
@@ -57,3 +57,6 @@ const routes = (
     </div>
   </BrowserRouter>
 )
+
+
+export default AppRouter
