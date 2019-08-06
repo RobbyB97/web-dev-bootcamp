@@ -5,17 +5,12 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 //Components
 import ExpenseDashboard from '../components/ExpenseDashboard'
 import ExpenseCreate from '../components/ExpenseCreate'
+import ExpenseHelp from '../components/ExpenseHelp'
 
 
 const EditPage = () => (
   <div>
     This is the edit page
-  </div>
-)
-
-const HelpPage = () => (
-  <div>
-    This is the help page
   </div>
 )
 
@@ -45,7 +40,7 @@ const AppRouter = () => (
         <Route path="/" component={ExpenseDashboard} exact={true}/>
         <Route path="/create" component={ExpenseCreate} exact={true}/>
         <Route path="/edit" component={EditPage}/>
-        <Route path="/help" component={HelpPage}/>
+        <Route path="/help" component={ExpenseHelp}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>
