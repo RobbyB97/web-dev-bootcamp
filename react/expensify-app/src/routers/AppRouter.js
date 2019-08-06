@@ -1,11 +1,10 @@
+//Libraries
 import React from 'react'
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 
-const ExpenseDashboard = () => (
-  <div>
-    This is from my dashboard component
-  </div>
-)
+//Components
+import ExpenseDashboard from '../components/ExpenseDashboard'
+
 
 const ExpenseDashboardCreate = () => (
   <div>
