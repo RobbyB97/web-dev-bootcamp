@@ -15,6 +15,10 @@ const AppRouter = () => (
     <div>
       <Header/>
       <Switch>
+        <Route path="/" component={Home} exact={true}/>
+        <Route path="/portfolio" component={Portfolio}/>
+        <Route path="/portfolio/:id" component={Portfolio}/>
+        <Route path="/contact" component={Contact}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>
