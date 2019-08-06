@@ -3,23 +3,12 @@ import React from 'react'
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 
 //Components
+import Header from '../components/Header'
 import ExpenseDashboard from '../components/ExpenseDashboard'
 import ExpenseCreate from '../components/ExpenseCreate'
 import ExpenseHelp from '../components/ExpenseHelp'
 import ExpenseEdit from '../components/ExpenseEdit'
 import NotFoundPage from '../components/NotFoundPage'
-
-
-const Header = () => (
-  <header>
-    <h1>Expensify</h1>
-    <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
-    <NavLink to="/create" activeClassName="is-active">Create</NavLink>
-    <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
-    <NavLink to="/help" activeClassName="is-active">Help</NavLink>
-  </header>
-)
-
 
 // Routes
 const AppRouter = () => (
