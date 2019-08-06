@@ -40,6 +40,12 @@ const NotFoundPage = () => (
   </div>
 )
 
+const Header = () => (
+  <header>
+    <h1>Expensify</h1>
+  </header>
+)
+
 
 // Routes
 const routes = (
