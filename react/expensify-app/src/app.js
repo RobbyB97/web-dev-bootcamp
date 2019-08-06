@@ -43,6 +43,10 @@ const NotFoundPage = () => (
 const Header = () => (
   <header>
     <h1>Expensify</h1>
+    <Link to="/">Home</Link>
+    <Link to="/create">Create</Link>
+    <Link to="/edit">Edit</Link>
+    <Link to="/help">Help</Link>
   </header>
 )
 
