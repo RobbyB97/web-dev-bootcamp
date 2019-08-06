@@ -7,13 +7,8 @@ import ExpenseDashboard from '../components/ExpenseDashboard'
 import ExpenseCreate from '../components/ExpenseCreate'
 import ExpenseHelp from '../components/ExpenseHelp'
 import ExpenseEdit from '../components/ExpenseEdit'
+import NotFoundPage from '../components/NotFoundPage'
 
-
-const NotFoundPage = () => (
-  <div>
-    404 - <Link to="/">Go Home</Link>
-  </div>
-)
 
 const Header = () => (
   <header>
