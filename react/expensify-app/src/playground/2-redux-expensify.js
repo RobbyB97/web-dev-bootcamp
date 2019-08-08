@@ -1,9 +1,22 @@
 import {createStore, combineReducers} from 'redux'
 
 
-// Reducer
+// Reducers
 const expensesReducerDefaultState = []
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
+  switch(action.type) {
+    default:
+      return state
+  }
+}
+
+const filtersReducerDefaultState = {
+  text: '',
+  sortBy: 'date',
+  startDate: undefined,
+  endDate: undefined
+}
+const filtersReducer = (state = filtersReducerDefaultState, action) => {
   switch(action.type) {
     default:
       return state
@@ -14,7 +27,8 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 // Store
 const store = createStore(
   combineReducers({
-    expenses: expensesReducer
+    expenses: expensesReducer,
+    filters: filtersReducer
   })
 )
 
