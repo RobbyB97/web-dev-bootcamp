@@ -19,6 +19,11 @@ const store = createStore((state = {count: 0}, action) => {
         count: 0
       }
 
+    case 'SET':
+      return {
+        count: action.number
+      }
+
     default:
       console.log('running')
       return state
@@ -48,4 +53,9 @@ store.dispatch({
 
 store.dispatch({
   type: 'RESET'
+})
+
+store.dispatch({
+  type: 'SET',
+  number: 800
 })
