@@ -21,7 +21,9 @@ const resetCount = () => ({
   type: 'RESET'
 })
 
-const store = createStore((state = {count: 0}, action) => {
+
+// Reducers
+const countReducer = (state = {count: 0}, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -47,19 +49,17 @@ const store = createStore((state = {count: 0}, action) => {
       console.log('running')
       return state
   }
-})
+}
+
+const store = createStore(countReducer)
 
 const unsubscribe = store.subscribe(() => {
   console.log(store.getState())
 })
 
 store.dispatch(incrementCount())
-
 store.dispatch(incrementCount({incrementBy: 5}))
-
 store.dispatch(decrementCount({decrementBy: 8000}))
 store.dispatch(decrementCount())
-
 store.dispatch(resetCount())
-
 store.dispatch(setCount({number: 800}))
