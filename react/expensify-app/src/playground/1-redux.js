@@ -1,10 +1,15 @@
 import {createStore} from 'redux'
 
 
-// Action generators
+// Action generators   (if object exists) (if not)
 const incrementCount = ({incrementBy = 1} = {}) => ({
   type: 'INCREMENT',
   incrementBy
+})
+
+const decrementCount = ({decrementBy = 1} = {}) => ({
+  type: 'DECREMENT',
+  decrementBy
 })
 
 
@@ -45,13 +50,8 @@ store.dispatch(incrementCount())
 
 store.dispatch(incrementCount({incrementBy: 5}))
 
-store.dispatch({
-  type: 'DECREMENT',
-  decrementBy: 80
-})
-store.dispatch({
-  type: 'DECREMENT'
-})
+store.dispatch(decrementCount({decrementBy: 8000}))
+store.dispatch(decrementCount())
 
 store.dispatch({
   type: 'RESET'
