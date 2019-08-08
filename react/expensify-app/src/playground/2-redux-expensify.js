@@ -2,6 +2,7 @@ import {createStore, combineReducers} from 'redux'
 import uuid from 'uuid'
 
 
+// Action generators
 const addExpense = (
   {
     description = '',
@@ -20,6 +21,11 @@ const addExpense = (
   }
 })
 
+const removeExpense = ({id}) => ({
+  type: 'REMOVE_EXPENSE',
+  id
+})
+
 
 // Reducers
 const expensesReducerDefaultState = []
@@ -35,7 +41,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
       state.filter((expense) => {
           return action.id !== expense.id
       })
-      
+
     default:
       return state
   }
