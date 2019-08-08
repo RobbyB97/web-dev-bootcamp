@@ -9,8 +9,9 @@ const store = createStore((state = {count: 0}, action) => {
       }
 
     case 'DECREMENT':
+      const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1
       return {
-        count: state.count - 1
+        count: state.count - decrementBy
       }
 
     case 'RESET':
@@ -38,7 +39,8 @@ store.dispatch({
 })
 
 store.dispatch({
-  type: 'DECREMENT'
+  type: 'DECREMENT',
+  decrementBy: 80
 })
 store.dispatch({
   type: 'DECREMENT'
