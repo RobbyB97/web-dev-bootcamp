@@ -12,6 +12,11 @@ const decrementCount = ({decrementBy = 1} = {}) => ({
   decrementBy
 })
 
+const setCount = ({number}) => ({
+  type: 'SET',
+  number
+})
+
 const resetCount = () => ({
   type: 'RESET'
 })
@@ -57,7 +62,4 @@ store.dispatch(decrementCount())
 
 store.dispatch(resetCount())
 
-store.dispatch({
-  type: 'SET',
-  number: 800
-})
+store.dispatch(setCount({number: 800}))
