@@ -32,6 +32,19 @@ const editExpense = (id, updates) => ({
   updates
 })
 
+const setStartDate = (startDate) => {
+  if (startDate) {
+    return {
+      type: 'SET_START_DATE',
+      startDate
+    }
+  }
+  return {
+    type: 'SET_START_DATE',
+    startDate: undefined
+  }
+}
+
 const setTextFilter = (text) => ({
   type: 'SET_TEXT_FILTER',
   text
@@ -73,7 +86,6 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
         }
       })
 
-
     default:
       return state
   }
@@ -105,6 +117,12 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         sortBy: 'amount'
       }
 
+    case 'SET_START_DATE':
+      return {
+        ...state,
+        startDate: action.startDate
+      }
+
     default:
       return state
   }
@@ -124,18 +142,8 @@ store.subscribe(() => {
   console.log(store.getState())
 })
 
-const expenseOne = store.dispatch(addExpense({description: 'Rent', amount: 100}))
-const expenseTwo = store.dispatch(addExpense({description: 'Food', amount: 1000}))
-store.dispatch(addExpense({description: 'Got mugged', amount: 100000}))
-
-store.dispatch(removeExpense({id: expenseOne.expense.id}))
-store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}))
-
-store.dispatch(setTextFilter('rent'))
-store.dispatch(setTextFilter('More rent'))
-
-store.dispatch(sortByAmount())
-store.dispatch(sortByDate())
+store.dispatch(setStartDate(125))
+store.dispatch(setStartDate())
 
 const demoState = {
   expenses: [{
