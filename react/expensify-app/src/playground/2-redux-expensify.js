@@ -45,6 +45,19 @@ const setStartDate = (startDate) => {
   }
 }
 
+const setEndDate = (endDate) => {
+  if (endDate) {
+    return {
+      type: 'SET_END_DATE',
+      endDate
+    }
+  }
+  return {
+    type: 'SET_END_DATE',
+    endDate: undefined
+  }
+}
+
 const setTextFilter = (text) => ({
   type: 'SET_TEXT_FILTER',
   text
@@ -123,6 +136,12 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         startDate: action.startDate
       }
 
+    case 'SET_END_DATE':
+      return {
+        ...state,
+        endDate: action.endDate
+      }
+
     default:
       return state
   }
@@ -144,6 +163,8 @@ store.subscribe(() => {
 
 store.dispatch(setStartDate(125))
 store.dispatch(setStartDate())
+store.dispatch(setEndDate(1250))
+store.dispatch(setEndDate())
 
 const demoState = {
   expenses: [{
