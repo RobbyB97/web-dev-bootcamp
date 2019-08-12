@@ -148,6 +148,18 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 }
 
 
+// Get visible expenses
+const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
+  return expenses.filter((expense) => {
+    const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate
+    const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate
+    const textMatch = true
+
+    return startDateMatch && endDateMatch && textMatch
+  })
+}
+
+
 // Store
 const store = createStore(
   combineReducers({
@@ -158,13 +170,14 @@ const store = createStore(
 
 
 store.subscribe(() => {
-  console.log(store.getState())
+  const state = store.getState()
+  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
+  console.log(visibleExpenses)
 })
 
-store.dispatch(setStartDate(125))
-store.dispatch(setStartDate())
-store.dispatch(setEndDate(1250))
-store.dispatch(setEndDate())
+store.dispatch(addExpense({description: 'Rent', amount: 10, createdAt: 100}))
+store.dispatch(addExpense({description: 'Other thing', amount: 80000, createdAt: 200}))
+store.dispatch(setStartDate(150))
 
 const demoState = {
   expenses: [{
