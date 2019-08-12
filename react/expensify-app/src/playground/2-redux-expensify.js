@@ -156,6 +156,12 @@ const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
     const textMatch = expense.description.toLowerCase().includes(text.toLowerCase())
 
     return startDateMatch && endDateMatch && textMatch
+  }).sort((a, b) => {
+    if (sortBy === 'date') {
+      return a.createdAt < b.createdAt ? 1 : -1
+    } else if (sortBy === 'amount') {
+      return a.amount < b.amount ? 1 : -1
+    }
   })
 }
 
@@ -175,7 +181,10 @@ store.subscribe(() => {
   console.log(visibleExpenses)
 })
 
+store.dispatch(sortByDate())
 store.dispatch(addExpense({description: 'Rent', amount: 10, createdAt: 100}))
+store.dispatch(addExpense({description: 'Rent', amount: 12, createdAt: 140}))
+store.dispatch(addExpense({description: 'Rent', amount: 9, createdAt: 10}))
 store.dispatch(addExpense({description: 'Other thing', amount: 80000, createdAt: 200}))
 store.dispatch(setTextFilter('rent'))
 
