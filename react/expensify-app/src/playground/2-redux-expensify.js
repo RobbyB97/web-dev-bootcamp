@@ -153,7 +153,7 @@ const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
   return expenses.filter((expense) => {
     const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate
     const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate
-    const textMatch = true
+    const textMatch = expense.description.toLowerCase().includes(text.toLowerCase())
 
     return startDateMatch && endDateMatch && textMatch
   })
@@ -177,7 +177,7 @@ store.subscribe(() => {
 
 store.dispatch(addExpense({description: 'Rent', amount: 10, createdAt: 100}))
 store.dispatch(addExpense({description: 'Other thing', amount: 80000, createdAt: 200}))
-store.dispatch(setStartDate(150))
+store.dispatch(setTextFilter('rent'))
 
 const demoState = {
   expenses: [{
