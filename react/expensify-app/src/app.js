@@ -6,7 +6,8 @@ import 'normalize.css/normalize.css'
 // Assets
 import './sass/main.scss'
 import AppRouter from './routers/AppRouter'
-import {configureStore, getVisibleExpenses} from './store/configureStore'
+import configureStore from './store/configureStore'
+import getVisibleExpenses from './selectors/expenses'
 import {addExpense, removeExpense, editExpense} from './actions/expenses'
 import {setStartDate, setEndDate, setTextFilter, sortByDate, sortByAmount} from './actions/filters'
 
