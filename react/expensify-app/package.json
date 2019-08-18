@@ -21,6 +21,7 @@
     "webpack-dev-server": "^2.5.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "react-modal": "^2.2.2",
+    "react-redux": "^5.0.5",
     "style-loader": "^0.18.2",
     "css-loader": "^0.28.4",
     "sass-loader": "^6.0.6",
