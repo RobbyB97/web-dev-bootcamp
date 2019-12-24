@@ -1,9 +1,11 @@
 import React from 'react'
+import ExpenseForm from './ExpenseForm'
 
 const ExpenseCreate = () => (
-  <div>
-    This is from my dashboard create component
-  </div>
+    <div>
+        <h1>Add Expense</h1>
+        <ExpenseForm />
+    </div>
 )
 
 
