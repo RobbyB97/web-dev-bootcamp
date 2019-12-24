@@ -4,7 +4,22 @@ export default class ExpenseForm extends React.Component {
     render() {
         return (
             <div>
-                ExpenseForm component
+                <form>
+                    <input 
+                        type="text"
+                        placeholder="Description"
+                        autoFocus
+                    />
+                    <input 
+                        type="number"
+                        placeholder="Amount"
+                    />
+                    <textarea
+                        placeholder="Expense note (optional)"
+                    >
+
+                    </textarea>
+                </form>
             </div>
         )
     }
