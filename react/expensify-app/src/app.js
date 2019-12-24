@@ -20,13 +20,8 @@ const store = configureStore()
 
 console.log(store.getState())
 store.dispatch(addExpense({description: 'Water bill', amount: 450}))
-store.dispatch(addExpense({description: 'Gas bill', amount: 400}))
-store.dispatch(setTextFilter('bill'))
-store.dispatch(setTextFilter('water'))
-
-setTimeout(() => {
-    store.dispatch(setTextFilter('rent'))
-}, 3000)
+store.dispatch(addExpense({description: 'Gas bill', createdAt: 1000}))
+store.dispatch(addExpense({description: 'Rent', amount: 1500}))
 
 const jsx = (
   <Provider store={store}>
