@@ -17,8 +17,8 @@ export default class ExpenseForm extends React.Component {
                     <textarea
                         placeholder="Expense note (optional)"
                     >
-
                     </textarea>
+                    <button>Add Expense</button>
                 </form>
             </div>
         )
