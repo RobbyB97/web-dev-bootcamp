@@ -1,13 +1,26 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
+import ExpenseForm from './ExpenseForm'
 
 const ExpenseEdit = (props) => {
   console.log(props)
   return (
     <div>
-        Editing expense with id of {props.match.params.id}
+        <ExpenseForm
+            onSubmit={(expense) => {
+                console.log('updated', expense)
+            }}
+        />
     </div>
   )
 }
 
+const mapStateToProps = (state, props) => {
+    return {
+        expense: state.expenses.find((expense) => expense.id === props.match.params.id)
+    }
+}
 
-export default ExpenseEdit
+
+export default connect()(ExpenseEdit)
