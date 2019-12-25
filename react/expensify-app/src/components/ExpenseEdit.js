@@ -4,12 +4,12 @@ import {connect} from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 
 const ExpenseEdit = (props) => {
-  console.log(props)
   return (
     <div>
         <ExpenseForm
+            expense={props.expense}
             onSubmit={(expense) => {
-                console.log('updated', expense)
+                console.log(expense)
             }}
         />
     </div>
@@ -23,4 +23,4 @@ const mapStateToProps = (state, props) => {
 }
 
 
-export default connect()(ExpenseEdit)
+export default connect(mapStateToProps)(ExpenseEdit)
