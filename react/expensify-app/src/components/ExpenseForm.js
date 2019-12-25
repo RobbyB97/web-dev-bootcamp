@@ -61,6 +61,8 @@ export default class ExpenseForm extends React.Component {
                         onDateChange={this.onDateChange}
                         focused={this.state.focusCalendar}
                         onFocusChange={this.onFocusCalendarChange}
+                        numberOfMonths={1}
+                        isOutsideRange={() => false}
                     />
                     <textarea
                         placeholder="Expense note (optional)"
