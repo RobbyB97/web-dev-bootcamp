@@ -47,7 +47,7 @@ export default class ExpenseForm extends React.Component {
         if (!(this.state.description && this.state.amount)) {
             this.setState(() => ({error: 'Please provide a description and dollar amount'}))
         } else {
-            console.log('submitted')
+            this.setState(() => ({error: ''}))
         }
     }
     
