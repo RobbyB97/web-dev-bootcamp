@@ -1,7 +1,11 @@
+import moment from 'moment'
+
+// Selects which expenses to render based on filter state
 export default (expenses, {text, sortBy, startDate, endDate}) => {
   return expenses.filter((expense) => {
-    const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate
-    const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate
+    const createdAtMoment = moment(expense.createdAt)
+    const startDateMatch = startDate ? createdAtMoment.isSameOrBefore() : true
+    const endDateMatch = endDate ?  endDate.isSameOrAfter(createdAtMoment, 'day') : true
     const textMatch = expense.description.toLowerCase().includes(text.toLowerCase())
 
     return startDateMatch && endDateMatch && textMatch
