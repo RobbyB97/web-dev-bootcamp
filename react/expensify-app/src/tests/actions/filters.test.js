@@ -38,3 +38,19 @@ test('Generate set text filter action object without provided text', () => {
         type: 'SET_TEXT_FILTER'
     })
 })
+
+
+test('Generate sort by date action object', () => {
+    const action = sortByDate()
+    expect(action).toEqual({
+        type: 'SORT_BY_DATE'
+    })
+})
+
+
+test('Generate sort by amount action object', () => {
+    const action = sortByAmount()
+    expect(action).toEqual({
+        type: 'SORT_BY_AMOUNT'
+    })
+})
