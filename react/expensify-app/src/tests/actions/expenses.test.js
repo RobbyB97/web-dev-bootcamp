@@ -9,6 +9,7 @@ test('Remove expense action object', () => {
     })
 })
 
+
 test('Edit expense action object', () => {
     const action = editExpense('qwerty', {description: 'Bill'})
     
@@ -20,6 +21,7 @@ test('Edit expense action object', () => {
         }
     })
 })
+
 
 test('Add expense action object with provided values', () => {
     const expenseData = {
@@ -36,5 +38,21 @@ test('Add expense action object with provided values', () => {
             ...expenseData,
             id: expect.any(String)
         }
+    })
+})
+
+
+test('Add expense action object with default values', () => {
+    const action = addExpense()
+    expect(action).toEqual({
+        type: 'ADD_EXPENSE',
+        expense: {
+            description: '',
+            note: '',
+            amount: 0,
+            createdAt: 0,
+            id: expect.any(String)
+        }
+
     })
 })
