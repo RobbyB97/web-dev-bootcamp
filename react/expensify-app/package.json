@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "live-server ./public",
     "build": "webpack",
-    "dev-server": "webpack-dev-server --watch"
+    "dev-server": "webpack-dev-server --watch",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
