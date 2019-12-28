@@ -48,3 +48,28 @@ test('Filter by start date', () => {
     
     expect(result).toEqual([expenses[2], expenses[0]])
 })
+
+
+test('Filter by end date, sort by amount', () => {
+    const filters = {
+        text: '',
+        sortBy: 'amount',
+        startDate: undefined,
+        endDate: moment(0)
+    }
+    const result = selectExpenses(expenses, filters)
+
+    expect(result).toEqual([expenses[1], expenses[0]])
+})
+
+test('Filter by end date, sort by date', () => {
+    const filters = {
+        text: '',
+        sortBy: 'date',
+        startDate: undefined,
+        endDate: moment(0)
+    }
+    const result = selectExpenses(expenses, filters)
+
+    expect(result).toEqual([expenses[0], expenses[1]])
+})
