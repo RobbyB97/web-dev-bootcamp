@@ -27,3 +27,4 @@ bundle.js
 
 # Ignore test files
 __snapshots__/*
+*.js.snap
