@@ -7,7 +7,7 @@
     "serve": "live-server ./public",
     "build": "webpack",
     "dev-server": "webpack-dev-server --watch",
-    "test": "jest"
+    "test": "jest --config=jest.config.json"
   },
   "author": "",
   "license": "ISC",
