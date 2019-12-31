@@ -37,3 +37,14 @@ test('Set text filter', () => {
     const state = filtersReducer(undefined, {type: 'SET_TEXT_FILTER', text: 'abc'})
     expect(state.text).toBe('abc')
 })
+
+
+test('Set start date filter', () => {
+     const state = filtersReducer(undefined, {type: 'SET_START_DATE', startDate: moment(0).valueOf()})
+     expect(state.startDate).toBe(moment(0).valueOf())
+})
+
+test('Set end date filter', () => {
+    const state = filtersReducer(undefined, {type: 'SET_END_DATE', endDate: moment(0).valueOf()})
+    expect(state.endDate).toBe(moment(0).valueOf())
+})
