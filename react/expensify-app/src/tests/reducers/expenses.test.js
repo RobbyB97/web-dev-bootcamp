@@ -62,5 +62,14 @@ test('Edit expense', () => {
 
 
 test('Don\'t edit expense if ID is invalid', () => {
-
+    const amount = 10
+    const action = {
+        type: 'EDIT_EXPENSE',
+        id: -10,
+        updates: {
+            amount
+        }
+    }
+    const state = expensesReducer(expenses, action)
+    expect(state).toEqual(expenses)
 })
