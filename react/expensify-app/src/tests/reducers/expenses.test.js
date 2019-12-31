@@ -43,12 +43,21 @@ test('Add expense', () => {
         expense
     }
     const state = expensesReducer(expenses, action)
-    expect(state).toEqual([expenses[0], expenses[1], expenses[2], expense ])
+    expect(state).toEqual([...expenses, expense ])
 })
 
 
 test('Edit expense', () => {
-
+    const amount = 10
+    const action = {
+        type: 'EDIT_EXPENSE',
+        id: expenses[1].id,
+        updates: {
+            amount
+        }
+    }
+    const state = expensesReducer(expenses, action)
+    expect(state[1].amount).toBe(amount)
 })
 
 
