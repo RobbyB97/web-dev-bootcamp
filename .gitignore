@@ -24,3 +24,6 @@ node/task-manager/avatars/
 
 # Ignore webpack build files
 bundle.js
+
+# Ignore test files
+__snapshots__/*
