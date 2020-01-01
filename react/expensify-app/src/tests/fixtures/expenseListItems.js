@@ -11,5 +11,4 @@ export default [{
     description: 'Water',
     amount: '10',
     createdAt: moment(0).subtract(3, 'days').valueOf()
-}
-]
+}]
