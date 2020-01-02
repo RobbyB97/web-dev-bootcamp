@@ -48,3 +48,25 @@ test('Set note on textarea change', () => {
 
     expect(wrapper.state('note')).toBe(value)
 })
+
+
+test('Set amount with valid input', () => {
+    const wrapper = shallow(<ExpenseForm />)
+    const value = '23.50'
+    wrapper.find('input').at(1).simulate('change', {
+        target: {value}
+    })
+
+    expect(wrapper.state('amount')).toBe(value)
+})
+
+
+test('Don\'t set amount with invalid input', () => {
+    const wrapper = shallow(<ExpenseForm />)
+    const value = '12.a122'
+    wrapper.find('input').at(1).simulate('change', {
+        target: {value}
+    })
+
+    expect(wrapper.state('error').length).toBeGreaterThan(0)
+})
