@@ -11,4 +11,5 @@ test('Render ExpenseListItem', () => {
         createdAt: expenseListItems[0].createdAt
     }
     const wrapper = shallow(<ExpenseListItem {...expenseListItems[0]}/>)
+    expect(wrapper).toMatchSnapshot()
 })
