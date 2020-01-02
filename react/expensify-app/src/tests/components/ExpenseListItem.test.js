@@ -10,10 +10,5 @@ test('Render ExpenseListItem', () => {
         amount: expenseListItems[0].amount,
         createdAt: expenseListItems[0].createdAt
     }
-    const wrapper = shallow(<ExpenseListItem 
-        id={data.id}
-        description={data.description}
-        amount={data.amount}
-        createdAt={data.createdAt}
-    />)
+    const wrapper = shallow(<ExpenseListItem {...expenseListItems[0]}/>)
 })
