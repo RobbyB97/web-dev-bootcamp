@@ -1,11 +1,13 @@
 import React from 'react'
 import {shallow} from 'enzyme'
+import moment from 'moment'
 
 import {ExpenseListFilters} from '../../components/ExpenseListFilters'
 import {filters, altFilters} from '../fixtures/filters'
 
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper
+let setTextFilter, sortByDate, sortByAmount, setStartDate, 
+    setEndDate, wrapper, onFocusChange
 
 beforeEach(() => {
     setTextFilter = jest.fn()
@@ -13,6 +15,7 @@ beforeEach(() => {
     sortByAmount = jest.fn()
     setStartDate = jest.fn()
     setEndDate = jest.fn()
+    onFocusChange = jest.fn()
     wrapper = shallow(
         <ExpenseListFilters 
             filters={filters}
@@ -21,6 +24,7 @@ beforeEach(() => {
             sortByAmount={sortByAmount}
             setStartDate={setStartDate}
             setEndDate={setEndDate}
+            onFocusChange={onFocusChange}
         />
     )
 })
@@ -76,4 +80,17 @@ test('Handle sortByDate', () => {
     wrapper.find('select').simulate('change', e)
 
     expect(sortByDate).toHaveBeenCalled()
+})
+
+
+test('Handle onDatesChange', () => {
+    const startDate = moment(0).add(4, 'years')
+    const endDate = moment(0).add(8, 'years')
+    wrapper.find('DateRangePicker').prop('onDatesChange')({
+        startDate: startDate,
+        endDate: endDate
+    })
+
+    expect(setStartDate).toHaveBeenLastCalledWith(startDate)
+    expect(setEndDate).toHaveBeenLastCalledWith(endDate)
 })
