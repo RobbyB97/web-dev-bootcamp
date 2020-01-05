@@ -4,13 +4,21 @@ import {shallow} from 'enzyme'
 import {ExpenseEdit} from '../../components/ExpenseEdit'
 import expenses from '../fixtures/expenses'
 
-let editExpense, history, wrapper
+let removeExpense, editExpense, history, wrapper
 
 // Set up ExpenseEdit test environment
 beforeEach(() => {
     editExpense = jest.fn()
+    removeExpense = jest.fn()
     history = {push: jest.fn()}
-    wrapper = shallow(<ExpenseEdit editExpense={editExpense} history={history} />)
+    wrapper = shallow(
+        <ExpenseEdit 
+            editExpense={editExpense} 
+            removeExpense={removeExpense} 
+            history={history}
+            expense={expenses[1]} 
+        />
+    )
 })
 
 
