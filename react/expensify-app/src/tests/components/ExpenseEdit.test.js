@@ -17,3 +17,14 @@ beforeEach(() => {
 test('Render ExpenseEdit', () => {
     expect(wrapper).toMatchSnapshot()
 })
+
+
+test('Handle editExpense', () => {
+    let edit = {
+        ...expenses[1],
+        'note': 'test'
+    }
+
+    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1].id, edit)
+    expect(history.push).toHaveBeenLastCalledWith('/')
+})
