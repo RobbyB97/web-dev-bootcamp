@@ -41,11 +41,24 @@ test('Render ExpenseListFilters with alt data', () => {
 
 
 test('Handle onTextChange', () => {
-    const e = {
+    let e = {
         target: {
             value: 'test'
         }
     }
     wrapper.find('input').simulate('change', e)
+    
     expect(setTextFilter).toHaveBeenLastCalledWith(e.target.value)
+})
+
+
+test('Handle sortByDate', () => {
+    let e = {
+        target: {
+            value: 'amount'
+        }
+    }
+    wrapper.find('select').simulate('change', e)
+
+    expect(sortByAmount).toHaveBeenCalled()
 })
