@@ -27,5 +27,25 @@ beforeEach(() => {
 
 
 test('Render ExpenseListFilters', () => {
+    expect(wrapper).toMatchSnapshot()
+})
 
+
+test('Render ExpenseListFilters with alt data', () => {
+    wrapper.setProps({
+        filters: altFilters
+    })
+
+    expect(wrapper).toMatchSnapshot()
+})
+
+
+test('Handle onTextChange', () => {
+    const e = {
+        target: {
+            value: 'test'
+        }
+    }
+    wrapper.find('input').simulate('change', e)
+    expect(setTextFilter).toHaveBeenLastCalledWith(e.target.value)
 })
