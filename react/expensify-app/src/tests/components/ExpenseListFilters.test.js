@@ -52,7 +52,7 @@ test('Handle onTextChange', () => {
 })
 
 
-test('Handle sortByDate', () => {
+test('Handle sortByAmount', () => {
     let e = {
         target: {
             value: 'amount'
@@ -61,4 +61,19 @@ test('Handle sortByDate', () => {
     wrapper.find('select').simulate('change', e)
 
     expect(sortByAmount).toHaveBeenCalled()
+})
+
+
+test('Handle sortByDate', () => {
+    wrapper.setProps({
+        filters: altFilters
+    })
+    let e = {
+        target: {
+            value: 'date'
+        }
+    }
+    wrapper.find('select').simulate('change', e)
+
+    expect(sortByDate).toHaveBeenCalled()
 })
