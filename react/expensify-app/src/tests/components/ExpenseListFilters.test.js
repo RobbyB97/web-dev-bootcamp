@@ -94,3 +94,9 @@ test('Handle onDatesChange', () => {
     expect(setStartDate).toHaveBeenLastCalledWith(startDate)
     expect(setEndDate).toHaveBeenLastCalledWith(endDate)
 })
+
+test('Handle onFocusChange', () => {
+    const focusCalendar = 'endDate'
+    wrapper.find('DateRangePicker').prop('onFocusChange')(focusCalendar)
+    expect(wrapper.state('focusCalendar')).toBe(focusCalendar)
+})
