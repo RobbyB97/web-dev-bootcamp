@@ -32,7 +32,8 @@ test('Handle editExpense', () => {
         ...expenses[1],
         'note': 'test'
     }
-
-    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1].id, edit)
+    wrapper.find('ExpenseForm').prop('onSubmit')(edit)
+    
     expect(history.push).toHaveBeenLastCalledWith('/')
+    expect(editExpense).toHaveBeenLastCalledWith(expenses[1].id, edit)
 })
