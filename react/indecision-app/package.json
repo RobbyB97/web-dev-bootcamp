@@ -1,12 +1,14 @@
 {
   "name": "indecision-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "indecision udemy project",
   "main": "index.js",
   "scripts": {
     "serve": "live-server ./public",
-    "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server",
+    "deploy:firebase": "npm run build:prod & firebase deploy"
   },
   "author": "",
   "license": "ISC",
