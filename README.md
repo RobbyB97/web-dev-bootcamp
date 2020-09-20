@@ -12,6 +12,7 @@
 
 -   ### Weather app
     -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/weather-app)**
+    -   **Path:** /node/weather-app
 
 -   ### Task Manager
     -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/task-manager)**
