@@ -28,3 +28,8 @@ bundle.js
 # Ignore test files
 __snapshots__/*
 *.js.snap
+
+# Ignore firebase config files
+*.firebaserc
+firebase.json
+*.cache
