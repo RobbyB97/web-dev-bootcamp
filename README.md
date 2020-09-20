@@ -33,10 +33,12 @@
     -   **Path:** /react/class-one
 
 -   ### Expensify app
+    -   **[View on Firebase](https://expensify-robbyb97.web.app)**
     -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/expensify-app)**
     -   **Path:** /react/expensify-app
 
 -   ### Indecision app
+    -   **[View on Firebase](https://indecision-robbyb97.web.app)**
     -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/indecision-app)**
     -   **Path:** /react/indecision-app
 
