@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "env-cmd ./config/test.env nodemon ./src/index.js -e html,css,js",
-    "start": "env-cmd ./config/prod.env nodemon ./src/index.js -e html,css,js"
+    "start": "node ./src/index.js"
   },
   "author": "Robby",
   "license": "ISC",

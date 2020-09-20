@@ -3,6 +3,7 @@
 
 ## Node.JS Projects
 -   ### Chat app
+    -   **[View on Heroku](http://chat-app-robbyb97.herokuapp.com/)**
     -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/chat-app)**
     -   **Path:** /node/chat-app
 

@@ -10,7 +10,7 @@ const {addUser, removeUser, getUser, getUsersInRoom} = require('./utils/users')
 
 // Express config
 const publicPage = path.join(__dirname, '../public')
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 const app = express()
 app.use(express.static(publicPage))
 
