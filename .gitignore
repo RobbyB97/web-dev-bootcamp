@@ -1,7 +1,5 @@
 # Node modules
-node_modules/*
-node/*/node_modules/*
-react/*/node_modules/*
+node_modules/
 
 # API keys
 node/weather-app/*key.txt
@@ -22,14 +20,18 @@ node/task-manager/avatars/
 .sass-cache/
 *.map
 
-# Ignore webpack build files
+# Ignore bundles
 bundle.js
+bundle.css
 
-# Ignore test files
-__snapshots__/*
+# Ignore jest snapshots
+__snapshots__/
 *.js.snap
 
 # Ignore firebase config files
 *.firebaserc
 firebase.json
 *.cache
+
+# Ignore JS files in the TypeScript course
+typescript/*/*.js
