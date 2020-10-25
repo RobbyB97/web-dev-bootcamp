@@ -1,0 +1,12 @@
+> show dbs
+> use shop
+> db.products.insertOne({name: "robby", age: 23})
+> db.products.insertOne({name: "Book", price: 10.99})
+> db.products.find()
+> db.products.insertOne({name: "How to Win Friends & Influence People", price: 16.99})
+> db.products.find().pretty()
+> db.products.insertOne({name: "Google Cardboard", price: 20.00, description: "Bare minimum needed for a VR experience with your smartphone."})
+> db.products.find({name: "Google Cardboard"})
+> db.products.insertOne({name: "Laptop", price: 1200.89, description: "A much good laptop", specs: {
+    cpu: "Intel i7", ram: "12GB", gpu: "Radeon-something-or-other"
+}})
