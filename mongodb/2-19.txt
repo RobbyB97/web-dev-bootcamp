@@ -1,1 +1,2 @@
 > db.flightData.insertOne({departureAirport: "TXL", arrivalAirport: "LHR"})
+> db.flightData.insertOne({departureAirport: "TXL", arrivalAirport: "LHR", _id: "txl-lhr-1"})
