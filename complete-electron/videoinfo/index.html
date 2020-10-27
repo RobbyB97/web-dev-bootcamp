@@ -10,6 +10,18 @@
                 <label>Select a video</label>
                 <input type="file" accept="video/*">
             </div>
+            <button type="submit">Get Info</button>
         </form>
+
+        <script>
+            const electron = require('electron');
+
+            document.querySelector('form').addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const file=document.querySelector('input').files[0];
+                console.log(file.path);
+            });
+        </script>
     </body>
 </html>
