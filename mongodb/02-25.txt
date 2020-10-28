@@ -1,0 +1,1 @@
+> db.passengers.find().forEach((passenger) => {printjson(passenger)})  
