@@ -1,0 +1,8 @@
+> db.flightData.updateOne({"_id" : ObjectId("5f9926469053b4274d5dbc76")}, {$set: {delayed: true}})
+> db.flightData.replaceOne({"_id" : ObjectId("5f9926469053b4274d5dbc76")}, {                      
+...     "departureAirport": "MUC",
+...     "arrivalAirport": "SFO",
+...     "aircraft": "Airbus A380",
+...     "distance": 12000,
+...     "intercontinental": true
+...   })
