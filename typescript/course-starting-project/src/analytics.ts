@@ -1,1 +1,5 @@
-console.log('Sending analytics');
+function sendAnalytics(data: string) {
+    console.log('data');
+}
+
+sendAnalytics('The data');
