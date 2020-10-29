@@ -1,0 +1,45 @@
+1. Insert 3 patient records with at least 1 history entry per patient
+
+# New database
+> use hospital
+
+> db.patients.insertMany([{
+    "name": "Ribby Roo",
+    "age": 25,
+    "history": [{
+        "disease": "cold",
+        "treatment": "crack"
+    }, {
+        "disease": "minor cut",
+        "treatment": "amputation"
+    }]
+}, {
+    "name": "Thomas Jefferson",
+    "age": 277,
+    "history": [{
+        "disease": "Being too old",
+        "treatment": "Death"
+    }]
+}, {
+    "name": "Benito Mussolini",
+    "age": 134,
+    "history": [{
+        "disease": "Being a terrible person",
+        "treatment": "Death"
+    }]
+}])
+
+
+2. Update patient data of 1 patient with new age, name and history entry
+
+> db.patients.updateOne({"name": "Benito Mussolini"}, {$set: {"age": 137}})
+
+
+3. Find all patients who are older than 30
+
+> db.patients.find({"age": {$gt: 30}})
+
+
+4. Delete all patients who for a cold as a disease
+
+> db.patients.remove({"history.disease": "cold"})
