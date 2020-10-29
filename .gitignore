@@ -34,7 +34,7 @@ firebase.json
 *.cache
 
 # Ignore JS files in the TypeScript course
-typescript/*/*.js
+typescript/**/*.js
 
 # Ignore database in the MongoDB course
 mongodb/data/db/
