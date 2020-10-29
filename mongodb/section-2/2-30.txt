@@ -1,0 +1,14 @@
+# Find Albert Twostone
+> db.passengers.find({name: "Albert Twostone"}).pretty()
+
+# Find just Albert's hobbies
+> db.passengers.findOne({name: "Albert Twostone"}).hobbies
+
+# Query arrays
+> db.passengers.find({hobbies: "sports"}).pretty()
+
+# Query objects
+> db.flightData.find({"status.description": "on-time"}).pretty()
+
+# Nested objects
+> db.flightData.find({"details.responsible": "Robby"}).pretty()
