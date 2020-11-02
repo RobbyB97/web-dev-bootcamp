@@ -1,0 +1,29 @@
+> use companyData
+> db.companies.insertOne({
+    name: "Fresh Apples Inc", 
+    isStartup: true, 
+    employees: 33, 
+    funding: 12345678901234567890,
+    details: {
+        ceo: "Mark Super",
+    },
+    tags: [{
+        title: "Super"
+    }, {
+        title: "Perfect"
+    }],
+    foundingDate: new Date(), 
+    insertedAt: new Timestamp()
+})
+
+# You can see information about your current db with stats() function
+> db.stats() 
+
+# You can specify data type
+> db.numbers.insertOne({a: 1})
+> db.stats() 
+> db.numbers.deleteMany({})
+> db.numbers.insertOne({a: NumberInt(1)})
+> db.stats()
+# See the difference?
+> typeof db.numbers.findOne().a
