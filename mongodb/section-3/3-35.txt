@@ -1,0 +1,8 @@
+# Clear database
+> use shop
+> db.dropDatabase()
+> use shop
+
+# Different documents in same collection can have different fields.
+> db.products.insertOne({name: "A book", price: 12.99})
+> db.products.insertOne({title: "T-shirt", seller: {name: "Rob", age: 23}})
