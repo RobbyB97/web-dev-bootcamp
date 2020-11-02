@@ -18,6 +18,14 @@ const menuTemplate = [{
         label: 'New Todo'
     }, {
         label: 'Quit',
+        accelerator: (() => {
+            switch (process.platform) {
+                case 'darwin':
+                    return 'Command+Q';
+                default:
+                    return 'Ctrl+Q';
+            }
+        })(),
         click() {
             app.quit();
         }
