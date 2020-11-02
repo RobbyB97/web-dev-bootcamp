@@ -38,3 +38,6 @@ typescript/**/*.js
 
 # Ignore database in the MongoDB course
 mongodb/data/db/
+
+# Ignore vscode options
+.vscode/
