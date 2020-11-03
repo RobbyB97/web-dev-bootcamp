@@ -10,13 +10,13 @@ This repository contains all of the projects and codebases created through onlin
 
 ## Table of Contents
 
-1.  [Node.js](#nodejs-course)
-1.  [React Course](#react-course)
-1.  [Typescipt Course](#typescript-course)
-1.  [MongoDB Course](#mongodb-course)
-1.  [Docker Course](#docker-course)
-1.  [Complete Electron Course](#complete-electron-course)
-1.  [Master Electron Course](#master-electron-course)
+1.  [Node.js](#user-content--nodejs-course)
+1.  [React Course](#user-content--react-course)
+1.  [Typescipt Course](#user-content--typescript-course)
+1.  [MongoDB Course](#user-content--mongodb-course)
+1.  [Docker Course](#user-content--docker-course)
+1.  [Complete Electron Course](#user-content--complete-electron-course)
+1.  [Master Electron Course](#user-content--master-electron-course)
 
 ---
 
