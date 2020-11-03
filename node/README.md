@@ -1,6 +1,6 @@
 #   [The Complete Node.js Developer Course (3rd edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
 
-Node.JS is a backend Javascript engine that leverages [Chrome's V8 Engine](https://v8.dev/). It is the backbone of [npm](https://www.npmjs.com/), which underlies all the prominent frameworks used in modern web development. Node.JS also provides highly efficient frameworks for runnings servers, such as [Express](https://expressjs.com/), [Passport](http://www.passportjs.org/), [Mongoose](https://mongoosejs.com/) and so much more. Learning this technology was definitely a great time investment, because the skills I built upon the solid foundational knowledge of Node.JS allow me to quickly and efficiently push out full stack applications.
+[Node.JS](https://nodejs.org/) is a backend Javascript engine that leverages [Chrome's V8 Engine](https://v8.dev/). It is the backbone of [npm](https://www.npmjs.com/), which underlies all the prominent frameworks used in modern web development. Node.JS also provides highly efficient frameworks for runnings servers, such as [Express](https://expressjs.com/), [Passport](http://www.passportjs.org/), [Mongoose](https://mongoosejs.com/) and so much more. Learning this technology was definitely a great time investment, because the skills I built upon the solid foundational knowledge of Node.JS allow me to quickly and efficiently push out full stack applications.
 
 ---
 
