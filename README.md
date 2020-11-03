@@ -1,6 +1,6 @@
 # Web Dev Bootcamp
 
-This repository contains all of the projects and codebases created through online courses. It serves as a great and fast reference for technologies I spent a significant amount of time learning.
+This repository contains all of the projects and codebases created through online courses. It serves as a great and fast reference for technologies I spent a significant amount of time learning. (Completed courses are marked with a ✔)
 
 ---
 
@@ -16,7 +16,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [Node.JS Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
+## ✔ [Node.JS Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
 
 **[Udemy Course](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)**
 
@@ -47,7 +47,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [React Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
+## ✔ [React Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
 
 **[Udemy Course](https://www.udemy.com/course/react-2nd-edition/)**
 
