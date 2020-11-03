@@ -1,6 +1,10 @@
 # Web Dev Bootcamp
 
-This repository contains all of the projects and codebases created through online courses. It serves as a great and fast reference for technologies I spent a significant amount of time learning. (Completed courses are marked with a ✔)
+This repository contains all of the projects and codebases created through online courses. It serves as a great and fast reference for technologies I spent a significant amount of time learning.
+
+-   Completed course = 🟢
+-   In progress course = 🟡
+-   On hold course = 🔴
 
 ---
 
@@ -16,7 +20,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## ✔ [Node.JS Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
+## 🟢 [Node.JS Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
 
 **[Udemy Course](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)**
 
@@ -47,7 +51,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## ✔ [React Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
+## 🟢 [React Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
 
 **[Udemy Course](https://www.udemy.com/course/react-2nd-edition/)**
 
@@ -79,7 +83,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-##  [TypeScript Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/typescript)
+## 🟡 [TypeScript Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/typescript)
 
 **[Udemy Course](https://www.udemy.com/course/understanding-typescript/)**
 
@@ -87,7 +91,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [MongoDB Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/mongodb)
+## 🟡 [MongoDB Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/mongodb)
 
 **[Udemy Course](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)**
 
@@ -95,7 +99,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [Docker Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/docker/)
+## 🟡 [Docker Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/docker/)
 
 **[Udemy Course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)**
 
@@ -103,7 +107,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [Complete Electron Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron)
+## 🟡 [Complete Electron Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron)
 
 **[Udemy Course](https://www.udemy.com/course/electron-react-tutorial/)**
 
@@ -111,7 +115,7 @@ This repository contains all of the projects and codebases created through onlin
 
 ---
 
-## [Master Electron Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/master-electron/electron)
+## 🔴 [Master Electron Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/master-electron/electron)
 
 **[Udemy Course](https://www.udemy.com/course/master-electron/)**
 
