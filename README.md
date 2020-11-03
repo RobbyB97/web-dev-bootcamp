@@ -18,101 +18,101 @@ This repository contains all of the projects and codebases created through onlin
 
 ## Node.JS Course
 
--   **[Udemy Course](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)**
+**[Udemy Course](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)**
 
--   **Path**: [/node/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
+**Path**: [/node/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node)
 
--   **Projects**
+**Projects**
 
-    -   **Chat app**
-        -   **[View on Heroku](http://chat-app-robbyb97.herokuapp.com/)**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/chat-app)**
-        -   **Path:** /node/chat-app
+-   **Chat app**
+    -   **[View on Heroku](http://chat-app-robbyb97.herokuapp.com/)**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/chat-app)**
+    -   **Path:** /node/chat-app
 
-    -   **Notes app**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/notes-app)**
-        -   **Path:** /node/notes-app
+-   **Notes app**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/notes-app)**
+    -   **Path:** /node/notes-app
 
-    -   **Weather app**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/weather-app)**
-        -   **Path:** /node/weather-app
+-   **Weather app**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/weather-app)**
+    -   **Path:** /node/weather-app
 
-    -   **Task Manager**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/task-manager)**
-        -   **Path:** /node/task-manager
+-   **Task Manager**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/task-manager)**
+    -   **Path:** /node/task-manager
 
-    -   **Web Server**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/web-server)**
-        -   **Path:** /node/web-server
+-   **Web Server**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/node/web-server)**
+    -   **Path:** /node/web-server
 
 ---
 
 ## React Course
 
--   **[Udemy Course](https://www.udemy.com/course/react-2nd-edition/)**
+**[Udemy Course](https://www.udemy.com/course/react-2nd-edition/)**
 
--   **Path**: [/react/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
+**Path**: [/react/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react)
 
--   **Projects**
+**Projects**
 
-    -   **Boilerplate**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/boilerplate-v1)**
-        -   **Path:** /react/boilerplate-v1
+-   **Boilerplate**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/boilerplate-v1)**
+    -   **Path:** /react/boilerplate-v1
 
-    -   **Class One**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/class-one)**
-        -   **Path:** /react/class-one
+-   **Class One**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/class-one)**
+    -   **Path:** /react/class-one
 
-    -   **Expensify app**
-        -   **[View on Firebase](https://expensify-robbyb97.web.app)**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/expensify-app)**
-        -   **Path:** /react/expensify-app
+-   **Expensify app**
+    -   **[View on Firebase](https://expensify-robbyb97.web.app)**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/expensify-app)**
+    -   **Path:** /react/expensify-app
 
-    -   **Indecision app**
-        -   **[View on Firebase](https://indecision-robbyb97.web.app)**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/indecision-app)**
-        -   **Path:** /react/indecision-app
+-   **Indecision app**
+    -   **[View on Firebase](https://indecision-robbyb97.web.app)**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/indecision-app)**
+    -   **Path:** /react/indecision-app
 
-    -   **Portfolio site**
-        -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/portfolio-site)**
-        -   **Path:** /react/portfolio-app
+-   **Portfolio site**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/react/portfolio-site)**
+    -   **Path:** /react/portfolio-app
 
 ---
 
 ##  TypeScript Course
 
--   **[Udemy Course](https://www.udemy.com/course/understanding-typescript/)**
+**[Udemy Course](https://www.udemy.com/course/understanding-typescript/)**
 
--   **Path**: [/typescript/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/typescript)
+**Path**: [/typescript/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/typescript)
 
 ---
 
 ## MongoDB Course
 
--   **[Udemy Course](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)**
+**[Udemy Course](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)**
 
--   **Path**: [/mongodb/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/mongodb)
+**Path**: [/mongodb/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/mongodb)
 
 ---
 
 ## Docker Course
 
--   **[Udemy Course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)**
+**[Udemy Course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)**
 
--   **Path**: [/docker/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/docker/)
+**Path**: [/docker/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/docker/)
 
 ---
 
 ## Complete Electron Course
 
--   **[Udemy Course](https://www.udemy.com/course/electron-react-tutorial/)**
+**[Udemy Course](https://www.udemy.com/course/electron-react-tutorial/)**
 
--   **Path**: [/complete-electron/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron)
+**Path**: [/complete-electron/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron)
 
 ---
 
 ## Master Electron Course
 
--   **[Udemy Course](https://www.udemy.com/course/master-electron/)**
+**[Udemy Course](https://www.udemy.com/course/master-electron/)**
 
--   **Path**: [/master-electron/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/master-electron/electron)
+**Path**: [/master-electron/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/master-electron/electron)
