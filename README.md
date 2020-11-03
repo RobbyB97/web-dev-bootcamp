@@ -1,5 +1,8 @@
 # Web Dev Bootcamp
 
+This repository contains all of the projects and codebases created through online courses. It serves as a great and fast reference for technologies I spent a significant amount of time learning.
+
+---
 
 ## Node.JS Course
 
