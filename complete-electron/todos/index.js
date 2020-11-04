@@ -6,7 +6,11 @@ let mainWindow;
 let addWindow;
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     mainWindow.loadURL(`file://${__dirname}/main.html`);
     mainWindow.on('closed', () => app.quit());
 
@@ -16,17 +20,19 @@ app.on('ready', () => {
 
 function createAddWindow() {
     addWindow = new BrowserWindow({
-        width: 300,
-        height: 200,
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 600,
+        height: 400,
         title: 'Add New Todo',
     });
     addWindow.loadURL(`file://${__dirname}/add.html`);
-
-
 }
 
-ipcMain.on('todo:add', (e, todo) => {
+ipcMain.on('todo:add', (event, todo) => {
     mainWindow.webContents.send('todo:add', todo);
+    addWindow.close();
 });
 
 const menuTemplate = [{
