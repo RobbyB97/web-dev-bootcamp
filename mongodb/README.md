@@ -1,3 +1,1 @@
-MongoDB data:
-port: 27018
-dbpath: ./data/db
+#   [MongoDB - The Complete Developer's Guide 2020](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
