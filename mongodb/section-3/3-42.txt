@@ -1,0 +1,11 @@
+# Database of patients, each has a summary of history of their diseases
+
+> use hospital
+> db.patients.insertOne({name: "Robby", age: 23, diseaseSummary: "summary-robby-1"})
+> db.diseaseSummaries.insertOne({_id: "summary-robby-1", diseases: ["cold", "broken leg"]})
+> db.diseaseSummaries.findOne()
+
+# Find diseaseSummary by reference
+> db.patients.findOne().diseaseSummary
+> var dsid = db.patients.findOne().diseaseSummary
+> db.diseaseSummaries.findOne({_id: dsid})
