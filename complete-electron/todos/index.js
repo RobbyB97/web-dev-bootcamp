@@ -28,6 +28,7 @@ function createAddWindow() {
         title: 'Add New Todo',
     });
     addWindow.loadURL(`file://${__dirname}/add.html`);
+    addWindow.on('closed', () => addWindow = null);
 }
 
 ipcMain.on('todo:add', (event, todo) => {
@@ -71,6 +72,8 @@ if (process.env.NODE_ENV !== 'production') {
             click(item, focusedWindow) {
                 focusedWindow.toggleDevTools();
             }
+        }, {
+            role: 'reload'
         }]
     });
 }
