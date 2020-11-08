@@ -41,3 +41,6 @@ mongodb/data/db/
 
 # Ignore vscode options
 .vscode/
+
+#Ignore mac build files
+.DS_Store
