@@ -9,8 +9,12 @@
     -   **Path:** ./videoinfo
 
 -   **Todo app**
-    -   **[Github Link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/todos)**
+    -   **[Github link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/todos)**
     -   **Path:** ./todos
+
+-   **Tasky**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/tasky)**
+    -   **Path:** ./tasky
 
 ---
 

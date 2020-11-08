@@ -113,6 +113,22 @@ This repository contains all of the projects and codebases created through onlin
 
 **Path**: [/complete-electron/](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron)
 
+**Projects**
+
+**Projects**
+
+-   **Video Info**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/videoinfo)**
+    -   **Path:** /complete-electron/videoinfo
+
+-   **Todo app**
+    -   **[Github link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/todos)**
+    -   **Path:** /complete-electron/todos
+
+-   **Tasky**
+    -   **[GitHub link](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/complete-electron/tasky)**
+    -   **Path:** /complete-electron/tasky
+
 ---
 
 ## 🔴 [Master Electron Course](https://github.com/RobbyB97/web-dev-bootcamp/tree/master/master-electron/electron)
