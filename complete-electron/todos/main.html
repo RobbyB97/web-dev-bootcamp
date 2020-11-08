@@ -19,7 +19,7 @@
             list.appendChild(li);
         });
 
-        ipcRenderer.on('todo:clearAll', (event, todo) => {
+        ipcRenderer.on('todo:clearAll', () => {
             list.innerHTML = '';
         });
     </script>
